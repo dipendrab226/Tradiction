@@ -12,8 +12,10 @@
 
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
 
-Team lead: Brian
-Front end lead: May
-Back end lead: Sanjay
-Github master: Dipendra (Dibs)
-Db master: Zike ; Ben
+#### Team lead: Brian, blim6@mail.sfsu.edu
+#### Front end lead: May, mnaing1@mail.sfsu.edu
+#### Back end lead: Sanjay, smirani1@mail.sfsu.edu
+#### Github master: Dipendra (Dibs) dbharati@mail.sfsu.edu
+#### Db master 1: Zike zxian@mail.sfsu.edu
+#### Db master 2: Ben benjamin.fletes@gmail.com
+
