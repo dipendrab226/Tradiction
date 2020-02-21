@@ -1,0 +1,39 @@
+<!DOCTYPE html>          <!--document type is html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--- Link CSS file to html file,   rel=defines relationship with the linked CSS files,  href= stores the path to the CSS file-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <title>Info on Dibs</title>          <!-- title prints in the browser tab -->
+
+    <!-- CSS: focus on style and look of your forms -->    <!--The CSS padding properties are used to generate
+                                                                space around an element's content, inside of any defined borders.-->
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .container {
+            background-color: rgba(209, 209, 224, 0.3);
+        }
+    </style>                           <!--container gives the box-impression to the body & rgba is its color-->
+    <!--CSS-->
+</head>
+<body>
+    <center>                         <!--puts the content inside it in center-->
+    <h2> </h2>
+    <img src="https://ca.slack-edge.com/TSREU24TC-UTAD4V25Q-b1743a46f717-512" width="400" height="400">
+    </center>                        <!-- link to the image source with height and width-->
+
+    <div class="container">              <!--puts everything inside it in a container-->
+        <h3>Intro</h3>            <!-- header have a bigger font size-->
+        <p> Hi !! My name is Dipendra Bharati. I go by Dibs. I graduating this semester. I am taking 5 classes. I
+            have been applying for internships and jobs. I plan on doing well in this class and learning a lot.
+        </p>                             <!-- Whatever you write inside paragraph is printed-->
+        <button class="btn btn-s btn-success" id="returnHome" type="submit" onclick="window.location.href = '{%  url 'm0-home' %}';">Go Home&rarr;</button> </br>
+    </div>                               <!--<button id="submit" type="submit">Login</button>-->
+                                         <!--<button type="button" class="cancelbtn">Cancel</button>-->
+                                         <!-- onclick event occurs when the user clicks the button-->
+</body>
+</html>
