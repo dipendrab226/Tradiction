@@ -1,0 +1,143 @@
+Watching for file changes with StatReloader
+[20/Feb/2020 23:55:17] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:55:19] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:55:21] "GET /about-may/ HTTP/1.1" 200 1126
+[20/Feb/2020 23:55:22] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:55:23] "GET /about-brian/ HTTP/1.1" 200 1191
+[20/Feb/2020 23:55:24] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:55:25] "GET /about-kevin/ HTTP/1.1" 200 1285
+[20/Feb/2020 23:56:20] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:56:53] "GET / HTTP/1.1" 200 1787
+Not Found: /favicon.ico
+[20/Feb/2020 23:56:53] "GET /favicon.ico HTTP/1.1" 404 3140
+[20/Feb/2020 23:56:56] "GET /about-brian/ HTTP/1.1" 200 1191
+[20/Feb/2020 23:57:16] "GET /about-brian/ HTTP/1.1" 200 1191
+[20/Feb/2020 23:57:16] "GET /about-brian/ HTTP/1.1" 200 1191
+[20/Feb/2020 23:57:23] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:57:25] "GET /about-may/ HTTP/1.1" 200 1126
+[20/Feb/2020 23:57:45] "GET /about-sanjay/ HTTP/1.1" 200 1061
+[20/Feb/2020 23:57:56] "GET /about-dibs/ HTTP/1.1" 200 2316
+[20/Feb/2020 23:58:09] "GET /about-kevin/ HTTP/1.1" 200 1285
+[20/Feb/2020 23:58:35] "GET /about-kevin/ HTTP/1.1" 200 1285
+[20/Feb/2020 23:58:39] "GET /about-ben/ HTTP/1.1" 200 1068
+[20/Feb/2020 23:59:44] "GET /about-ben/ HTTP/1.1" 200 1068
+[20/Feb/2020 23:59:46] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:59:47] "GET /about-may/ HTTP/1.1" 200 1126
+[20/Feb/2020 23:59:48] "GET / HTTP/1.1" 200 1787
+[20/Feb/2020 23:59:48] "GET /about-brian/ HTTP/1.1" 200 1191
+[20/Feb/2020 23:59:52] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:23:22] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:23:30] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:38:08] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:38:21] "GET /about-brian/ HTTP/1.1" 200 1191
+[21/Feb/2020 00:38:27] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:38:28] "GET /about-may/ HTTP/1.1" 200 1126
+[21/Feb/2020 00:38:29] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 00:38:31] "GET /about-may/ HTTP/1.1" 200 1126
+[21/Feb/2020 00:38:37] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 02:55:18] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 02:55:27] "GET /about-brian/ HTTP/1.1" 200 1191
+[21/Feb/2020 03:06:25] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 03:07:13] "GET / HTTP/1.1" 200 1787
+Not Found: /favicon.ico
+[21/Feb/2020 03:07:15] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 03:07:17] "GET /about-kevin/ HTTP/1.1" 200 1285
+[21/Feb/2020 03:07:50] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 03:31:54] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 03:31:55] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 03:35:55] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 04:02:44] "GET / HTTP/1.1" 200 1787
+Invalid HTTP_HOST header: 'ip-172-31-43-103.us-east-2.compute.internal:8000'. You may need to add 'ip-172-31-43-103.us-east-2.compute.internal' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 04:07:44] "GET / HTTP/1.1" 400 61229
+[21/Feb/2020 04:59:25] "GET /about-may/ HTTP/1.1" 200 1126
+[21/Feb/2020 04:59:29] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:17] "GET / HTTP/1.1" 200 1787
+Not Found: /favicon.ico
+[21/Feb/2020 05:01:17] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:01:20] "GET /about-dibs/ HTTP/1.1" 200 2316
+[21/Feb/2020 05:01:23] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:28] "GET /about-brian/ HTTP/1.1" 200 1191
+[21/Feb/2020 05:01:30] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:32] "GET /about-may/ HTTP/1.1" 200 1126
+[21/Feb/2020 05:01:33] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:33] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:33] "GET /about-brian/ HTTP/1.1" 200 1191
+Not Found: /favicon.ico
+[21/Feb/2020 05:01:34] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:01:34] "GET /about-brian/ HTTP/1.1" 200 1191
+[21/Feb/2020 05:01:35] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:35] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:37] "GET /about-sanjay/ HTTP/1.1" 200 1061
+[21/Feb/2020 05:01:38] "GET /about-ben/ HTTP/1.1" 200 1068
+[21/Feb/2020 05:01:40] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:41] "GET /about-dibs/ HTTP/1.1" 200 2316
+[21/Feb/2020 05:01:41] "GET /about-kevin/ HTTP/1.1" 200 1285
+[21/Feb/2020 05:01:42] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:44] "GET /about-dibs/ HTTP/1.1" 200 2316
+[21/Feb/2020 05:01:46] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:47] "GET /about-ben/ HTTP/1.1" 200 1068
+[21/Feb/2020 05:01:47] "GET /about-sanjay/ HTTP/1.1" 200 1061
+[21/Feb/2020 05:01:50] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:51] "GET /about-may/ HTTP/1.1" 200 1126
+[21/Feb/2020 05:01:52] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:54] "GET /about-kevin/ HTTP/1.1" 200 1285
+[21/Feb/2020 05:01:57] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:01:58] "GET /about-ben/ HTTP/1.1" 200 1068
+[21/Feb/2020 05:02:06] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:17:42] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:29:50] "GET / HTTP/1.1" 200 1787
+Not Found: /favicon.ico
+[21/Feb/2020 05:29:51] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:30:27] "GET /about-brian/ HTTP/1.1" 200 1191
+Not Found: /favicon.ico
+[21/Feb/2020 05:30:27] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:31:20] "GET / HTTP/1.1" 200 1787
+Not Found: /favicon.ico
+[21/Feb/2020 05:31:20] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:31:22] "GET /about-brian/ HTTP/1.1" 200 1191
+[21/Feb/2020 05:31:25] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:31:26] "GET /about-may/ HTTP/1.1" 200 1126
+Not Found: /favicon.ico
+[21/Feb/2020 05:31:26] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:31:47] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:31:55] "GET /about-sanjay/ HTTP/1.1" 200 1061
+Not Found: /favicon.ico
+[21/Feb/2020 05:31:55] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:32:12] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:32:13] "GET /about-dibs/ HTTP/1.1" 200 2316
+Not Found: /favicon.ico
+[21/Feb/2020 05:32:13] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:32:22] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:32:23] "GET /about-kevin/ HTTP/1.1" 200 1285
+Not Found: /favicon.ico
+[21/Feb/2020 05:32:24] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:32:58] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:33:00] "GET /about-ben/ HTTP/1.1" 200 1068
+Not Found: /favicon.ico
+[21/Feb/2020 05:33:00] "GET /favicon.ico HTTP/1.1" 404 3140
+[21/Feb/2020 05:33:51] "GET /about-sanjay/ HTTP/1.1" 200 1061
+[21/Feb/2020 05:34:08] "GET / HTTP/1.1" 200 1787
+[21/Feb/2020 05:34:14] "GET /about-dibs/ HTTP/1.1" 200 2316
+Invalid HTTP_HOST header: 'ip-172-31-43-103.us-east-2.compute.internal:8000'. You may need to add 'ip-172-31-43-103.us-east-2.compute.internal' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 05:37:15] "GET / HTTP/1.1" 400 61229
+[21/Feb/2020 06:02:12] code 400, message Bad request version ('À\x14À')
+[21/Feb/2020 06:02:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+Invalid HTTP_HOST header: '18.222.193.100:8000'. You may need to add '18.222.193.100' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 07:32:57] "GET / HTTP/1.1" 400 61590
+Invalid HTTP_HOST header: 'ip-172-31-43-103.us-east-2.compute.internal:8000'. You may need to add 'ip-172-31-43-103.us-east-2.compute.internal' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 07:37:11] "GET / HTTP/1.1" 400 61229
+Invalid HTTP_HOST header: 'ip.ws.126.net:443'. You may need to add 'ip.ws.126.net' to ALLOWED_HOSTS.
+Bad Request: /ip.ws.126.net:443
+[21/Feb/2020 13:22:43] "CONNECT ip.ws.126.net:443 HTTP/1.1" 400 61302
+Invalid HTTP_HOST header: '18.222.193.100:8000'. You may need to add '18.222.193.100' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 18:02:02] "GET / HTTP/1.1" 400 61309
+[21/Feb/2020 18:46:40] "GET / HTTP/1.1" 200 1787
+Invalid HTTP_HOST header: '18.222.193.100:8000'. You may need to add '18.222.193.100' to ALLOWED_HOSTS.
+Bad Request: /
+[21/Feb/2020 19:18:22] "GET / HTTP/1.1" 400 61617
