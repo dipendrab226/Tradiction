@@ -18,6 +18,21 @@
         .navbar {
             margin-bottom: 20px;
         }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
     </style>
 </head>
 <body>
@@ -31,34 +46,96 @@
             </button>
         </form>
         <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
+            <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
+            <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
         </form>
     </nav>
 </div>
-<div class="container-fluid test">
+<div class="container-fluid tab-content"id="myTabContent">
     <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a class="nav-link"href="#stocks" data-toggle="tab">Stocks</a></li>
+            <a class="nav-link" href="#">News</a>
+            <a class="nav-link" href="#">Portfolio</a>
+            <a class="nav-link" href="#">Trading History</a>
+            <a class="nav-link" href="#">Watchlist</a>
+            <a class="nav-link" href="#">Help</a>
     </nav>
-</div>
+
+    <div class="tab-pane fade in active" id="stocks">
+        <nav>
+            <table>
+                <tr>
+                    <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search"></th>
+                    <th>Last</th>
+                    <th>CHG</th>
+                    <th>%CHG</th>
+                    <th>HIGH</th>
+                    <th>LOW</th>
+
+                </tr>
+                <tr>
+                    <td>Nasdaq Composite</td>
+                    <td>8650.14</td>
+                    <td>117.78</td>
+                    <td>1.38</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>S&P500</td>
+                    <td>2874.56</td>
+                    <td>75.01</td>
+                    <td>2.68</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>China:Shanghai Composite</td>
+                    <td>2838.49</td>
+                    <td>18.56</td>
+                    <td>0.66</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>Japan:Nikkei225</td>
+                    <td>19897.26</td>
+                    <td>607.06</td>
+                    <td>3.15</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>UK:FTSE100</td>
+                    <td>5786.96</td>
+                    <td>158.53</td>
+                    <td>2.82</td>
+                    <td>----</td>
+                    <td>----</td>
+                </tr>
+            </table>
+        </nav>
+    </div>
 
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+
 </body>
 </html>
