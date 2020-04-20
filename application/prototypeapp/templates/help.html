@@ -1,64 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Help</title>
-    <style>
-        .test {
-            margin-top: 100px;
-        }
-
-        .navbar {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Tradiction</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
-                Search
-            </button>
-        </form>
-        <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
-    </nav>
-</div>
-<div class="container-fluid test">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
-    </nav>
-</div>
-
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                    <title>Help</title>
+                    <style>
+                        .test {
+                            margin-top: 100px;
+                        }
+                    .navbar {
+                        margin-bottom: 20px;
+                    }
+                    </style>
+                    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="navbar-brand">Tradiction</a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
+                            Search
+                        </button>
+                        </form>
+                <form class="form-inline">
+                    <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
+                    <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
+                </form>
+            </nav>
+        </div>
+        <div class="container-fluid test">
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="nav-link" href="#">Stocks</a>
+                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="#">Trading History</a>
+                <a class="nav-link" href="#">Watchlist</a>
+                <a class="nav-link" href="#">Help</a>
+            </nav>
+        </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <style>
+                    body {
+                        font-family: Arial;
+                    }
+                form.search input[type=text] {
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid grey;
+                    float: left;
+                    width: 80%;
+                    background: #f1f1f1;
+                }
+                form.search button {
+                    width: 20%;
+                    padding: 10px;
+                    background: #ffffff;
+                    color: #42eb13;
+                    font-size: 16px;
+                    border: 1px solid grey;
+                    border-left: none;
+                    cursor: pointer;
+                }
+                form.search button:hover {
+                    background: #42eb13;
+                    color: #ffffff;
+                }
+                .container
+                {
+                    width: 100%;
+                    padding: 100px 500px;
+                    background: #09db2f;
+                    margin: 200px auto;
+                    display: flex;
+                    justify-content: center;
+                    transform
+                }
+                .containers
+                {
+                    float: left;
+                    background-color:  #1dbf5b;
+                    border: 1px solid #cc0099;
+                    border-color:  #cc0099;
+                    margin: 0px 5px;
+                    cursor: pointer;
+                    padding: 64px 64px;
+                    transition: 0.5s;
+                    font-size: 16px;
+                }
+                .containers:hover
+                {
+                    background-color:  #09db2f;
+                    font-size: 24px;
+                    color: white;
+                    padding: 128px 64px;
+                    box-shadow: 5px 10px 8px #0f4d28;
+                }
+                </style>
+                <form class="search" style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="How can I help you">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                <body>
+                    <div class= "container">
+                        <div class="containers">FAQ</div>
+                        <div class="containers">FORUMS</div>
+                        <div class="containers">24/7 LIVE SUPPORT</div>
+                        <div class="containers">TRADING HISTORY </div>
+                        <div class="containers"> CONTACT US</div>
+                    </div>
+                </body>
+                </body>
 </html>
