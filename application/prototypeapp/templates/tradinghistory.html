@@ -16,6 +16,23 @@
         }
         .navbar {
             margin-bottom: 20px;
+              }
+
+              table {
+                  color:green;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid lightgreen;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
         }
     </style>
 </head>
@@ -45,9 +62,64 @@
         <a class="nav-link" href="#">Help</a>
     </nav>
 </div>
+<div class="trade" id="Trading History">
+    <nav>
+        <table>
+            <tr>
+                
+                <th>Serial No.</th>
+                <th>Name</th>
+                <th>Selling Price</th>
+                <th>Date & Time</th>
+                <th>Quantity</th>
+                <th> Total</th>
 
-
-
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Dibs Bharati</td>
+                <td>$1000</td>
+                <td>04/19/2020 11:59 PM</td>
+                <td>1</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Brian Lim</td>
+                <td>$2000</td>
+                <td>04/20/2020 12:00 PM</td>
+                <td> 2</td>
+                <td>$4000</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Sanjay Mirani</td>
+                <td>$3000</td>
+                <td>04/21/2020 12:01 AM</td>
+                <td>3</td>
+                <td>$9000</td>
+            </tr>
+            <tr>
+                <td> XXXX </td>
+                <td>Benjamin Fletes</td>
+                <td>$4000</td>
+                <td>04/22/2019 12:04 PM</td>
+                <td>4</td>
+                <td>$16000</td>
+                
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Randy Orton</td>
+                <td>$5000</td>
+                <td>04/23/2020 12:05 PM</td>
+                <td>5</td>
+                <td>$25000</td>
+                
+            </tr>
+        </table>
+    </nav>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
