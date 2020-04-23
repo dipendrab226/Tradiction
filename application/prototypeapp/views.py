@@ -70,7 +70,7 @@ def index(request):
 def search(request):
 
     try:
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = 'select count(*) from stocks'
         cursor.execute(query)
@@ -128,7 +128,7 @@ def addtrader(request):
         pwd = "\"" + request.POST.get('pwd') + "\""
         cpwd = "\"" + request.POST.get('cpwd') + "\""
 
-        conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
+        conn = mysql.connector.connect(host="localhost", database="tradiction", user='admin1', password='Admin123')
         cursor = conn.cursor()
 
         """if request.method == 'POST' and request.FILES['bankstatement']:
@@ -177,7 +177,7 @@ def addexpert(request):
     pwd = "\"" + request.POST.get('pwd') + "\""
     cpwd = "\"" + request.POST.get('cpwd') + "\""
 
-    conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
+    conn = mysql.connector.connect(host="localhost", database="tradiction", user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     if (pwd == cpwd):
@@ -201,7 +201,7 @@ def addexpert(request):
 def logindata(request):
     uname = request.GET.get('username')
     pwd = request.GET.get('password')
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "SELECT password,lid FROM login WHERE username= '%s'" % uname
     cursor.execute(query)
