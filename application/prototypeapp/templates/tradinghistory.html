@@ -1,53 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>Trading History</title>
+    {% include "header.html" %}
     <style>
-        .test {
-            margin-top: 100px;
+
+          table {
+              color:green;
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+         }
+
+        td, th {
+            border: 1px solid lightgreen;
+            text-align: left;
+            padding: 8px;
         }
-        .navbar {
-            margin-bottom: 20px;
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
         }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Tradiction</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
-                Search
-            </button>
-        </form>
-        <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
+
+<div class="trade" id="Trading History">
+    <nav>
+        <table>
+            <tr>
+                
+                <th>Serial No.</th>
+                <th>Name</th>
+                <th>Selling Price</th>
+                <th>Date & Time</th>
+                <th>Quantity</th>
+                <th> Total</th>
+
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Dibs Bharati</td>
+                <td>$1000</td>
+                <td>04/19/2020 11:59 PM</td>
+                <td>1</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Brian Lim</td>
+                <td>$2000</td>
+                <td>04/20/2020 12:00 PM</td>
+                <td> 2</td>
+                <td>$4000</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Sanjay Mirani</td>
+                <td>$3000</td>
+                <td>04/21/2020 12:01 AM</td>
+                <td>3</td>
+                <td>$9000</td>
+            </tr>
+            <tr>
+                <td> XXXX </td>
+                <td>Benjamin Fletes</td>
+                <td>$4000</td>
+                <td>04/22/2019 12:04 PM</td>
+                <td>4</td>
+                <td>$16000</td>
+                
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Randy Orton</td>
+                <td>$5000</td>
+                <td>04/23/2020 12:05 PM</td>
+                <td>5</td>
+                <td>$25000</td>
+                
+            </tr>
+        </table>
     </nav>
 </div>
-<div class="container-fluid test">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
-    </nav>
-</div>
-
-
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
