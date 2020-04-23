@@ -1,60 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Tradiction</title>
-    <style>
-        .test {
-            margin-top: 100px;
-        }
-
-        .navbar {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
+<html>
+<head>{% include 'header.html' %}</head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Tradiction</a>
 
-        <form class="form-inline"
-        ">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
-    </nav>
-</div>
-<div class="container-fluid test">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
-    </nav>
-</div>
-<br><br>
-<div>
-    {% for foo in row %}
-    <tr>
-        &ensp;
-        <td><b>{{ foo.0 }}</b></td>
-        &ensp;
-        <td><b>{{ foo.1 }}</b></td>
-    </tr>
-    {% endfor %}
-</div>
-
-<br><br>
 <div class="row mx-md-n5">
   <div class="col px-md-5">
       <div class="py-5 border text-center rounded">
@@ -68,11 +15,9 @@
       <div class="p-3 border rounded text-center">
           <p class= "font-weight-bold">Recent News</p>
 <!--          convert these to a href once we work on backend.-->
-          <p class="text-left">Article 1</p>
-          <p class="text-left">Article 2</p>
-          <p class="text-left">Article 3</p>
-          <p class="text-left">Article 4</p>
-          <p class="text-left">Article 5</p>
+          {% for i in articles %}
+            <a target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
+          {% endfor %}
       </div>
 
   </div>

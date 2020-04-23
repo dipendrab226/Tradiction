@@ -1,51 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Tradiction</title>
+    {% include 'header.html' %}
     <style>
-        .test {
-            margin-top: 100px;
+        table {
+            color:green;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
         }
 
-        .navbar {
-            margin-bottom: 20px;
+        td, th {
+            border: 1px solid lightgreen;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color:#dddddd;
         }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Watchlist</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
-                Search
-            </button>
-        </form>
-        <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
+
+<div class="trade" id="Trading History">
+    <nav>
+        <table>
+            <tr>
+                
+                <th>ID</th>
+                <th>Name</th>
+                <th>Current Price</th>
+                <th>Day High </th>
+                <th>Day Low</th>
+                <th> Stock Name</th>
+
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Dibs Bharati</td>
+                <td>$1000</td>
+                <td>$1010</td>
+                <td>$990</td>
+                <td>Tesla</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Brian Lim</td>
+                <td>$2000</td>
+                <td>$2020</td>
+                <td>$1980</td>
+                <td>Microsoft</td>
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Sanjay Mirani</td>
+                <td>$3000</td>
+                <td>$3040</td>
+                <td>$2960</td>
+                <td>Amazon</td>
+            </tr>
+            <tr>
+                <td> XXXX </td>
+                <td>Benjamin Fletes</td>
+                <td>$4000</td>
+                <td>$4060</td>
+                <td>$3940</td>
+                <td>Google</td>
+                
+            </tr>
+            <tr>
+                <td>XXXX</td>
+                <td>Randy Orton</td>
+                <td>$5000</td>
+                <td>$5080</td>
+                <td>$4920</td>
+                <td>Oracle</td>
+                
+            </tr>
+        </table>
     </nav>
-</div>
-<div class="container-fluid test">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
-    </nav>
-</div>
 
 
 
