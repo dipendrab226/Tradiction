@@ -19,22 +19,83 @@
             <a target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
           {% endfor %}
       </div>
-
   </div>
-  <div class="col px-md-5">
-      <div class="p-3 border text-center rounded">
-          <p class="font-weight-bold"> Trending</p>
-          <div class="container border text-left rounded my-1">Trending stock information goes here..</div>
-          <div class="container border text-left rounded my-1">Laborum hamburger non consequat reprehenderit pork</div>
-          <div class="container border text-left rounded my-1">short ribs reprehenderit excepteur alcatra beef ribs nostrud ad</div>
-          <div class="container border text-left rounded my-1">Boudin cupidatat qui, proident excepteur velit kevin fatback</div>
-          <div class="container border text-left rounded my-1">Short loin flank short ribs kevin lorem anim</div>
-          <div class="container border text-left rounded my-1">Eu deserunt sint bresaola drumstick, tenderloin swine</div>
-          <div class="container border text-left rounded my-1">hock, bacon doner sed laboris</div>
+  <div class="row mx-md-n5">
+      <div class="col px-md-5">
+          <div class="py-5 border text-center rounded">
+              Invest With Us!
+          </div>
       </div>
-
   </div>
-</div>
+    <br>
+    <div class="row mx-md-n5">
+      <div class="col px-md-5">
+          <div class="p-3 border rounded text-center">
+              <p class= "font-weight-bold">Recent News</p>
+    <!--          convert these to a href once we work on backend.-->
+              {% for i in articles %}
+                <a target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
+              {% endfor %}
+          </div>
+
+      </div>
+        <div class="col px-md-5">
+          <div class="p-3 border text-center rounded">
+              <p class= "font-weight-bold">Trending Stocks</p>
+                    <table>
+                          <tr>
+                              <th>Name</th>
+                              <th>Last</th>
+                              <th>CHG</th>
+                              <th>%CHG</th>
+                              <th>HIGH</th>
+                              <th>LOW</th>
+
+                          </tr>
+                          <tr>
+                              <td>Nasdaq Composite</td>
+                              <td>8650.14</td>
+                              <td>117.78</td>
+                              <td>1.38</td>
+                              <td>----</td>
+                              <td>----</td>
+                          </tr>
+                          <tr>
+                              <td>S&P500</td>
+                             <td>2874.56</td>
+                             <td>75.01</td>
+                             <td>2.68</td>
+                             <td>----</td>
+                             <td>----</td>
+                         </tr>
+                         <tr>
+                             <td>China:Shanghai Composite</td>
+                             <td>2838.49</td>
+                             <td>18.56</td>
+                             <td>0.66</td>
+                             <td>----</td>
+                             <td>----</td>
+                         </tr>
+                         <tr>
+                             <td>Japan:Nikkei225</td>
+                             <td>19897.26</td>
+                             <td>607.06</td>
+                             <td>3.15</td>
+                             <td>----</td>
+                             <td>----</td>
+                         </tr>
+                         <tr>
+                             <td>UK:FTSE100</td>
+                             <td>5786.96</td>
+                             <td>158.53</td>
+                             <td>2.82</td>
+                             <td>----</td>
+                             <td>----</td>
+                         </tr>
+                     </table>
+        </div>
+    </div>
+
 
 
 
