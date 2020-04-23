@@ -57,7 +57,7 @@ def index(request):
 
     # list = [symbols, names]
 
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = 'TRUNCATE `tradiction`.`stocks`'
     cursor.execute(query)
@@ -117,7 +117,7 @@ def addtrader(request):
         accno = "\"" + request.POST.get('accno') + "\""
         pwd = "\"" + request.POST.get('password') + "\""
 
-        conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
+        conn = mysql.connector.connect(host="localhost", database="tradiction", user="admin1", password="Admin123")
         cursor = conn.cursor()
 
         """if request.method == 'POST' and request.FILES['bankstatement']:
@@ -150,7 +150,7 @@ def addtrader(request):
 def logindata(request):
     uname = request.GET.get('username')
     pwd = request.GET.get('password')
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "SELECT password,lid FROM login WHERE username= '%s'" % uname
     cursor.execute(query)
