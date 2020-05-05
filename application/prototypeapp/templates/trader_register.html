@@ -12,95 +12,201 @@
 
 
 </head>
-<body>
+
+
+<body style="background-color: rgb(77, 77,77)">
+    
+<script>
+
+    function validate() {
+        var Email = document.getElementById("email").value;
+if (Email.match(/^[a-z0-9]+@(gmail.com|yahoo.com|yahoo.in|gtu.edu.in)$/)) {
+    document.getElementById("div1").innerHTML = "Ok input";
+    document.getElementById("div1").style.color = "green";
+} else {
+    document.getElementById("div1").innerHTML = "Enter the correct email address";
+    document.getElementById("div1").style.color = "Red";
+}
+        var password = document.getElementById("password").value;
+var illegalChars = /[\W_]/;
+if (password === "") {
+    document.getElementById("div2").innerHTML = "You didn't enter a password.";
+    document.getElementById("div2").style.color = "Red";
+} else if ((password.length < 6) || (password.length > 15)) {
+    document.getElementById("div2").innerHTML = "The password must be between 6 to 15 characters. ";
+    document.getElementById("div2").style.color = "Red";
+} else {
+    document.getElementById("div2").innerHTML = "Ok input";
+    document.getElementById("div2").style.color = "green";
+}
+    }
+</script>
 <div class="container">
+        <div class="row justify-content-center">
+                <div class="col-md-6">
+                        <div class="card">
+                                <header class="card-header">
+	                                <a href="/prototypeapp/expertregistration" class="float-right btn btn-outline-success mt-1">Expert Signup</a>
+	                                <h4 class="card-title mt-2">Sign up</h4>
+                                </header>
+                               <article class="card-body">
+                                  <form action="/prototypeapp/addtrader" method="post" enctype="multipart/form-data"> {% csrf_token %}
+                                     <div class="form-row">
+                                        <div class="col form-group">
+                                           <label>First name </label>
+                                           <input type="text" class="form-control" placeholder="Ex-Jose" name="fname">
+                                       </div> <!-- form-group end.// -->
+                                       <div class="col form-group">
+                                            <label>Last name</label>
+                                            <input type="text" class="form-control" placeholder="Ex- Ortiz " name="lname">
+                                          </div> <!-- form-group end.// -->
+                                       </div> <!-- form-row end.// -->
+                                       <div class="form-group" id="email">
+                                            <label>Email address</label>
+                                            <input type="email" class="form-control" placeholder="Ex- BobSmith@gmail.com" name="email">
+                                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-group">
+                                             <label>Address</label>
+                                             <input type="text" class="form-control" placeholder="Ex- 1420 San Pablo Ave" name="address">
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                     <label>City</label>
+                                                     <input type="text" class="form-control"  placeholder= "Ex- San Francisco " name="city">
+                                                </div> <!-- form-group end.// -->
+                                                <div class="form-group col-md-4">
+                                                    <label>State</label>
+                                                     <input type="text" class="form-control" placeholder= " Ex- California" name="state">
+                                                </div> <!-- form-group end.// -->
+                                                <div class="form-group col-md-4">
+                                                    <label>Postal Code</label>
+                                                    <input type="text" class="form-control" placeholder= "Ex- 94015">
+                                                 </div> <!-- form-group end.// -->
+                                        </div> <!-- form-row.// -->
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" class="form-control" placeholder="Ex- 580-399-8395" name="phono">
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-group">
+                                            <div>
+                                             <label>Social Security Number</label>
 
-<div class="row justify-content-center">
-<div class="col-md-6">
-<div class="card">
-<header class="card-header">
-	<a href="/prototypeapp/expertregistration" class="float-right btn btn-outline-success mt-1">Expert Signup</a>
-	<h4 class="card-title mt-2">Sign up</h4>
-</header>
-<article class="card-body">
-                    <form action="/prototypeapp/addtrader" method="post" enctype="multipart/form-data"> {% csrf_token %}
-                        <div class="form-row">
-                            <div class="col form-group">
-                                <label>First name </label>
-                                <input type="text" class="form-control" placeholder="" name="fname">
-                            </div> <!-- form-group end.// -->
-                            <div class="col form-group">
-                                <label>Last name</label>
-                                <input type="text" class="form-control" placeholder=" " name="lname">
-                            </div> <!-- form-group end.// -->
-                        </div> <!-- form-row end.// -->
-                        <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="" name="email">
-                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div> <!-- form-group end.// -->
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" class="form-control" placeholder="" name="address">
-                        </div> <!-- form-group end.// -->
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label>City</label>
-                                <input type="text" class="form-control" name="city">
-                            </div> <!-- form-group end.// -->
-                            <div class="form-group col-md-4">
-                                <label>State</label>
-                                <input type="text" class="form-control" name="state">
-                            </div> <!-- form-group end.// -->
-                            <div class="form-group col-md-4">
-                                <label>Postal Code</label>
-                                <input type="text" class="form-control">
-                            </div> <!-- form-group end.// -->
-                        </div> <!-- form-row.// -->
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" placeholder="" name="phono">
-                        </div> <!-- form-group end.// -->
-            <div class="form-group">
-                <label>SSN</label>
-                <input type="text" class="form-control" placeholder="" name="ssnno">
-                <small class="form-text text-muted">This will not be shared with anyone and is used for account
-                    validation purposes only.</small>
-            </div> <!-- form-group end.// -->
-            <div class="form-group">
-                <label>Bank Statement</label>
-                <input type="file" class="form-control" placeholder="" name="bankst">
-            </div> <!-- form-group end.// -->
-            <div class="form-row">
-                <div class="col form-group">
-                    <label>Routing Number</label>
-                    <input type="text" class="form-control" placeholder="" name="routingno">
-                </div> <!-- form-group end.// -->
-                <div class="col form-group">
-                    <label>Account Number</label>
-                    <input type="text" class="form-control" placeholder="" name="accno">
-                </div> <!-- form-group end.// -->
-            </div> <!-- form-row end.// -->
-            <div class="form-group">
-                <label>Create password</label>
-                <input class="form-control" type="password" name="pwd">
-            </div> <!-- form-group end.// -->
-            <div class="form-group">
-                <label>Confirm password</label>
-                <input class="form-control" type="password" name="cpwd">
-            </div> <!-- form-group end.// -->
-            <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block"> Register</button>
-            </div> <!-- form-group// -->
-            <div class="form-group">
-                <button type="submit" class="btn btn-outline-secondary btn-block" formaction="/prototypeapp/index"> Cancel</button>
-            </div> <!-- form-group// -->
+                                                    
+                                              <!-- Trigger the modal with a button -->
+                                              <button type="button" class="btn btn-info btn-xs "   style="border-radius: 50%; padding:2px; background-color:green " data-toggle="modal" data-target="#firstModal">info</button>
+                               
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="firstModal" role="dialog">
+                                                <div class="modal-dialog modal-sm" >
+                                                  <div class="modal-content" style="width: 550px; height: 400px;">
 
-            <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of
-                use and Privacy Policy.</small>
-            </form>
+                                                    <div class="modal-body">
+                                                    <a>
+                                                      <img src="Social.jpg" style="width: 500px; height: 300px;">
+                                                    </a>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+                                               </div>
+
+
+                                              </div>
+                                             <input type="text" class="form-control" placeholder="Ex- 123-45-6789 " name="ssnno">
+                                             <small class="form-text text-muted">This will not be shared with anyone and is used for account
+                                             validation purposes only.</small>
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-group">
+                                            <div>
+                                            <label>Bank Statement</label>
+
+                                                
+                                              <!-- Trigger the modal with a button -->
+                                              <button type="button" class="btn btn-info btn-xs "   style="border-radius: 50%; padding:2px; background-color:green " data-toggle="modal" data-target="#secondModal">info</button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade"  id="secondModal" role="dialog">
+                                                <div class="modal-dialog modal-sm" >
+                                                  <div class="modal-content" style="width: 550px; height: 500px;">
+                                                    <div class="modal-header">
+                                                      <h6> Upload a monthly statement pdf similar to the image below</h6>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                    <a>
+                                                      <img src="Bankstatement.jpg" style="width: 500px; height: 300px;">
+                                                    </a>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+                                               </div>
+
+                                            
+
+                                              </div>
+                                            <input type="file" class="form-control"  name="bankst">
+
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-row">
+                                            <div class="col form-group">
+                                                 <label>  Routing Number</label> 
+
+                                 
+                                              <!-- Trigger the modal with a button -->
+                                            <button type="button" class="btn btn-info btn-xs "   style="border-radius: 50%; padding:2px; background-color:green " data-toggle="modal" data-target="#thirdModal">info</button>
+                               
+                                              <!-- Modal -->
+                                             <div class="modal fade" id="thirdModal" role="dialog">
+                                                <div class="modal-dialog modal-sm" >
+                                                  <div class="modal-content" style="width: 550px; height: 400px;">
+                                     
+
+                                                       <div class="modal-body">
+                                                          <a> 
+                                                                 <img src="Routing.jpg" style="width: 500px; height: 300px;">
+                                                         </a>
+                                                        </div>
+                                                         <div class="modal-footer">
+                                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                      </div>
+                                                   </div>
+                                 
+
+
+                                     </div>
+                                 <input type="text" class="form-control" placeholder="Ex-123000345" name="routingno">
+                                </div> <!-- form-group end.// -->
+                                <div class="col form-group">
+                                    <label>Account Number</label>
+                                    <input type="text" class="form-control" placeholder="Ex- 123000123449999" name="accno">
+                               </div> <!-- form-group end.// -->
+                             </div> <!-- form-row end.// -->
+                             
+                             <div class="form-group" id="password">
+                                <label>Create password</label>
+                                 <input type="password" type="password" placeholder="Ex- alaladida123###" name="cpwd">
+                               </div> <!-- form-group end.// -->
+                             <div class="form-group" >
+                                  <label>Confirm password</label>
+                            <input class="form-control"  type="password" placeholder="Ex- alaladida123###" name="cpwd">
+                        </div> <!-- form-group end.// -->
+                             <div class="form-group">
+                                  <button type="submit" class="btn btn-success btn-block"> Register</button>
+                            </div> <!-- form-group// -->
+                             <div class="form-group">
+                                  <button type="submit" class="btn btn-outline-success btn-block" formaction="/prototypeapp/index"> Cancel</button>
+                            </div> <!-- form-group// -->
+
+                                <small class="text-muted">By clicking the 'Register' button, you confirm that you accept our <br> Terms of
+                                      use and Privacy Policy.</small>
+                 </form>
             </article> <!-- card-body end .// -->
-            <div class="border-top card-body text-center">Have an account? <a href="/prototypeapp/login">Log In</a></div>
+            <div class="border-info card-body text-center">Have an account? <a href="/prototypeapp/login">Log In</a></div>
         </div> <!-- card.// -->
     </div> <!-- col.//-->
 
