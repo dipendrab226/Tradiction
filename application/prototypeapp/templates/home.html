@@ -1,14 +1,30 @@
 <html>
-<head>{% include 'header.html' %}</head>
-<body>
+<head>{% include 'header.html' %}
+<style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-  <div class="row mx-md-n5">
-      <div class="col px-md-5">
-          <div class="py-5 border text-center rounded">
-              Invest With Us!
-          </div>
-      </div>
-  </div>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+  <section class="jumbotron text-center">
+     <div class="container">
+       <h1>Invest with Us!</h1>
+       <p class="lead text-muted">Tradiction offers the latest in stock news, and a platform to easily view, buy and sell stocks. Sign up today to take advantage of everything this site has to offer! </p>
+     </div>
+   </section>
     <br>
     <div class="row mx-md-n5">
       <div class="col px-md-5">
@@ -77,9 +93,6 @@
                      </table>
         </div>
     </div>
-
-
-
 
 
 
