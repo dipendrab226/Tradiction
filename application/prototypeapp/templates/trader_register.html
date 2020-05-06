@@ -10,7 +10,7 @@
     <style>
     </style>
 
-
+    {% load static %}
 </head>
 <body style="background-color: rgb(77, 77,77)">
 
@@ -105,7 +105,7 @@ if (password === "") {
 
                                                     <div class="modal-body">
                                                     <a>
-                                                      <img src="Social.jpg" style="width: 500px; height: 300px;">
+							<img src="{% static 'Social.jpg' %}" style="width: 500px; height: 300px;">
                                                     </a>
                                                     </div>
                                                     <div class="modal-footer">
@@ -138,7 +138,7 @@ if (password === "") {
 
                                                     <div class="modal-body">
                                                     <a>
-                                                      <img src="Bankstatement.jpg" style="width: 500px; height: 300px;">
+							    <img src="{% static 'Bankstatement.jpg' %}" style="width: 500px; height: 300px;">
                                                     </a>
                                                     </div>
                                                     <div class="modal-footer">
@@ -169,7 +169,7 @@ if (password === "") {
 
                                                        <div class="modal-body">
                                                           <a> 
-                                                                 <img src="Routing.jpg" style="width: 500px; height: 300px;">
+							<img src="{% static 'Routing.jpg' %}" style="width: 500px; height: 300px;">
                                                          </a>
                                                         </div>
                                                          <div class="modal-footer">
