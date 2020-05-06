@@ -1,103 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <title>Tradiction</title>
-
-  <style>
-           
-           .nav-link {
+    <title>Tradiction</title>
+    <style>
+       
+ .navbar {
+          height: 50px;
+                }
+        .nav-link {
                  color:white;
                  float: right;
                   background-color: none;
                   border: none;
                   border-color:  none;
-                  margin-left:40px;
-                  margin-right:40px;
-                  cursor: pointer;
-                  padding: 10px 10px;
                  
+                  cursor: pointer;
+                  padding: 3px 3px;
                   font-size: 20px;
+                  text-align: center;
                   
-                }            
-.nav-tabs{
-  border:none;
-  Margin-top:-8px;
-  margin-bottom: -8px;
-  
-  outline-color: black;
-}
+                }  
+
 .nav-link:hover
                  {
-                   color:white;
+                   color:green;
                    transition:0.5s;
-                    background-color: black;
-                   
-                }           
-                .nav-tab.active{
-                  color:black;
-                } 
-  </style>
-  </head>
- <body>
-  
-  <div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between" ;>
+                   font-size:22px;
+                   border-top:10px;
+                   border-bottom:10px;
+                 }
+    </style>
 
-       <span class="navbar-brand mb-0 h1" href="/prototypeapp/index">Tradiction </span>
-
-       <form class="form-inline">
-         <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="login.html">Login</button>
-         <button class="btn btn-outline-success" type="submit" formaction="registration.html">Sign Up</button>
-       </form>
-
-     </nav>
-  </div>
-
-
-
- <div class="container-fluid test">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+    <div class="container-fluid">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand mb-0 h1" href="/prototypeapp/index">Tradiction</a>
         
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="nav nav-tabs" style="margin-left:70px" >
-            <li class="nav-item " id="mylinks">
-              <a class=" nav-link" href="/prototypeapp/stocks">Stocks </a>
-            </li>
-            <li class="nav-item">
-              <a class=" nav-link" href="/prototypeapp/news">News</a>
-            </li>
-            <li class="nav-item">
-              <a class=" nav-link" href="/prototypeapp/portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/prototypeapp/tradinghistory">Trading History</a>
-            </li>
-            <li class="nav-item">
-              <a class=" nav-link" href="/prototypeapp/watchlist">Watchlist</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/prototypeapp/help">Help</a>
-            </li>
-          </ul>
-
+        <form class="form-inline">
+        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
+        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
+        </form>
     </nav>
-  </div>
-</body>
+    </div>
 
+    <div class="container-fluid test">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
+         
+         
 
+            <a class="nav-link  active " href="/prototypeapp/stocks">Stocks<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">News</a>
+            <a class="nav-link" href="/prototypeapp/portfolio">Portfolio</a>
+            <a class="nav-link" href="/prototypeapp/tradinghistory">Trading History</a>
+            <a class="nav-link" href="/prototypeapp/watchlist">Watchlist</a>
+            <a class="nav-link" href="/prototypeapp/help">Help</a>
+
+         </div>
+       </div>
+         
+        </nav>
+    </div>
+</head>
+<body></body>
 </html>
-
-
