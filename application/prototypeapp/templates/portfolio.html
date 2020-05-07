@@ -4,63 +4,18 @@
         <style>
             table
             {
-                width 100%;
+                font-family: arial, sans-serif;
                 border-collapse: collapse;
+                width: 100%;
             }
+        
         td, th
         {
-            border: 2px solid #dddddd;
-            padding: 8px;
-            text-align: center;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 2px;
         }
         </style>
-        /* */
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {'packages':['line']});
-            google.charts.setOnLoadCallback(drawChart);
-            
-            function drawChart()
-            {
-                
-                var data = new google.visualization.DataTable();
-                data.addColumn('number', 'Year');
-                data.addColumn('number', 'Stock');
-                
-                data.addRows([
-                              [1, 600.8],
-                              [2,  30.9],
-                              [3,  254.4],
-                              [4,  500.7],
-                              [5,  250.9],
-                              [6,   432.8],
-                              [7,   23.6],
-                              [8,  43.3],
-                              [9,  45.9],
-                              [10, 65.8],
-                              [11,  75.3],
-                              [12,  99.6],
-                              [13,  100.8],
-                              ]);
-                              
-                              var display =
-                              {
-                                  chart:
-                                  {    title: 'Stock Name'},
-                                  width: 1000,
-                                  height: 500,
-                                  axes:
-                                  {
-                                      x:
-                                  {    0: {side: 'bottom'}}}
-                                  
-                              };
-                              
-                              var stockGraph = new google.charts.Line(document.getElementById('StockGraph'));
-                              
-                              stockGraph.draw(data, google.charts.Line.convertOptions(display));
-            }
-        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -103,7 +58,6 @@
                 <a class="nav-link" href="#">Help</a>
             </nav>
         </div>
-        <div id="StockGraph"></div>
         <table>
             <tr>
                 <th>Serial #</th>
@@ -153,7 +107,11 @@
                 <td>9/21/18</td>
                 <td>4</td>
             </tr>
+            <tr>
+                <th>Total:</th>
+                <td colspan="5">$564356.00</td>
+            </tr>
         </table>
+        </p>
     </body>
 </html>
-
