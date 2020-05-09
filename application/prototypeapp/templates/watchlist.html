@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Tradiction</title>
+    {% include 'header.html' %}
     <style>
-        .test {
-            margin-top: 100px;
+        table {
+            color:green;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
         }
 
-        .navbar {
-            margin-bottom: 20px;
+        td, th {
+            border: 1px solid lightgreen;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color:#dddddd;
         }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Watchlist</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
-                Search
-            </button>
-        </form>
-        <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
+
+<div class="trade" id="Trading History">
+    <nav>
+        <table>
+            <tr>
+                <th>Stock Name</th>
+                <th>Symbol</th>
+                <th>Details</th>
+                <th>Remove</th>
+            </tr>
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i.2 }}</td>
+                    <td>{{ i.3 }}</td>
+                    <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
+                    <td><a href="/removefromwatchlist?symbol={{ i.3 }}">Remove from Watchlist</a></td>
+                </tr>
+            {% endfor %}
+        </table>
     </nav>
-</div>
-<div class="container-fluid test">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="nav-link" href="#">Stocks</a>
-        <a class="nav-link" href="#">News</a>
-        <a class="nav-link" href="#">Portfolio</a>
-        <a class="nav-link" href="#">Trading History</a>
-        <a class="nav-link" href="#">Watchlist</a>
-        <a class="nav-link" href="#">Help</a>
-    </nav>
-</div>
 
 
 
