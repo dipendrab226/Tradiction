@@ -352,41 +352,43 @@ def addtrader(request):
     city = "\"" + request.POST.get('city') + "\""
     state = "\"" + request.POST.get('state') + "\""
     phono = "\"" + request.POST.get('phono') + "\""
-    ssnno = "\"" + request.POST.get('ssnno') + "\""
-    # bankst = request.FILES['bankst']
-    routingno = "\"" + request.POST.get('routingno') + "\""
-    accno = "\"" + request.POST.get('accno') + "\""
-    pwd = "\"" + request.POST.get('pwd') + "\""
-    cpwd = "\"" + request.POST.get('cpwd') + "\""
+    ssnno = request.POST.get('ssnno')
+    bankst = request.FILES['bankst']
+    routingno = request.POST.get('routingno')
+    accno = request.POST.get('accno')
+    pwd = request.POST.get('cpwd1')
+    cpwd = request.POST.get('cpwd2')
 
-    erouting = AESCipher(key).encrypt(routingno)
-    eaccount = AESCipher(key).encrypt(accno)
-    essn = AESCipher(key).encrypt(ssnno)
+    erouting = "\"" + AESCipher(key).encrypt(routingno) + "\""
+    eaccount = "\"" + AESCipher(key).encrypt(accno) + "\""
+    essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
 
     conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
     cursor = conn.cursor()
 
-    """if request.method == 'POST' and request.FILES['bankstatement']:
+    if request.method == 'POST':
         fs = FileSystemStorage()
 
         # Bank Statement
 
         filename = bankst.name
         extension = filename.split(".")
-        upload_file_name = fname + lname + "_bankstatement." + extension[1]
+        upload_file_name = request.POST.get('fname') + request.POST.get('lname') + "_bankstatement." + extension[1]
         filename = fs.save(upload_file_name, bankst)
-        bankstatement_url = "\"" + fs.url(filename) + "\""   """
+        bankstatement_url = "\"" + fs.url(filename) + "\""
+        print(bankstatement_url)
 
-    if (pwd == cpwd):
-        epwd = AESCipher(key).encrypt(pwd)
-        query = "insert into tradiction.login (username,password,role) values (%s,%s,%s)" % (email, epwd, "trader")
+    if pwd == cpwd:
+        epwd = "\"" + AESCipher(key).encrypt(pwd) + "\""
+        query = "insert into tradiction.login (username,password,role) values (%s,%s,%s)" % (email, epwd, '"trader"')
         cursor.execute(query)
 
         id = cursor.lastrowid
 
-        query = "insert into tradiction.traderreg (firstname, lastname, address, city, state, phoneno, ssnno, bankst, routingno, accountno, lid) " \
-                "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d)" % (
-                fname, lname, address, city, state, phono, essn, '"bankstatement.pdf"', erouting, eaccount, id)
+        query = "insert into tradiction.traderreg (firstname, lastname, address, city, state, phoneno, ssnno, bankst, routingno, accountno, lid, " \
+                "status) " \
+                "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%s)" % (
+                fname, lname, address, city, state, phono, essn, bankstatement_url, erouting, eaccount, id, '"pending"')
 
         cursor1 = conn.cursor()
         cursor1.execute(query)
@@ -410,23 +412,35 @@ def addexpert(request):
     state = "\"" + request.POST.get('state') + "\""
     postalcode = "\"" + request.POST.get('postalcode') + "\""
     phono = "\"" + request.POST.get('phono') + "\""
-    ssnno = "\"" + request.POST.get('ssnno') + "\""
-    pwd = "\"" + request.POST.get('pwd') + "\""
-    cpwd = "\"" + request.POST.get('cpwd') + "\""
+    certificate = request.FILES['certificate']
+    ssnno = request.POST.get('ssnno')
+    pwd = request.POST.get('cpwd1')
+    cpwd = request.POST.get('cpwd2')
 
-    essn = AESCipher(key).encrypt(ssnno)
+    essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
     conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
     cursor = conn.cursor()
 
+    if request.method == 'POST':
+        fs = FileSystemStorage()
+        filename = certificate.name
+        extension = filename.split(".")
+        upload_file_name = request.POST.get('fname') + request.POST.get('lname') + "_certificate." + extension[1]
+        filename = fs.save(upload_file_name, certificate)
+        certificate_url = "\"" + fs.url(filename) + "\""
+        print(certificate_url)
+
     if pwd == cpwd:
-        epwd = AESCipher(key).encrypt(pwd)
-        query = "insert into tradiction.login (username,password,role) values (%s,%,%s)" % (email, epwd, "expert")
+        epwd = "\"" + AESCipher(key).encrypt(pwd) + "\""
+        query = "insert into tradiction.login (username,password,role) values (%s,%,%s)" % (email, epwd, '"expert"')
         cursor.execute(query)
         id = cursor.lastrowid
 
-        query = "insert into tradiction.expertreg (firstname, lastname, address, city, state, postalcode, phoneno, ssnno, expertcertificate, loid) " \
-                "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%d)" % (
-                    fname, lname, address, city, state, postalcode, phono, essn, '"certificate.pdf"', id)
+        query = "insert into tradiction.expertreg (firstname, lastname, address, city, state, postalcode, phoneno, ssnno, expertcertificate, loid, " \
+                "status" \
+                ") " \
+                "values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%s)" % (
+                    fname, lname, address, city, state, postalcode, phono, essn, certificate_url, id, '"pending"')
 
         cursor.execute(query)
         conn.commit()
@@ -487,7 +501,11 @@ def logindata(request):
         loginpwd = rows[0][0]
         loginid = rows[0][1]
         loginrole = rows[0][2]
-        dpwd = AESCipher(key).decrypt(loginpwd)
+        if loginpwd != 'admin':
+            dpwd = AESCipher(key).decrypt(loginpwd)
+            print(dpwd)
+        else:
+            dpwd = 'admin'
         request.session['lid'] = loginid
 
         if pwd == dpwd:

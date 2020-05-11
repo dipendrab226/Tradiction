@@ -21,13 +21,13 @@
             background-color: #dddddd;
         }
     </style>
-    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}>
-    </script>
-</head>
+    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}></script>
+    <link rel="stylesheet" type="text/css" href={% static "css/http_cdn.datatables.net_1.10.20_css_jquery.dataTables.css" %}></head>
+    <script type="text/javascript" charset="utf8" src={% static "js/http_cdn.datatables.net_1.10.20_js_jquery.dataTables.js" %}></script>
 <body>
 	<div class="container-fluid">
-	<table>
-
+	<table id="stocktable" class="display">
+            <thead>
                 <tr>
                     <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search"></th>
                 <tr>
@@ -36,6 +36,7 @@
                     <th>Details</th>
                     <th>Watchlist</th>
                 </tr>
+            </thead>
             <tbody id="stocks">
             {% for i in rows %}
                 <tr>
@@ -69,6 +70,11 @@
                     });
                 });
             });
+    </script>
+    <script>
+        $(document).ready( function () {
+              $('#stocktable').DataTable();
+            } );
     </script>
 
     <!-- Optional JavaScript -->
