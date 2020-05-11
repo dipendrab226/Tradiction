@@ -1,70 +1,60 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Tradiction</title>
-    <style>
-       
- .navbar {
-          height: 50px;
-                }
-        .nav-link {
-                 color:white;
-                 float: right;
-                  background-color: none;
-                  border: none;
-                  border-color:  none;
-                 
-                  cursor: pointer;
-                  padding: 3px 3px;
-                  font-size: 20px;
-                  text-align: center;
-                  
-                }  
-
-.nav-link:hover
-                 {
-                   color:green;
-                   transition:0.5s;
-
-
-                   font-size:22px;
-                   border-top:10px;
-                   border-bottom:10px;
-                 }
-    </style>
-
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand mb-0 h1" href="/prototypeapp/index">Tradiction</a>
-                
-        
-        <form class="form-inline">
-        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/prototypeapp/login">Login</button>
-        <button class="btn btn-outline-success" type="submit" formaction="/prototypeapp/registration">Sign Up</button>
-        </form>
-    </nav>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-         
-         
-
-            <a class="nav-link" href="/prototypeapp/stocks">Stocks</a>
-            <a class="nav-link" href="/prototypeapp/news">News</a>
-            <a class="nav-link" href="/prototypeapp/portfolio">Portfolio</a>
-            <a class="nav-link" href="/prototypeapp/tradinghistory">Trading History</a>
-            <a class="nav-link" href="/prototypeapp/watchlist">Watchlist</a>
-            <a class="nav-link" href="/prototypeapp/help">Help</a>
-
-         
-        </nav>
-	<br>
-</head>
-<body></body>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <title>Tradiction</title>
+      <style>
+         .navbar {
+         height: 50px;
+         }
+         .nav-link {
+         color:white;
+         float: right;
+         background-color: none;
+         border: none;
+         border-color: none;
+         cursor: pointer;
+         padding: 3px 3px;
+         font-size: 20px;
+         text-align: center;
+         }
+         .nav-link:hover
+         {
+         color:green;
+         transition:0.5s;
+         font-size:22px;
+         border-top:10px;
+         border-bottom:10px;
+         }
+      </style>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+         <a class="navbar-brand mb-0 h1" href="/index">Tradiction</a>
+         <form class="form-inline">
+            {% if lid is not None %}
+            <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/logout">Logout</button>
+            {% else %}
+            <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/login">Login</button>
+            <button class="btn btn-outline-success" type="submit" formaction="/registration">Sign Up</button>
+            {% endif %}
+         </form>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
+         <a class="nav-link" href="/stocks">Stocks</a>
+         <a class="nav-link" href="/news">News</a>
+         <a class="nav-link" href="/portfolio">Portfolio</a>
+         <a class="nav-link" href="/tradinghistory">Trading History</a>
+         <a class="nav-link" href="/watchlist">Watchlist</a>
+         <a class="nav-link" href="/help">Help</a>
+      </nav>
+      <br>
+   </head>
+   <body></body>
 </html>
+

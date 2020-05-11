@@ -1,11 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Stocks</title>
     {% include 'header.html' %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         table {
             font-family: arial, sans-serif;
@@ -22,159 +20,56 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
-        .btn:focus, .btn:active {
-          outline: none !important;
-          box-shadow: none !important;
-        }
     </style>
-    <script >
-        var times = 0;
-        function change(btn) {
-
-            if (times % 2 == 0) {
-                btn.value="Add" ;
-                btn.style.border = "#28a745";
-                btn.style.background ="#28a745";
-            }
-            if (times % 2 == 1) {
-                btn.value="Remove"
-                btn.style.border ="#dc3545";
-                btn.style.background ="#dc3545";
-
-            }
-
-            times++;
-        }
+    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}>
     </script>
 </head>
 <body>
-    <div class = "container-fluid">
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search your stock" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/prototypeapp/search">
-                Search
-            </button>
-        </form>
-    <table class="table">
-        <thead>
+	<div class="container-fluid">
+	<table>
 
-        <tr>
-            <th>Stocks</th>
-            <th>Last</th>
-            <th>CHG</th>
-            <th>%CHG</th>
-            <th>HIGH</th>
-            <th>LOW</th>
-            <th>add to wishlist</th>
+                <tr>
+                    <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search"></th>
+                <tr>
+                    <th>Name</th>
+                    <th>Ticker</th>
+                    <th>Details</th>
+                    <th>Watchlist</th>
+                </tr>
+            <tbody id="stocks">
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i.2 }}</td>
+                    <td>{{ i.1 }}</td>
+                    <td><a href="/stockdetails?stock={{ i.1 }}">Details</a></td>
 
+                    {% if lid is not None %}
+                        {% if i.1 in symbols %}
+                            <td><a href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
+                        {% else %}
+                            <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                        {% endif %}
+                    {% else %}
+                        <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                    {% endif %}
 
-        </tr>
-        </thead>
-        <tr>
-            <td>Nasdaq Composite</td>
-            <td>8650.14</td>
-            <td>117.78</td>
-            <td>1.38</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-        </tr>
-        <tr>
-            <td>S&P500</td>
-            <td>2874.56</td>
-            <td>75.01</td>
-            <td>2.68</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>China:Shanghai Composite</td>
-            <td>2838.49</td>
-            <td>18.56</td>
-            <td>0.66</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>Japan:Nikkei225</td>
-            <td>19897.26</td>
-            <td>607.06</td>
-            <td>3.15</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>UK:FTSE100</td>
-            <td>5786.96</td>
-            <td>158.53</td>
-            <td>2.82</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>Nike</td>
-            <td>12286.94</td>
-            <td>148.53</td>
-            <td>1.82</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>AAPL</td>
-            <td>287.73</td>
-            <td>34.05</td>
-            <td>3.28</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>AT&T INC</td>
-            <td>3123.43</td>
-            <td>112.45</td>
-            <td>2.76</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" /></th>
-        </tr>
-        <tr>
-            <td>UK:FTSE100</td>
-            <td>5786.96</td>
-            <td>158.53</td>
-            <td>2.82</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-        <tr>
-            <td>NASDAQ</td>
-            <td>3486.26</td>
-            <td>644.22</td>
-            <td>5.44</td>
-            <td>----</td>
-            <td>----</td>
-            <th><input type="button" value="Add" class="btn btn-success" onclick="change(this)" />
-            </th>
-        </tr>
-    </table>
-</div>
-    <br><br>
-    {% for i in row %}
-        <h3>{{ i }}</h3>
-    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+	 </table>
+	</div>
 
+    <script>
+            $(document).ready(function() {
+                $("#search").on("keyup", function() {
+                    let value = $(this).val().toLowerCase();
+                    $("#stocks tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
