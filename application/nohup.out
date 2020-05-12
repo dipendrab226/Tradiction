@@ -13089,3 +13089,733 @@ topheadlines: {'status': 'ok', 'totalResults': 70, 'articles': [{'source': {'id'
  "Says - Barron's",
  'Nevada Gov. Sisolak declares state of fiscal emergency amid COVID-19 - FOX5 '
  'Las Vegas']
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 12, 2020 - 05:06:43
+Django version 3.0.3, using settings 'tradiction.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+topheadlines: {'status': 'ok', 'totalResults': 70, 'articles': [{'source': {'id': None, 'name': 'Marketwatch.com'}, 'author': 'Mike Murphy', 'title': 'Dow futures sink more than 200 points after mixed day on Wall Street - MarketWatch', 'description': '', 'url': 'http://www.marketwatch.com/story/dow-futures-sink-more-than-200-points-after-mixed-day-on-wall-street-2020-05-12', 'urlToImage': 'https://s.wsj.net/public/resources/MWimages/MW-GP644_MicroS_ZG_20180906154215.jpg', 'publishedAt': '2020-05-12T04:02:00Z', 'content': 'U.S. stock index futures sank in overnight electronic trading, following a mixed day on Wall Street on Monday. As of midnight Eastern, Dow Jones Industrial Average futures\r\n YM00, \r\n -0.66%\r\nwere down 150 points, or 0.6%. S&amp;P 500 futures\r\n ES00, \r\n -0.61%… [+385 chars]'}, {'source': {'id': 'financial-times', 'name': 'Financial Times'}, 'author': 'Alice Woodhouse', 'title': 'Coronavirus latest: 8% of US mortgages are in forbearance - Financial Times', 'description': 'News, analysis and comment from the Financial Times, the worldʼs leading global business publication', 'url': 'https://www.ft.com/content/776e1bc1-76b2-3055-985a-b37c75cd937f', 'urlToImage': None, 'publishedAt': '2020-05-12T02:05:17Z', 'content': 'Journalists in 50+ countries explore developments in global commerce from every perspective.\r\nFor Premium subscribers, we offer our dedicated FT Free Trade newsletter every Tuesday and Thursday.'}, {'source': {'id': None, 'name': 'Youtube.com'}, 'author': None, 'title': "Suspending meat exports straight from 'China's playbook' - Sky News Australia", 'description': 'China’s decision to suspend meat exports from at least four Australian abattoirs is straight from the nation’s “playbook”, US Studies Centre’s James Brown sa...', 'url': 'https://www.youtube.com/watch?v=5JwFbCoshCU', 'urlToImage': 'https://i.ytimg.com/vi/5JwFbCoshCU/maxresdefault.jpg', 'publishedAt': '2020-05-12T01:50:14Z', 'content': None}, {'source': {'id': None, 'name': 'Marketwatch.com'}, 'author': 'Greg Robb', 'title': 'Fed says it will start buying corporate-bond ETFs on Tuesday - MarketWatch', 'description': '', 'url': 'http://www.marketwatch.com/story/fed-says-it-will-start-buying-corporate-bond-etfs-on-tuesday-2020-05-11', 'urlToImage': 'https://s.wsj.net/public/resources/MWimages/MW-GP644_MicroS_ZG_20180906154215.jpg', 'publishedAt': '2020-05-12T01:11:00Z', 'content': "The Federal Reserve's new lending facility will begin purchasing corporate bond exchange-traded funds on Tuesday, the New York Fed announced Monday evening. The Fed said most of the purchases would be in exchange-traded funds with exposure to U.S. investment-… [+387 chars]"}, {'source': {'id': None, 'name': 'Nypost.com'}, 'author': 'David Meyer', 'title': 'Passenger blasts United Airlines for yet another packed flight amid coronavirus - New York Post ', 'description': 'A New Jersey woman says she endured yet another United Airlines flight packed with people despite the ongoing coronavirus outbreak. Photos taken by Mary Pearson, 76, of Long Beach Island shows pass…', 'url': 'https://nypost.com/2020/05/11/united-airlines-passenger-recounts-packed-flight-amid-coronavirus/', 'urlToImage': 'https://thenypost.files.wordpress.com/2020/05/united.jpg?quality=90&strip=all&w=1200', 'publishedAt': '2020-05-12T00:52:19Z', 'content': 'A New Jersey woman says she endured yet another United Airlines flight packed with people despite the ongoing coronavirus outbreak.\r\nPhotos taken by Mary Pearson, 76, of Long Beach Island shows passengers in every seat on Thursday’s 2:30 p.m. flight from San … [+2164 chars]'}, {'source': {'id': None, 'name': 'Cointelegraph.com'}, 'author': 'Horus Hughes', 'title': 'BTC Halving Tweets Show Investors Remain Bullish on Bitcoin Price - Cointelegraph', 'description': 'Bitcoin halved successfully and even though BTC failed to rally investor sentiment remains bullish', 'url': 'https://cointelegraph.com/news/twitter-remains-bullish-on-bitcoin-price-despite-muted-btc-halving', 'urlToImage': 'https://s3.cointelegraph.com/storage/uploads/view/52beb8cafe28653b4c79cf6a6030fdbf.jpeg', 'publishedAt': '2020-05-12T00:42:01Z', 'content': 'The long awaited Bitcoin halving came and went, bringing with it whipsaw volatility which saw the price whipsaw 5% to 7% in each direction for the last three hours leading up to block 630,000.\xa0\r\nEarlier in the day, the top-ranked digital asset on CoinMarketCa… [+3662 chars]'}, {'source': {'id': None, 'name': 'Foxbusiness.com'}, 'author': 'Blake Burman', 'title': 'Trump orders federal retirement money invested in Chinese equities to be pulled - Fox Business', 'description': "Trump's team tells the Thrift Savings Plan to dump all assets invested in Chinese stocks.", 'url': 'https://www.foxbusiness.com/markets/trump-orders-federal-retirement-money-invested-in-chinese-equities-to-be-pulled', 'urlToImage': 'https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/04/0/0/Donald-Trump-Xi-Jinping-iStock-Coronaviru-009.png?ve=1&tl=1', 'publishedAt': '2020-05-12T00:02:02Z', 'content': 'Get all the latest news on coronavirus and more delivered daily to your inbox.\xa0Sign up here.\r\nPresident Trump is moving to cut investment ties between U.S.\xa0federal retirement funds and Chinese equities, FOX Business has learned in a move that is tied to the h… [+1533 chars]'}, {'source': {'id': None, 'name': 'Kxan.com'}, 'author': 'Russell Falcon', 'title': 'Man hit by airplane, killed on ABIA runway identified by police - KXAN.com', 'description': 'A man struck and killed by a passenger plane after it landed on a runway at Austin-Bergstrom International Airport Thursday night has been identified', 'url': 'https://www.kxan.com/news/local/austin/man-hit-by-airplane-killed-on-abia-runway-identified-by-police/', 'urlToImage': 'https://www.kxan.com/wp-content/uploads/sites/40/2020/05/abia-crash.jpg?w=1280&h=720&crop=1', 'publishedAt': '2020-05-12T00:01:00Z', 'content': 'AUSTIN (KXAN) — A man struck and killed by a passenger plane after it landed on a runway at Austin-Bergstrom International Airport Thursday night has been identified by Austin police.\r\nPolice say 22-year-old Junin Ko was killed on the runway. Ko was pronounce… [+1300 chars]'}, {'source': {'id': 'cnbc', 'name': 'CNBC'}, 'author': 'Seema Mody', 'title': 'Marriott CFO expects regional business to pick up first as states relax coronavirus restrictions - CNBC', 'description': 'Regional destinations that guests can get to by car will be the first to rebound, Marriott CFO Leeny Oberg told CNBC on Monday after the hotel operator reported dismal earnings.', 'url': 'https://www.cnbc.com/2020/05/11/coronavirus-marriott-cfo-expects-regional-business-to-pick-up-first.html', 'urlToImage': 'https://image.cnbcfm.com/api/v1/image/105796904-1552674060380gettyimages-497396938.jpeg?v=1586261778', 'publishedAt': '2020-05-11T23:48:02Z', 'content': 'Regional destinations that guests can get to by car will be the first to rebound, the chief financial officer at\xa0Marriott International\xa0said Monday after the hotel giant reported much lower-than-expected earnings as coronavirus mitigation restrictions ravaged… [+2972 chars]'}, {'source': {'id': None, 'name': 'Youtube.com'}, 'author': None, 'title': "Jim Cramer reviews Top 10 performers on the 'Cramer Covid-19 Index' of stocks' - CNBC Television", 'description': '"Remember, there\'s nothing irrational about these rallies. The stay-at-home names are simply the right stocks for this difficult moment," the "Mad Money" hos...', 'url': 'https://www.youtube.com/watch?v=85SBiSTnDxE', 'urlToImage': 'https://i.ytimg.com/vi/85SBiSTnDxE/hqdefault.jpg', 'publishedAt': '2020-05-11T23:30:13Z', 'content': '"Remember, there\'s nothing irrational about these rallies. The stay-at-home names are simply the right stocks for this difficult moment," the "Mad Money" host said.'}, {'source': {'id': 'google-news', 'name': 'Google News'}, 'author': None, 'title': 'Chain with 2 stores in Boise area files for bankruptcy. Liquidation sales coming fast - Idaho Statesman', 'description': None, 'url': 'https://news.google.com/__i/rss/rd/articles/CBMiQmh0dHBzOi8vd3d3LmlkYWhvc3RhdGVzbWFuLmNvbS9uZXdzL2J1c2luZXNzL2FydGljbGUyNDI2NTk5NDYuaHRtbNIBQmh0dHBzOi8vYW1wLmlkYWhvc3RhdGVzbWFuLmNvbS9uZXdzL2J1c2luZXNzL2FydGljbGUyNDI2NTk5NDYuaHRtbA?oc=5', 'urlToImage': None, 'publishedAt': '2020-05-11T23:28:26Z', 'content': None}, {'source': {'id': None, 'name': 'Wthr.com'}, 'author': None, 'title': "Steak 'n Shake to permanently close over 50 locations citing coronavirus pandemic - WTHR", 'description': "Biglari Holdings Inc. announced in its first quarter report that Steak 'n Shake's revenue has drop $59 million compared to the same time last year because of a decrease in demand.", 'url': 'https://www.wthr.com/article/steak-n-shake-permanently-close-over-50-locations-citing-coronavirus-pandemic', 'urlToImage': 'https://www.wthr.com/sites/default/files/styles/article_image/public/2019/12/02/business_steak_n_shake_pr_newswire-970.jpg?itok=uNcIh_rT', 'publishedAt': '2020-05-11T23:16:50Z', 'content': "WASHINGTON The restaurant Steak 'n Shake has announced the decision to permanently close at least 51 of its restaurant locations nationwide. The move comes amid growing worry about the COVID-19 outbreak and its damage on the company's financial future.\r\nBigla… [+1076 chars]"}, {'source': {'id': None, 'name': 'Tennessean.com'}, 'author': 'Cassandra Stephenson, Brad Schmitt', 'title': 'Most Nashville retail stores, restaurants re-open Monday to a trickle of customers - Tennessean', 'description': "Nashville's restaurants and retail shops re-opened to a trickle of customers for the first time in six weeks on Monday, with COVID-19 precautions in place.", 'url': 'https://www.tennessean.com/story/money/2020/05/11/nashville-retail-stores-restaurants-reopen-coronavirus/3097540001/', 'urlToImage': 'https://www.gannett-cdn.com/presto/2020/05/11/PNAS/461cf3b0-47ea-4441-ba42-befe82e0780a-Reopen-051120-AAN-013.jpg?crop=3599,2025,x0,y0&width=3200&height=1680&fit=bounds', 'publishedAt': '2020-05-11T23:11:35Z', 'content': "Last SlideNext Slide\r\nNashville's reopening got off to a slow start Monday, with a trickle of customers returning to most restaurants and retail establishments as they opened their doors to the public for the first time in about\xa0seven weeks.\r\nAthens Family Re… [+8119 chars]"}, {'source': {'id': 'the-wall-street-journal', 'name': 'The Wall Street Journal'}, 'author': 'Dawn Lim, Orla McCaffrey', 'title': 'PNC Financial to Exit Full Investment in BlackRock - The Wall Street Journal', 'description': 'Deal is emblematic of an era in which BlackRock has dislodged banks to become a central power on Wall Street in its own right', 'url': 'https://www.wsj.com/articles/pnc-financial-to-exit-full-investment-in-blackrock-11589230013', 'urlToImage': 'https://images.wsj.net/im-185874/social', 'publishedAt': '2020-05-11T23:10:53Z', 'content': 'BlackRock Inc.s largest shareholder, PNC Financial Services Group Inc., said it is exiting its stake in the firm, ending a lucrative yearslong wager on the worlds largest money manager.\r\nPNC Financial Services Group Inc. currently owns a roughly 22% stake in … [+82 chars]'}, {'source': {'id': 'associated-press', 'name': 'Associated Press'}, 'author': 'Scott Sonner', 'title': 'Biggest US solar project approved in Nevada despite critics - The Associated Press', 'description': 'RENO, Nev. (AP) — The Trump administration announced final approval Monday of the largest solar energy project in the U.S. and one of the biggest in the world despite objections from...', 'url': 'https://apnews.com/3182e2ca95d3f2cbfff23ebec3c36f55', 'urlToImage': 'https://storage.googleapis.com/afs-prod/media/c77a11e50401456fb6385a4fa663a030/2944.jpeg', 'publishedAt': '2020-05-11T23:05:01Z', 'content': 'RENO, Nev. (AP) The Trump administration announced final approval Monday of the largest solar energy project in the U.S. and one of the biggest in the world despite objections from conservationists who say it will destroy thousands of acres of habitat critica… [+3543 chars]'}, {'source': {'id': None, 'name': 'Npr.org'}, 'author': None, 'title': 'Oysters Delivered Door To Door In New York : Coronavirus Live Updates - NPR', 'description': "As sales to restaurant clients dried up, oyster farmer Peter Stein had to adapt or perish. Now, he's delivering oysters directly to individual customers, doing about 20% of his usual business.", 'url': 'https://www.npr.org/sections/coronavirus-live-updates/2020/05/11/853911772/business-adapts-to-deliver-the-world-in-a-long-island-oyster-door-to-door', 'urlToImage': 'https://media.npr.org/assets/img/2020/05/11/2306300114_70e841e569_o1_wide-b146a9f8d449c57ddc83f9e4234c7ef5facede9d.jpg?s=1400', 'publishedAt': '2020-05-11T22:49:51Z', 'content': "As sales to restaurant clients dried up, oyster farmer Peter Stein had to adapt or perish. Now, he's delivering oysters directly to individual customers doing about 20% of his usual business.\r\nJonathan Pearson / Flickr\r\nPeter Stein is an oyster farmer and own… [+2221 chars]"}, {'source': {'id': 'cnbc', 'name': 'CNBC'}, 'author': 'Kevin Stankiewicz', 'title': "'I support Elon Musk' — AutoNation's Mike Jackson says US auto plants should be reopened - CNBC", 'description': '"It\'s entirely appropriate that the factories reopen. I fully support it. We need the vehicles," AutoNation\'s Mike Jackson told CNBC.', 'url': 'https://www.cnbc.com/2020/05/11/i-support-elon-musk-autonations-mike-jackson-says-us-auto-plants-should-be-reopened.html', 'urlToImage': 'https://image.cnbcfm.com/api/v1/image/102733264-20150602-0139-1370.jpg?v=1550843583', 'publishedAt': '2020-05-11T22:44:02Z', 'content': 'AutoNation\'s Mike Jackson told CNBC on Monday that U.S. auto plants should be reopened to support increasing demand for vehicles as the U.S. economy\xa0tries to restart from its coronavirus-driven halt.\xa0\r\n"It\'s entirely appropriate that the factories reopen. I f… [+3101 chars]'}, {'source': {'id': None, 'name': 'Q13fox.com'}, 'author': 'https://www.facebook.com/Q13FOX', 'title': 'Giant potato giveaway comes to Tacoma Dome - Q13 News Seattle', 'description': 'TACOMA -- Potato farmers of Washington are doing what they can to help those struggling amid the COVID-19 crisis.\r\n\nThe Washington State Potato Commission plans to give out 200,000 pounds of potatoes Thursday at the Tacoma Dome.\r\n\nThe potato commission says t…', 'url': 'https://q13fox.com/2020/05/11/giant-potato-giveaway-comes-to-tacoma-dome/', 'urlToImage': 'https://tribkcpq.files.wordpress.com/2017/03/gettyimages-482898197.jpg?quality=85&strip=all&w=1200', 'publishedAt': '2020-05-11T22:37:35Z', 'content': 'TACOMA — Potato farmers of Washington are doing what they can to help those struggling amid the COVID-19 crisis.\r\nThe Washington State Potato Commission plans to give out 200,000 pounds of potatoes Thursday at the Tacoma Dome.\r\nThe potato commission says the … [+810 chars]'}, {'source': {'id': None, 'name': 'Jalopnik.com'}, 'author': 'Bradley Brownell', 'title': 'Electric Cars Are More Green Than Ever As Coal Declines - Jalopnik', 'description': 'I think we can all agree that pretty much everything sucks right now, and it’s very rare to see even a small bit of good news. That’s why I got so excited to see a little bit of that good news come across my desk this morning. In the wake of a coronavirus-ind…', 'url': 'https://jalopnik.com/electric-cars-are-more-green-than-ever-as-coal-declines-1843397233', 'urlToImage': 'https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/grrdzwyxlneflhlmrucc.jpg', 'publishedAt': '2020-05-11T22:33:11Z', 'content': 'I think we can all agree that pretty much everything sucks right now, and its very rare to see even a small bit of good news. Thats why I got so excited to see a little bit of that good news come across my desk this morning. In the wake of a coronavirus-induc… [+3430 chars]'}, {'source': {'id': 'cnbc', 'name': 'CNBC'}, 'author': 'Lauren Thomas', 'title': 'The biggest US mall owner plans to have 50% of its centers reopened this week - CNBC', 'description': 'The biggest U.S. mall owner Simon Property Group said Monday that it plans to have roughly 50% of its properties reopened again within the next week.', 'url': 'https://www.cnbc.com/2020/05/11/simon-property-group-spg-reports-q1-2020-earnings.html', 'urlToImage': 'https://image.cnbcfm.com/api/v1/image/106532376-15892353373142018-12-11t210429z_1042735456_rc148ec22990_rtrmadp_3_usa-holidayshopping.jpg?v=1589235485', 'publishedAt': '2020-05-11T22:22:12Z', 'content': 'The biggest U.S. mall owner,\xa0Simon Property Group, said Monday that it plans to have roughly 50% of its properties reopened again within the next week, as states begin to loosen their lockdown restrictions during the coronavirus pandemic.\xa0\r\nIt made the announ… [+3479 chars]'}]}
+[{'author': 'Mike Murphy',
+  'content': 'U.S. stock index futures sank in overnight electronic trading, '
+             'following a mixed day on Wall Street on Monday. As of midnight '
+             'Eastern, Dow Jones Industrial Average futures\r\n'
+             ' YM00, \r\n'
+             ' -0.66%\r\n'
+             'were down 150 points, or 0.6%. S&amp;P 500 futures\r\n'
+             ' ES00, \r\n'
+             ' -0.61%… [+385 chars]',
+  'description': '',
+  'publishedAt': '2020-05-12T04:02:00Z',
+  'source': {'id': None, 'name': 'Marketwatch.com'},
+  'title': 'Dow futures sink more than 200 points after mixed day on Wall '
+           'Street - MarketWatch',
+  'url': 'http://www.marketwatch.com/story/dow-futures-sink-more-than-200-points-after-mixed-day-on-wall-street-2020-05-12',
+  'urlToImage': 'https://s.wsj.net/public/resources/MWimages/MW-GP644_MicroS_ZG_20180906154215.jpg'},
+ {'author': 'Alice Woodhouse',
+  'content': 'Journalists in 50+ countries explore developments in global '
+             'commerce from every perspective.\r\n'
+             'For Premium subscribers, we offer our dedicated FT Free Trade '
+             'newsletter every Tuesday and Thursday.',
+  'description': 'News, analysis and comment from the Financial Times, the '
+                 'worldʼs leading global business publication',
+  'publishedAt': '2020-05-12T02:05:17Z',
+  'source': {'id': 'financial-times', 'name': 'Financial Times'},
+  'title': 'Coronavirus latest: 8% of US mortgages are in forbearance - '
+           'Financial Times',
+  'url': 'https://www.ft.com/content/776e1bc1-76b2-3055-985a-b37c75cd937f',
+  'urlToImage': None},
+ {'author': None,
+  'content': None,
+  'description': 'China’s decision to suspend meat exports from at least four '
+                 'Australian abattoirs is straight from the nation’s '
+                 '“playbook”, US Studies Centre’s James Brown sa...',
+  'publishedAt': '2020-05-12T01:50:14Z',
+  'source': {'id': None, 'name': 'Youtube.com'},
+  'title': "Suspending meat exports straight from 'China's playbook' - Sky "
+           'News Australia',
+  'url': 'https://www.youtube.com/watch?v=5JwFbCoshCU',
+  'urlToImage': 'https://i.ytimg.com/vi/5JwFbCoshCU/maxresdefault.jpg'},
+ {'author': 'Greg Robb',
+  'content': "The Federal Reserve's new lending facility will begin purchasing "
+             'corporate bond exchange-traded funds on Tuesday, the New York '
+             'Fed announced Monday evening. The Fed said most of the purchases '
+             'would be in exchange-traded funds with exposure to U.S. '
+             'investment-… [+387 chars]',
+  'description': '',
+  'publishedAt': '2020-05-12T01:11:00Z',
+  'source': {'id': None, 'name': 'Marketwatch.com'},
+  'title': 'Fed says it will start buying corporate-bond ETFs on Tuesday - '
+           'MarketWatch',
+  'url': 'http://www.marketwatch.com/story/fed-says-it-will-start-buying-corporate-bond-etfs-on-tuesday-2020-05-11',
+  'urlToImage': 'https://s.wsj.net/public/resources/MWimages/MW-GP644_MicroS_ZG_20180906154215.jpg'},
+ {'author': 'David Meyer',
+  'content': 'A New Jersey woman says she endured yet another United Airlines '
+             'flight packed with people despite the ongoing coronavirus '
+             'outbreak.\r\n'
+             'Photos taken by Mary Pearson, 76, of Long Beach Island shows '
+             'passengers in every seat on Thursday’s 2:30 p.m. flight from San '
+             '… [+2164 chars]',
+  'description': 'A New Jersey woman says she endured yet another United '
+                 'Airlines flight packed with people despite the ongoing '
+                 'coronavirus outbreak. Photos taken by Mary Pearson, 76, of '
+                 'Long Beach Island shows pass…',
+  'publishedAt': '2020-05-12T00:52:19Z',
+  'source': {'id': None, 'name': 'Nypost.com'},
+  'title': 'Passenger blasts United Airlines for yet another packed flight '
+           'amid coronavirus - New York Post ',
+  'url': 'https://nypost.com/2020/05/11/united-airlines-passenger-recounts-packed-flight-amid-coronavirus/',
+  'urlToImage': 'https://thenypost.files.wordpress.com/2020/05/united.jpg?quality=90&strip=all&w=1200'},
+ {'author': 'Horus Hughes',
+  'content': 'The long awaited Bitcoin halving came and went, bringing with it '
+             'whipsaw volatility which saw the price whipsaw 5% to 7% in each '
+             'direction for the last three hours leading up to block '
+             '630,000.\xa0\r\n'
+             'Earlier in the day, the top-ranked digital asset on '
+             'CoinMarketCa… [+3662 chars]',
+  'description': 'Bitcoin halved successfully and even though BTC failed to '
+                 'rally investor sentiment remains bullish',
+  'publishedAt': '2020-05-12T00:42:01Z',
+  'source': {'id': None, 'name': 'Cointelegraph.com'},
+  'title': 'BTC Halving Tweets Show Investors Remain Bullish on Bitcoin Price '
+           '- Cointelegraph',
+  'url': 'https://cointelegraph.com/news/twitter-remains-bullish-on-bitcoin-price-despite-muted-btc-halving',
+  'urlToImage': 'https://s3.cointelegraph.com/storage/uploads/view/52beb8cafe28653b4c79cf6a6030fdbf.jpeg'},
+ {'author': 'Blake Burman',
+  'content': 'Get all the latest news on coronavirus and more delivered daily '
+             'to your inbox.\xa0Sign up here.\r\n'
+             'President Trump is moving to cut investment ties between U.S.\xa0'
+             'federal retirement funds and Chinese equities, FOX Business has '
+             'learned in a move that is tied to the h… [+1533 chars]',
+  'description': "Trump's team tells the Thrift Savings Plan to dump all "
+                 'assets invested in Chinese stocks.',
+  'publishedAt': '2020-05-12T00:02:02Z',
+  'source': {'id': None, 'name': 'Foxbusiness.com'},
+  'title': 'Trump orders federal retirement money invested in Chinese equities '
+           'to be pulled - Fox Business',
+  'url': 'https://www.foxbusiness.com/markets/trump-orders-federal-retirement-money-invested-in-chinese-equities-to-be-pulled',
+  'urlToImage': 'https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/04/0/0/Donald-Trump-Xi-Jinping-iStock-Coronaviru-009.png?ve=1&tl=1'},
+ {'author': 'Russell Falcon',
+  'content': 'AUSTIN (KXAN) — A man struck and killed by a passenger plane '
+             'after it landed on a runway at Austin-Bergstrom International '
+             'Airport Thursday night has been identified by Austin police.\r\n'
+             'Police say 22-year-old Junin Ko was killed on the runway. Ko was '
+             'pronounce… [+1300 chars]',
+  'description': 'A man struck and killed by a passenger plane after it landed '
+                 'on a runway at Austin-Bergstrom International Airport '
+                 'Thursday night has been identified',
+  'publishedAt': '2020-05-12T00:01:00Z',
+  'source': {'id': None, 'name': 'Kxan.com'},
+  'title': 'Man hit by airplane, killed on ABIA runway identified by police - '
+           'KXAN.com',
+  'url': 'https://www.kxan.com/news/local/austin/man-hit-by-airplane-killed-on-abia-runway-identified-by-police/',
+  'urlToImage': 'https://www.kxan.com/wp-content/uploads/sites/40/2020/05/abia-crash.jpg?w=1280&h=720&crop=1'},
+ {'author': 'Seema Mody',
+  'content': 'Regional destinations that guests can get to by car will be the '
+             'first to rebound, the chief financial officer at\xa0Marriott '
+             'International\xa0said Monday after the hotel giant reported much '
+             'lower-than-expected earnings as coronavirus mitigation '
+             'restrictions ravaged… [+2972 chars]',
+  'description': 'Regional destinations that guests can get to by car will be '
+                 'the first to rebound, Marriott CFO Leeny Oberg told CNBC on '
+                 'Monday after the hotel operator reported dismal earnings.',
+  'publishedAt': '2020-05-11T23:48:02Z',
+  'source': {'id': 'cnbc', 'name': 'CNBC'},
+  'title': 'Marriott CFO expects regional business to pick up first as states '
+           'relax coronavirus restrictions - CNBC',
+  'url': 'https://www.cnbc.com/2020/05/11/coronavirus-marriott-cfo-expects-regional-business-to-pick-up-first.html',
+  'urlToImage': 'https://image.cnbcfm.com/api/v1/image/105796904-1552674060380gettyimages-497396938.jpeg?v=1586261778'},
+ {'author': None,
+  'content': '"Remember, there\'s nothing irrational about these rallies. The '
+             'stay-at-home names are simply the right stocks for this '
+             'difficult moment," the "Mad Money" host said.',
+  'description': '"Remember, there\'s nothing irrational about these rallies. '
+                 'The stay-at-home names are simply the right stocks for this '
+                 'difficult moment," the "Mad Money" hos...',
+  'publishedAt': '2020-05-11T23:30:13Z',
+  'source': {'id': None, 'name': 'Youtube.com'},
+  'title': "Jim Cramer reviews Top 10 performers on the 'Cramer Covid-19 "
+           "Index' of stocks' - CNBC Television",
+  'url': 'https://www.youtube.com/watch?v=85SBiSTnDxE',
+  'urlToImage': 'https://i.ytimg.com/vi/85SBiSTnDxE/hqdefault.jpg'},
+ {'author': None,
+  'content': None,
+  'description': None,
+  'publishedAt': '2020-05-11T23:28:26Z',
+  'source': {'id': 'google-news', 'name': 'Google News'},
+  'title': 'Chain with 2 stores in Boise area files for bankruptcy. '
+           'Liquidation sales coming fast - Idaho Statesman',
+  'url': 'https://news.google.com/__i/rss/rd/articles/CBMiQmh0dHBzOi8vd3d3LmlkYWhvc3RhdGVzbWFuLmNvbS9uZXdzL2J1c2luZXNzL2FydGljbGUyNDI2NTk5NDYuaHRtbNIBQmh0dHBzOi8vYW1wLmlkYWhvc3RhdGVzbWFuLmNvbS9uZXdzL2J1c2luZXNzL2FydGljbGUyNDI2NTk5NDYuaHRtbA?oc=5',
+  'urlToImage': None},
+ {'author': None,
+  'content': "WASHINGTON The restaurant Steak 'n Shake has announced the "
+             'decision to permanently close at least 51 of its restaurant '
+             'locations nationwide. The move comes amid growing worry about '
+             "the COVID-19 outbreak and its damage on the company's financial "
+             'future.\r\n'
+             'Bigla… [+1076 chars]',
+  'description': 'Biglari Holdings Inc. announced in its first quarter report '
+                 "that Steak 'n Shake's revenue has drop $59 million compared "
+                 'to the same time last year because of a decrease in demand.',
+  'publishedAt': '2020-05-11T23:16:50Z',
+  'source': {'id': None, 'name': 'Wthr.com'},
+  'title': "Steak 'n Shake to permanently close over 50 locations citing "
+           'coronavirus pandemic - WTHR',
+  'url': 'https://www.wthr.com/article/steak-n-shake-permanently-close-over-50-locations-citing-coronavirus-pandemic',
+  'urlToImage': 'https://www.wthr.com/sites/default/files/styles/article_image/public/2019/12/02/business_steak_n_shake_pr_newswire-970.jpg?itok=uNcIh_rT'},
+ {'author': 'Cassandra Stephenson, Brad Schmitt',
+  'content': 'Last SlideNext Slide\r\n'
+             "Nashville's reopening got off to a slow start Monday, with a "
+             'trickle of customers returning to most restaurants and retail '
+             'establishments as they opened their doors to the public for the '
+             'first time in about\xa0seven weeks.\r\n'
+             'Athens Family Re… [+8119 chars]',
+  'description': "Nashville's restaurants and retail shops re-opened to a "
+                 'trickle of customers for the first time in six weeks on '
+                 'Monday, with COVID-19 precautions in place.',
+  'publishedAt': '2020-05-11T23:11:35Z',
+  'source': {'id': None, 'name': 'Tennessean.com'},
+  'title': 'Most Nashville retail stores, restaurants re-open Monday to a '
+           'trickle of customers - Tennessean',
+  'url': 'https://www.tennessean.com/story/money/2020/05/11/nashville-retail-stores-restaurants-reopen-coronavirus/3097540001/',
+  'urlToImage': 'https://www.gannett-cdn.com/presto/2020/05/11/PNAS/461cf3b0-47ea-4441-ba42-befe82e0780a-Reopen-051120-AAN-013.jpg?crop=3599,2025,x0,y0&width=3200&height=1680&fit=bounds'},
+ {'author': 'Dawn Lim, Orla McCaffrey',
+  'content': 'BlackRock Inc.s largest shareholder, PNC Financial Services '
+             'Group Inc., said it is exiting its stake in the firm, ending a '
+             'lucrative yearslong wager on the worlds largest money '
+             'manager.\r\n'
+             'PNC Financial Services Group Inc. currently owns a roughly 22% '
+             'stake in … [+82 chars]',
+  'description': 'Deal is emblematic of an era in which BlackRock has '
+                 'dislodged banks to become a central power on Wall Street in '
+                 'its own right',
+  'publishedAt': '2020-05-11T23:10:53Z',
+  'source': {'id': 'the-wall-street-journal',
+             'name': 'The Wall Street Journal'},
+  'title': 'PNC Financial to Exit Full Investment in BlackRock - The Wall '
+           'Street Journal',
+  'url': 'https://www.wsj.com/articles/pnc-financial-to-exit-full-investment-in-blackrock-11589230013',
+  'urlToImage': 'https://images.wsj.net/im-185874/social'},
+ {'author': 'Scott Sonner',
+  'content': 'RENO, Nev. (AP) The Trump administration announced final '
+             'approval Monday of the largest solar energy project in the U.S. '
+             'and one of the biggest in the world despite objections from '
+             'conservationists who say it will destroy thousands of acres of '
+             'habitat critica… [+3543 chars]',
+  'description': 'RENO, Nev. (AP) — The Trump administration announced final '
+                 'approval Monday of the largest solar energy project in the '
+                 'U.S. and one of the biggest in the world despite objections '
+                 'from...',
+  'publishedAt': '2020-05-11T23:05:01Z',
+  'source': {'id': 'associated-press', 'name': 'Associated Press'},
+  'title': 'Biggest US solar project approved in Nevada despite critics - The '
+           'Associated Press',
+  'url': 'https://apnews.com/3182e2ca95d3f2cbfff23ebec3c36f55',
+  'urlToImage': 'https://storage.googleapis.com/afs-prod/media/c77a11e50401456fb6385a4fa663a030/2944.jpeg'},
+ {'author': None,
+  'content': 'As sales to restaurant clients dried up, oyster farmer Peter '
+             "Stein had to adapt or perish. Now, he's delivering oysters "
+             'directly to individual customers doing about 20% of his usual '
+             'business.\r\n'
+             'Jonathan Pearson / Flickr\r\n'
+             'Peter Stein is an oyster farmer and own… [+2221 chars]',
+  'description': 'As sales to restaurant clients dried up, oyster farmer Peter '
+                 "Stein had to adapt or perish. Now, he's delivering oysters "
+                 'directly to individual customers, doing about 20% of his '
+                 'usual business.',
+  'publishedAt': '2020-05-11T22:49:51Z',
+  'source': {'id': None, 'name': 'Npr.org'},
+  'title': 'Oysters Delivered Door To Door In New York : Coronavirus Live '
+           'Updates - NPR',
+  'url': 'https://www.npr.org/sections/coronavirus-live-updates/2020/05/11/853911772/business-adapts-to-deliver-the-world-in-a-long-island-oyster-door-to-door',
+  'urlToImage': 'https://media.npr.org/assets/img/2020/05/11/2306300114_70e841e569_o1_wide-b146a9f8d449c57ddc83f9e4234c7ef5facede9d.jpg?s=1400'},
+ {'author': 'Kevin Stankiewicz',
+  'content': "AutoNation's Mike Jackson told CNBC on Monday that U.S. auto "
+             'plants should be reopened to support increasing demand for '
+             'vehicles as the U.S. economy\xa0tries to restart from its '
+             'coronavirus-driven halt.\xa0\r\n'
+             '"It\'s entirely appropriate that the factories reopen. I f… '
+             '[+3101 chars]',
+  'description': '"It\'s entirely appropriate that the factories reopen. I '
+                 'fully support it. We need the vehicles," AutoNation\'s Mike '
+                 'Jackson told CNBC.',
+  'publishedAt': '2020-05-11T22:44:02Z',
+  'source': {'id': 'cnbc', 'name': 'CNBC'},
+  'title': "'I support Elon Musk' — AutoNation's Mike Jackson says US auto "
+           'plants should be reopened - CNBC',
+  'url': 'https://www.cnbc.com/2020/05/11/i-support-elon-musk-autonations-mike-jackson-says-us-auto-plants-should-be-reopened.html',
+  'urlToImage': 'https://image.cnbcfm.com/api/v1/image/102733264-20150602-0139-1370.jpg?v=1550843583'},
+ {'author': 'https://www.facebook.com/Q13FOX',
+  'content': 'TACOMA — Potato farmers of Washington are doing what they can to '
+             'help those struggling amid the COVID-19 crisis.\r\n'
+             'The Washington State Potato Commission plans to give out 200,000 '[12/May/2020 05:06:50] "GET / HTTP/1.1" 200 11414
+[12/May/2020 05:06:55] "GET /stocks HTTP/1.1" 200 179036
+[12/May/2020 05:06:56] "GET /static/js/jquery_3.4.1_jquery.js HTTP/1.1" 404 1742
+
+             'pounds of potatoes Thursday at the Tacoma Dome.\r\n'
+             'The potato commission says the … [+810 chars]',
+  'description': 'TACOMA -- Potato farmers of Washington are doing what they '
+                 'can to help those struggling amid the COVID-19 crisis.\r\n'
+                 '\n'
+                 'The Washington State Potato Commission plans to give out '
+                 '200,000 pounds of potatoes Thursday at the Tacoma Dome.\r\n'
+                 '\n'
+                 'The potato commission says t…',
+  'publishedAt': '2020-05-11T22:37:35Z',
+  'source': {'id': None, 'name': 'Q13fox.com'},
+  'title': 'Giant potato giveaway comes to Tacoma Dome - Q13 News Seattle',
+  'url': 'https://q13fox.com/2020/05/11/giant-potato-giveaway-comes-to-tacoma-dome/',
+  'urlToImage': 'https://tribkcpq.files.wordpress.com/2017/03/gettyimages-482898197.jpg?quality=85&strip=all&w=1200'},
+ {'author': 'Bradley Brownell',
+  'content': 'I think we can all agree that pretty much everything sucks right '
+             'now, and its very rare to see even a small bit of good news. '
+             'Thats why I got so excited to see a little bit of that good news '
+             'come across my desk this morning. In the wake of a '
+             'coronavirus-induc… [+3430 chars]',
+  'description': 'I think we can all agree that pretty much everything sucks '
+                 'right now, and it’s very rare to see even a small bit of '
+                 'good news. That’s why I got so excited to see a little bit '
+                 'of that good news come across my desk this morning. In the '
+                 'wake of a coronavirus-ind…',
+  'publishedAt': '2020-05-11T22:33:11Z',
+  'source': {'id': None, 'name': 'Jalopnik.com'},
+  'title': 'Electric Cars Are More Green Than Ever As Coal Declines - Jalopnik',
+  'url': 'https://jalopnik.com/electric-cars-are-more-green-than-ever-as-coal-declines-1843397233',
+  'urlToImage': 'https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/grrdzwyxlneflhlmrucc.jpg'},
+ {'author': 'Lauren Thomas',
+  'content': 'The biggest U.S. mall owner,\xa0Simon Property Group, said '
+             'Monday that it plans to have roughly 50% of its properties '
+             'reopened again within the next week, as states begin to loosen '
+             'their lockdown restrictions during the coronavirus '
+             'pandemic.\xa0\r\n'
+             'It made the announ… [+3479 chars]',
+  'description': 'The biggest U.S. mall owner Simon Property Group said Monday '
+                 'that it plans to have roughly 50% of its properties reopened '
+                 'again within the next week.',
+  'publishedAt': '2020-05-11T22:22:12Z',
+  'source': {'id': 'cnbc', 'name': 'CNBC'},
+  'title': 'The biggest US mall owner plans to have 50% of its centers '
+           'reopened this week - CNBC',
+  'url': 'https://www.cnbc.com/2020/05/11/simon-property-group-spg-reports-q1-2020-earnings.html',
+  'urlToImage': 'https://image.cnbcfm.com/api/v1/image/106532376-15892353373142018-12-11t210429z_1042735456_rc148ec22990_rtrmadp_3_usa-holidayshopping.jpg?v=1589235485'}]
+['Dow futures sink more than 200 points after mixed day on Wall Street - '
+ 'MarketWatch',
+ 'Coronavirus latest: 8% of US mortgages are in forbearance - Financial Times',
+ "Suspending meat exports straight from 'China's playbook' - Sky News "
+ 'Australia',
+ 'Fed says it will start buying corporate-bond ETFs on Tuesday - MarketWatch',
+ 'Passenger blasts United Airlines for yet another packed flight amid '
+ 'coronavirus - New York Post ',
+ 'BTC Halving Tweets Show Investors Remain Bullish on Bitcoin Price - '
+ 'Cointelegraph',
+ 'Trump orders federal retirement money invested in Chinese equities to be '
+ 'pulled - Fox Business',
+ 'Man hit by airplane, killed on ABIA runway identified by police - KXAN.com',
+ 'Marriott CFO expects regional business to pick up first as states relax '
+ 'coronavirus restrictions - CNBC',
+ "Jim Cramer reviews Top 10 performers on the 'Cramer Covid-19 Index' of "
+ "stocks' - CNBC Television",
+ 'Chain with 2 stores in Boise area files for bankruptcy. Liquidation sales '
+ 'coming fast - Idaho Statesman',
+ "Steak 'n Shake to permanently close over 50 locations citing coronavirus "
+ 'pandemic - WTHR',
+ 'Most Nashville retail stores, restaurants re-open Monday to a trickle of '
+ 'customers - Tennessean',
+ 'PNC Financial to Exit Full Investment in BlackRock - The Wall Street Journal',
+ 'Biggest US solar project approved in Nevada despite critics - The Associated '
+ 'Press',
+ 'Oysters Delivered Door To Door In New York : Coronavirus Live Updates - NPR',
+ "'I support Elon Musk' — AutoNation's Mike Jackson says US auto plants should "
+ 'be reopened - CNBC',
+ 'Giant potato giveaway comes to Tacoma Dome - Q13 News Seattle',
+ 'Electric Cars Are More Green Than Ever As Coal Declines - Jalopnik',
+ 'The biggest US mall owner plans to have 50% of its centers reopened this '
+ 'week - CNBC']
+{'52WeekChange': -0.14683753,
+ 'SandP52WeekChange': 0.041940093,
+ 'address1': '3M Center',
+ 'algorithm': None,
+ 'annualHoldingsTurnover': None,
+ 'annualReportExpenseRatio': None,
+ 'ask': 146.19,
+ 'askSize': 1200,
+ 'averageDailyVolume10Day': 2427416,
+ 'averageVolume': 4866114,
+ 'averageVolume10days': 2427416,
+ 'beta': 0.996613,
+ 'beta3Year': None,
+ 'bid': 0,
+ 'bidSize': 900,
+ 'bookValue': 17.641,
+ 'category': None,
+ 'circulatingSupply': None,
+ 'city': 'St. Paul',
+ 'companyOfficers': [],
+ 'country': 'United States',
+ 'currency': 'USD',
+ 'dateShortInterest': 1586908800,
+ 'dayHigh': 147.96,
+ 'dayLow': 145.59,
+ 'dividendRate': 5.88,
+ 'dividendYield': 0.0396,
+ 'earningsQuarterlyGrowth': 0.45,
+ 'enterpriseToEbitda': 11.912,
+ 'enterpriseToRevenue': 3.226,
+ 'enterpriseValue': 104349409280,
+ 'exDividendDate': 1581552000,
+ 'exchange': 'NYQ',
+ 'exchangeTimezoneName': 'America/New_York',
+ 'exchangeTimezoneShortName': 'EDT',
+ 'expireDate': None,
+ 'fiftyDayAverage': 143.245,
+ 'fiftyTwoWeekHigh': 187.72,
+ 'fiftyTwoWeekLow': 114.04,
+ 'fiveYearAverageReturn': None,
+ 'fiveYearAvgDividendYield': 2.68,
+ 'floatShares': 574483127,
+ 'forwardEps': 8.92,
+ 'forwardPE': 16.337442,
+ 'fromCurrency': None,
+ 'fullTimeEmployees': 96163,
+ 'fundFamily': None,
+ 'fundInceptionDate': None,
+ 'gmtOffSetMilliseconds': '-14400000',
+ 'heldPercentInsiders': 0.087139994,
+ 'heldPercentInstitutions': 0.01133,
+ 'industry': 'Specialty Industrial Machinery',
+ 'isEsgPopulated': False,
+ 'lastCapGain': None,
+ 'lastDividendValue': None,
+ 'lastFiscalYearEnd': 1577750400,
+ 'lastMarket': None,
+ 'lastSplitDate': 1064880000,
+ 'lastSplitFactor': '2:1',
+ 'legalType': None,
+ 'logo_url': 'https://logo.clearbit.com/3m.com',
+ 'longBusinessSummary': '3M Company develops, manufactures, and markets '
+                        'various products worldwide. It operates through four '
+                        'business segments: Safety & Industrial, '
+                        'Transportation & Electronics, Health Care, and '
+                        'Consumer. The Safety & Industrial segment offers '
+                        'personal safety products, adhesives and tapes, '
+                        'abrasives, closure and masking systems, electrical '
+                        'markets, automotive aftermarket, and roofing '
+                        'granules. The Transportation & Electronics provides '
+                        'electronics, such as display materials and systems, '
+                        'electronic materials solutions; automotive, '
+                        'aerospace, and commercial solutions; advanced '
+                        'materials; and transportation safety products. This '
+                        'segment serves transportation and electronic original '
+                        'equipment manufacturer customers. The Health Care '
+                        'segment offers medical solutions, oral care, '
+                        'separation and purification sciences, health '
+                        'information systems, drug delivery systems, and food '
+                        'safety products. The Consumer segment provides home '
+                        'improvement, home care, and consumer health care '
+                        'products, as well as stationery and office supplies. '
+                        'This segment is also involved in the retail auto care '
+                        'business. The company serves automotive, electronics '
+                        'and automotive electrification, appliance, paper and '
+                        'printing, packaging, food and beverage, construction, '
+                        'medical clinics and hospitals, pharmaceuticals, '
+                        'dental and orthodontic practitioners, health '
+                        'information systems, food manufacturing and testing, '
+                        'consumer and office retail, office business to '
+                        'business, home improvement, drug and pharmacy retail, '
+                        'and other markets. 3M Company was founded in 1902 and '
+                        'is headquartered in St. Paul, Minnesota.',
+ 'longName': '3M Company',
+ 'market': 'us_market',
+ 'marketCap': 83823312896,
+ 'maxAge': 1,
+ 'maxSupply': None,
+ 'messageBoardId': 'finmb_289194',
+ 'morningStarOverallRating': None,
+ 'morningStarRiskRating': None,
+ 'mostRecentQuarter': 1585612800,
+ 'navPrice': None,
+ 'netIncomeToCommon': 4970999808,
+ 'nextFiscalYearEnd': 1640908800,
+ 'open': 147.82,
+ 'openInterest': None,
+ 'payoutRatio': 0.6796,
+ 'pegRatio': 13.03,
+ 'phone': '651-733-1110',
+ 'previousClose': 148.51,
+ 'priceHint': 2,
+ 'priceToBook': 8.260869,
+ 'priceToSalesTrailing12Months': 2.591298,
+ 'profitMargins': 0.15367,
+ 'quoteType': 'EQUITY',
+ 'regularMarketDayHigh': 147.96,
+ 'regularMarketDayLow': 145.59,
+ 'regularMarketOpen': 147.82,
+ 'regularMarketPreviousClose': 148.51,
+ 'regularMarketPrice': 147.82,
+ 'regularMarketVolume': 2604454,
+ 'revenueQuarterlyGrowth': None,
+ 'sector': 'Industrials',
+ 'sharesOutstanding': 575196032,
+ 'sharesPercentSharesOut': 0.0128999995,
+ 'sharesShort': 7436338,
+ 'sharesShortPreviousMonthDate': 1584057600,
+ 'sharesShortPriorMonth': 8155247,
+ 'shortName': '3M Company',
+ 'shortPercentOfFloat': 0.0128999995,
+ 'shortRatio': 1.37,
+ 'startDate': None,
+ 'state': 'MN',
+ 'strikePrice': None,
+ 'symbol': 'MMM',
+ 'threeYearAverageReturn': None,
+ 'toCurrency': None,
+ 'totalAssets': None,
+ 'tradeable': False,
+ 'trailingAnnualDividendRate': 5.79,
+ 'trailingAnnualDividendYield': 0.038987275,
+ 'trailingEps': 8.523,
+ 'trailingPE': 17.09844,
+ 'twoHundredDayAverage': 159.66861,
+ 'volume': 2604454,
+ 'volume24Hr': None,
+ 'volumeAllCurrencies': None,
+ 'website': 'http://www.3m.com',
+ 'yield': None,
+ 'ytdReturn': None,
+ 'zip': '55144'}
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+NeutralRT @TagionGrowth: #Bitcoin (#BTC) rewards company @trylolli #Lolli announced on Monday the close of an oversubscribed $3 million seed-II fu…
+
+Negative: @3MIndia Hello. We are trying to reach u from few days. But no response. As phone is cont busy and gets disconnecte… https://t.co/ywW1kFFmfq
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+NeutralRT @TagionGrowth: #Bitcoin (#BTC) rewards company @trylolli #Lolli announced on Monday the close of an oversubscribed $3 million seed-II fu…
+
+Positive: @jendubayevans @chigrl @DiMartinoBooth That's a fair ask! However, in context of 3M manufacturing PPE items in Asia… https://t.co/WEeMy6EJEK
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Neutral$MMM invierte en 3M. Análisis de esta acción.
+https://t.co/r07eIKuT1M
+
+Positive: @TheQuartering I guess.. is it some shitty Chinese company like Wish? Masks are generally helpful and don't encoura… https://t.co/aljTfJzAJr
+
+Neutral#Bitcoin (#BTC) rewards company @trylolli #Lolli announced on Monday the close of an oversubscribed $3 million seed… https://t.co/Lh0cXukZxA
+
+Negative: RT @rebecca_altman: In 1963, Union Carbide was the 1st company to produce + ship a BILLION pounds of #plastic in a single year. Here, the b…
+
+Positive: RT @88rising: 88rising started with a hope and a dream, on top of a parking garage in New York. We are so overwhelmed with joy. Over 3M vie…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Negative: @GavinNewsom Maybe you shouldn’t have given China a BILLION dollars for their POS masks. The average cost of which… https://t.co/VxrsEshHpr
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Neutralcould frontline health workers receive them? Could schools provide this equipment for staff and students? it is unc… https://t.co/hOmZYPiuUI
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: RT @thatgirlell_: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging more dea…
+
+Positive: Mercy has 1.3M followers, she’s making headlines, her Twitter gets more engagement than trash own, she’s bagging mo… https://t.co/gAQGEE3OJH
+Internal Server Error: /stockdetails
+Traceback (most recent call last):
+  File "/home/ubuntu/csc648-04-sp20-team01/application/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/ubuntu/csc648-04-sp20-team01/application/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ubuntu/csc648-04-sp20-team01/application/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/csc648-04-sp20-team01/application/prototypeapp/views.py", line 747, in stockdetails
+    query = "SELECT wid FROM watchlist where symbol='%s' and logid = '%d'" % (ticker, lid)
+TypeError: %d format: a number is required, not NoneType
+[12/May/2020 05:07:11] "GET /stockdetails?stock=MMM HTTP/1.1" 500 72465
+[12/May/2020 05:07:36] "GET /addtowatchlist?symbol=MMM HTTP/1.1" 200 2688
+[12/May/2020 05:07:53] "GET /registration? HTTP/1.1" 200 13803
+[12/May/2020 05:07:53] "GET /static/Social.jpg HTTP/1.1" 200 927702
+[12/May/2020 05:07:53] "GET /static/Bankstatement.jpg HTTP/1.1" 200 38078
+[12/May/2020 05:07:53] "GET /static/Routing.jpg HTTP/1.1" 200 44989
+
+NeutralRT @Shelness: #3M @3M is the global leader in computerized, integrated, and automated motor vehicle licensing and registration systems. #My…
+
+Neutral#3M @3M is the global leader in computerized, integrated, and automated motor vehicle licensing and registration sy… https://t.co/cOV1Dap9x3
+
+Neutral#3M @3M is the global leader in computerized, integrated, and automated motor vehicle licensing and registration sy… https://t.co/mgljs5zrl1
+
+NeutralRT @NetAdvisor: #California Gov to Get $247 Million Refund for #N95masks. 
+
+- CA (D) Gov Choose *China* over USA's @3M to make masks.
+- Chi…
+
+Positive: RT @hope_won: Wow, Congrats to you!  @Chaymeriyia 👉🏾 This 25-Year Old Turned Down $4.4M and Now Her Company is Valued at $7.3M  
+https://t.…
+
+Positive: @WhiteHouse Really? Why did it take over 2 months to make a deal with 3m for masks made in China, when a Texas comp… https://t.co/dX9WaiRMhh
+
+Positive: @OzopSurgical @power_conv_tech 1.what exactly the agreement with the note holder about if they already diluted 3M$… https://t.co/xRjkv8OVP1
+
+Negative: Ashton Kutcher Participates in Lolli’s $3M Seed Round
+https://t.co/Y1jmcbj52f
+Bitcoin rewards company Lolli has ann… https://t.co/KHeNjNxrCu
+
+Negative: On LinkedIn again (worse than FB by far) - I came across this post: https://t.co/InT6Hte1uR
+
+Yes - a BTC online rew… https://t.co/oS7Vwn9wgO
+
+Positive: @Marvin78600495 @HKrassenstein Okay, ill go. Hunter Biden (while dad was VP) got a cushy job in Ukraine for about 3… https://t.co/uW6UDKNhul
+
+Positive: @PrantikRath Please connect with our team in India directly through https://t.co/RGm8yUWqlY for any further assista… https://t.co/H8Ea5Nipgo
+
+Neutral@akhilpaul124 Hi - We recommend purchasing our respirators from 3M authorized distributors/dealers, as that offers… https://t.co/JRMpho78kD
+
+Neutral@wallofballs @dave__uu @MackayIM @LifehackerAU It's a thing - 'shrouded valve' - 3M 1883SV
+https://t.co/GM82SCB1Pm… https://t.co/c6z18KNj3j
+
+Negative: @rhomboid1MF @F15JCM The CEO seems to get a bit above $3m a year. $675,000 base + $150% bonus + 200% LTIC.  But the… https://t.co/4pMQ1bqSDF
+
+Negative: Toward the end of January 2020, the administration under Trump turned down an offer by a Texas company, Prestige Am… https://t.co/e1WtGtrlpz
+
+Positive: @Yunes112233 Hi - Thank you for reaching out to us. You can learn more information regarding our advice on the use… https://t.co/QJRalM4Cil
+
+Positive: RT @tracey_esi: 3M N95 masks readily available for orders as large as 3000 - 5000 boxes at a very good price. Hit me up if you know any ins…
+
+Positive: RT @tracey_esi: 3M N95 masks readily available for orders as large as 3000 - 5000 boxes at a very good price. Hit me up if you know any ins…
+
+Positive: RT @88rising: 88rising started with a hope and a dream, on top of a parking garage in New York. We are so overwhelmed with joy. Over 3M vie…
+
+Positive: RT @sasor18: was to her during her transition and I think that's beautiful. I know industry has it's own problems, but I look forward to st…
+
+Positive: was to her during her transition and I think that's beautiful. I know industry has it's own problems, but I look fo… https://t.co/oHTZdGmzfL
+
+NeutralDisplay and device technology continues to advance. So do we. Find out why some call us "experts in visual privacy.… https://t.co/DsFYf8O91O
+
+Positive: Minnesota is home to several iconic people and places including Bob Dylan, The Mall of America, The Mayo Clinic, Pr… https://t.co/ABNE8Wganz
+
+NeutralRT @dagchadheadroom: $STAKE @xdaichain
+
+– Cross-chain staking &amp; earning (earn multiple shitcoins)
+– CEO @barinov is the Dr Dre of the ETH f…
+
+Positive: $MMM Michael Vale sells $2.1M Worth Of 3M Company Stock https://t.co/WGelk0OZkl
+
+Positive: RT @CNN: 3M, the largest maker of N95 face masks in the country, has sued another company for offering to sell New York City overpriced N95…
+
+Positive: @vikinetani Hi VIkas -  Thank you for reaching out to us. Please connect with our team in India directly through… https://t.co/B9Ol1rcN0L
+
+Positive: RT @tracey_esi: 3M N95 masks readily available for orders as large as 3000 - 5000 boxes at a very good price. Hit me up if you know any ins…
+
+Positive: While the Covid-19 pandemic has impacted the ability of many Dayton-area companies to generate new revenue, this lo… https://t.co/sU9quALvwl
+
+Positive: Great Company..
+Best Investment Platform with daily Earning 1%
+https://t.co/mQKYBFlXbL https://t.co/lRZT7Zsva9
+
+Positive: RT @tracey_esi: 3M N95 masks readily available for orders as large as 3000 - 5000 boxes at a very good price. Hit me up if you know any ins…
+
+Positive: The article failed to mention 3M, the first ever Wholly Foreign Own Enterprise in China established in 1984. Tesla,… https://t.co/Hj5B2XrX0N
+
+Negative: RT @MartiniShark: You know @washingtonpost , telling a half-truth is still telling a lie.
+
+One company not striking a deal with the governm…
+
+Negative: RT @MartiniShark: You know @washingtonpost , telling a half-truth is still telling a lie.
+
+One company not striking a deal with the governm…
+
+NeutralRT @dagchadheadroom: $STAKE @xdaichain
+
+– Cross-chain staking &amp; earning (earn multiple shitcoins)
+– CEO @barinov is the Dr Dre of the ETH f…
+
+Negative: RT @MartiniShark: You know @washingtonpost , telling a half-truth is still telling a lie.
+
+One company not striking a deal with the governm…
+
+Negative: Silly me.  It’s worse.  Trump is using the shortage to make money.
+
+For him and his friends.
+
+They used the DPA to… https://t.co/ivPr6wdEra
+
+Negative: RT @InmanNews: "The company failed to meet the consensus estimate of $0.40 adjusted earnings per share, falling slightly under at $0.39 ear…
+
+NeutralRT @NetAdvisor: #California Gov to Get $247 Million Refund for #N95masks. 
+
+- CA (D) Gov Choose *China* over USA's @3M to make masks.
+- Chi…
+
+Positive: @lalisasvogues lisa got 3M on her own shes literally above her company i hope yge knows that 😭😭
+
+Neutral3Mっていう会社の
+防毒マスク欲しい
+　
+DIYの素材にピッタリかもしれん
+
+https://t.co/4NK0Gi5z2W３Ｍ-防毒マスク-面体-6000/?N=5002385+8710670+3292748944&amp;rt=rud
+
+Positive: Cosmetic Dentistry Market Latest Trends and Opportunities By 2029 | Key Players: Danaher Corporation, 3M Company, D… https://t.co/MEw7Tnsvat
+
+Positive: New post: ENTRY LEVEL PRODUCTION – Chaska, MN 55318 A GREAT COMPANY in Chaska is looking for production workers to… https://t.co/oOb3J3AZxY
+
+Positive: Rosslyn Data Technologies plc, a leading global big data technology company, is pleased to announce a Placing to ra… https://t.co/08J4Uq7UEk
+
+NeutralRT @dagchadheadroom: $STAKE @xdaichain
+
+– Cross-chain staking &amp; earning (earn multiple shitcoins)
+– CEO @barinov is the Dr Dre of the ETH f…
+
+Neutral$STAKE @xdaichain
+
+– Cross-chain staking &amp; earning (earn multiple shitcoins)
+– CEO @barinov is the Dr Dre of the ET… https://t.co/tOAXqoVm2P
+
+Positive: RT @westaustralian: Great Southern Mining has re-stocked its financial armoury with commitments received to raise $3.15M in a placement tha…
+
+Positive: RT @westaustralian: Great Southern Mining has re-stocked its financial armoury with commitments received to raise $3.15M in a placement tha…
+
+in func [55, 12, 18]
+in func Subject: '3M Company' is 64.71% Positive
+[55, 12, 18, '64.71% Positive', "'3M Company' is 64.71% Positive"]
+None

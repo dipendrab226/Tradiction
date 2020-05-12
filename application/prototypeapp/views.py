@@ -336,7 +336,7 @@ def index(request):
 
 def addtrader(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     fname = "\"" + request.POST.get('fname') + "\""
     lname = "\"" + request.POST.get('lname') + "\""
     email = "\"" + request.POST.get('email') + "\""
@@ -395,7 +395,7 @@ def addtrader(request):
 
 def addexpert(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     fname = "\"" + request.POST.get('fname') + "\""
     lname = "\"" + request.POST.get('lname') + "\""
     email = "\"" + request.POST.get('email') + "\""
@@ -448,7 +448,7 @@ def forgotpwd(request):
 
 
 def getpwd(request):
-    key = "tradiction"
+    key = "tradiction123456"
     e = request.POST.get("username")
     print(e)
     conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
@@ -478,7 +478,7 @@ def getpwd(request):
 
 def logindata(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     uname = request.POST.get('username')
     pwd = request.POST.get('password')
 
@@ -732,8 +732,8 @@ def stocks(request):
 def stockdetails(request):
 
     lid = request.session.get('lid')
-    if lid is not None:
-        lid = int(lid)
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
 
     ticker = request.GET.get("stock")
     symbol = yf.Ticker(ticker)
@@ -742,20 +742,21 @@ def stockdetails(request):
     ans = query_twitter(details['longName'], 100)
     pprint(ans)
 
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
-    cursor = conn.cursor()
-    query = "SELECT wid FROM watchlist where symbol='%s' and logid = '%d'" % (ticker, lid)
-    cursor.execute(query)
-    rows = cursor.fetchall()
-    if rows:
-        flag = 1
+    if lid is not None:
+        lid = int(lid)
+        query = "SELECT wid FROM watchlist where symbol='%s' and logid = '%d'" % (ticker, lid)
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        query = "SELECT sid from stocks where stocksymbol='%s'" % ticker
+        cursor.execute(query)
+        sid = cursor.fetchone()
+        if rows:
+            flag = 1
+        else:
+            flag = 0
+        return render(request, 'details.html', {'details': details, 'twitter': ans, 'flag': flag, 'sid': sid, 'lid': lid})
     else:
-        flag = 0
-    query = "SELECT sid from stocks where stocksymbol='%s'" % ticker
-    cursor.execute(query)
-    sid = cursor.fetchone()
-    return render(request, 'details.html', {'details': details, 'twitter': ans, 'flag': flag, 'sid': sid})
-
+        return render(request, 'details.html', {'details': details, 'twitter': ans, 'lid': lid})
 
 def addtowatchlist(request):
 
