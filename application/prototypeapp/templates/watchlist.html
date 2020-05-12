@@ -27,57 +27,19 @@
     <nav>
         <table>
             <tr>
-                
-                <th>ID</th>
-                <th>Name</th>
-                <th>Current Price</th>
-                <th>Day High </th>
-                <th>Day Low</th>
-                <th> Stock Name</th>
-
+                <th>Stock Name</th>
+                <th>Symbol</th>
+                <th>Details</th>
+                <th>Remove</th>
             </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>Dibs Bharati</td>
-                <td>$1000</td>
-                <td>$1010</td>
-                <td>$990</td>
-                <td>Tesla</td>
-            </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>Brian Lim</td>
-                <td>$2000</td>
-                <td>$2020</td>
-                <td>$1980</td>
-                <td>Microsoft</td>
-            </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>Sanjay Mirani</td>
-                <td>$3000</td>
-                <td>$3040</td>
-                <td>$2960</td>
-                <td>Amazon</td>
-            </tr>
-            <tr>
-                <td> XXXX </td>
-                <td>Benjamin Fletes</td>
-                <td>$4000</td>
-                <td>$4060</td>
-                <td>$3940</td>
-                <td>Google</td>
-                
-            </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>Randy Orton</td>
-                <td>$5000</td>
-                <td>$5080</td>
-                <td>$4920</td>
-                <td>Oracle</td>
-                
-            </tr>
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i.2 }}</td>
+                    <td>{{ i.3 }}</td>
+                    <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
+                    <td><a href="/removefromwatchlist?symbol={{ i.3 }}">Remove from Watchlist</a></td>
+                </tr>
+            {% endfor %}
         </table>
     </nav>
 

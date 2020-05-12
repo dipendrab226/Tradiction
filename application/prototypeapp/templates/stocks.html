@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,67 +21,54 @@
             background-color: #dddddd;
         }
     </style>
-</head>
+    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}></script>
 <body>
 	<div class="container-fluid">
-	<table>
+	<table id="stocktable" class="display">
+            <thead>
                 <tr>
-                    <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search"></th>
-                    <th>Last</th>
-                    <th>CHG</th>
-                    <th>%CHG</th>
-                    <th>HIGH</th>
-                    <th>LOW</th>
+                    <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search"></th>
+                <tr>
+                    <th>Name</th>
+                    <th>Ticker</th>
+                    <th>Details</th>
+                    <th>Watchlist</th>
+                </tr>
+            </thead>
+            <tbody id="stocks">
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i.2 }}</td>
+                    <td>{{ i.1 }}</td>
+                    <td><a href="/stockdetails?stock={{ i.1 }}">Details</a></td>
+
+                    {% if lid is not None %}
+                        {% if i.1 in symbols %}
+                            <td><a href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
+                        {% else %}
+                            <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                        {% endif %}
+                    {% else %}
+                        <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                    {% endif %}
 
                 </tr>
-                <tr>
-                    <td>Nasdaq Composite</td>
-                    <td>8650.14</td>
-                    <td>117.78</td>
-                    <td>1.38</td>
-                    <td>----</td>
-                    <td>----</td>
-                </tr>
-                <tr>
-                    <td>S&P500</td>
-                    <td>2874.56</td>
-                    <td>75.01</td>
-                    <td>2.68</td>
-                    <td>----</td>
-                    <td>----</td>
-                </tr>
-                <tr>
-                    <td>China:Shanghai Composite</td>
-                    <td>2838.49</td>
-                    <td>18.56</td>
-                    <td>0.66</td>
-                    <td>----</td>
-                    <td>----</td>
-                </tr>
-                <tr>
-                    <td>Japan:Nikkei225</td>
-                    <td>19897.26</td>
-                    <td>607.06</td>
-                    <td>3.15</td>
-                    <td>----</td>
-                    <td>----</td>
-                </tr>
-                <tr>
-                    <td>UK:FTSE100</td>
-                    <td>5786.96</td>
-                    <td>158.53</td>
-                    <td>2.82</td>
-                    <td>----</td>
-                    <td>----</td>
-                </tr>
+            {% endfor %}
+            </tbody>
 	 </table>
 	</div>
 
-    <br><br>
-    {% for i in row %}
-        <h3>{{ i }}</h3>
-    {% endfor %}
-
+    <script>
+            $(document).ready(function() {
+                $("#search").on("keyup", function() {
+                    let value = $(this).val().toLowerCase();
+                    $("#stocks tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

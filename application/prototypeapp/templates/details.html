@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'header.html' %}
+    <style>
+        table {
+            border: 1px solid #000000;
+
+        }
+
+        th, td {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%" border="1">
+
+    <h2> {{ details.longName }} </h2>
+
+    <h3> {{ details.symbol }} </h3>
+    <br>
+    <tr>
+        <th>Previous Close</th>
+        <td>{{ details.previousClose }}</td>
+        <th>Market Cap</th>
+        <td>{{ details.marketCap }}</td>
+    </tr>
+    <tr>
+        <th>Open</th>
+        <td>{{ details.open }}</td>
+        <th>Beta</th>
+        <td>{{ details.beta }}</td>
+    </tr>
+    <tr>
+        <th>Bid</th>
+        <td>{{ details.bid }} x {{ details.askSize }}</td>
+        <th>Ask</th>
+        <td>{{ details.ask }} x {{ details.askSize }}</td>
+    </tr>
+    <tr>
+        <th>Day's Range</th>
+        <td>{{ details.dayLow }} - {{ details.dayHigh }}</td>
+        <th>52 Week Range</th>
+        <td>{{ details.fiftyTwoWeekLow }} - {{ details.fiftyTwoWeekHigh }}</td>
+    </tr>
+    <tr>
+        <th>Volume</th>
+        <td>{{ details.volume }}</td>
+        <th>Avg. Volume</th>
+        <td>{{ details.averageVolume }}</td>
+    </tr>
+
+    </table>
+    <br>
+
+    <div align="center"><h3>{{ twitter.4 }}</h3></div>
+    <br>
+    <div class="w3l_login_form_bottom1">
+    {% if lid %}
+        <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+    {% else %}
+        <a href="/login">BUY</a>
+    {% endif %}
+
+    {% if flag == 0 %}
+        <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
+    {% elif flag == 1 %}
+        <a href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
+    {% endif %}
+    </div>
+</body>
+</html>

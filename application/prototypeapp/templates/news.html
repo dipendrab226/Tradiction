@@ -4,91 +4,20 @@
 <body>
 <br>
 
-    <div class="row mx-md-n5">
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
+        <div class="row mx-md-n5">
+                {% for i in articles %}
+                  <div class="col px-md-5">
+                      <div class="p-3 border rounded text-center">
+                          <div class=figure >
+                              <p><a href={{ i.url }} target="_blank" ><img src= {{ i.urlToImage }}  class="img-responsive"
+                                                          width="200" height="220" > </a></p>
+                              <p> <a href={{ i.url }} target="_blank"> {{ i.title }} </a></p>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+        </div>
 
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border text-center rounded">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-    </div>
-    <br><br>
-    <div class="row mx-md-n5">
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-      <div class="col px-md-5">
-          <div class="p-3 border text-center rounded">
-              <div class=figure>
-                  <p><img src="address.jpg" class="img-responsive"
-                          width="200" height="220"> </p>
-                  <p> this is a title </p>
-              </div>
-          </div>
-
-      </div>
-    </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
