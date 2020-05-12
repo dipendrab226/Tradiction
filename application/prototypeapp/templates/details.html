@@ -64,7 +64,12 @@
     <div align="center"><h3>{{ twitter.4 }}</h3></div>
     <br>
     <div class="w3l_login_form_bottom1">
-    <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+    {% if lid %}
+        <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+    {% else %}
+        <a href="/login">BUY</a>
+    {% endif %}
+
     {% if flag == 0 %}
         <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
     {% elif flag == 1 %}
