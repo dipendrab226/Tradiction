@@ -1,4 +1,4 @@
-from aescipher import *
+from simple_aes_cipher import AESCipher, generate_secret_key
 from random import randint
 from cryptography.fernet import Fernet
 from django.core.mail import EmailMessage
@@ -34,7 +34,7 @@ def portfolio(request):
     print(lid)
     if lid is not None:
         lid = int(request.session.get('lid'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " select bs.bid,bs.datetime,bs.buyprice, bs.quantity,bs.total, sd.stockname, sd.stocksymbol from buystocks as bs join stocks as sd " \
                 "on bs.stid = sd.sid where bs.lid = '%d' AND status='payment successful'" % (lid)
@@ -76,7 +76,7 @@ def sellstocks(request):
     ticker = yf.Ticker(symbol)
     currentprice = ticker.info['previousClose']
     name = ticker.info['longName']
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "select stid,datetime,buyprice from buystocks where bid='%d' " % (bid)
     cursor.execute(query)
@@ -99,7 +99,7 @@ def sells(request):
     total1 = quantity * bprice
     net = total - total1
     bid = request.GET.get('bid')
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     query = "INSERT INTO sellstocks (lid,sellingprice,sellingdate,profitloss,bid) VALUES ('%d','%s','%s','%d','%s')" % (
@@ -122,7 +122,7 @@ def tradinghistory(request):
     print(lid)
     if lid is not None:
         lid = int(lid)
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = "SELECT sname,sellingdate,sellingprice,profitloss,buyprice,quantity,total FROM tradiction.sellstocks join tradiction.buystocks on " \
                 "sellstocks.bid=buystocks.bid join tradiction.stocks on buystocks.stid=stocks.sid";
@@ -142,7 +142,7 @@ def logout(request):
 
 
 def between(request):
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     lid = int(request.session.get('lid'))
     bid = int(request.session.get('bid'))
@@ -225,7 +225,7 @@ def success(request):
         print("Your Transaction ID for this transaction is ",txnid)
         print("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
     #return render(request, 'sucess.html', {"txnid":txnid,"status":status,"amount":amount})
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "INSERT INTO payment (bid,tranid,status,date) VALUES('%s','%s','%s','%s')" % (bid, txnid, status, date)
     cursor.execute(query)
@@ -297,54 +297,46 @@ def index(request):
     return render(request, 'home.html', {'articles': articles, 'lid': lid})
 
 
-"""def search(request):
+# def search(request):
+#     try:
+#         conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+#         cursor = conn.cursor()
+#         query = 'select count(*) from stocks'
+#         cursor.execute(query)
+#         rows = cursor.fetchall()
+#         print(rows)
+#         if rows is None:
+#             payload = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+#             table = payload[0]
+#             symbols = table['Symbol'].values.tolist()
+#             print(symbols)
+#             names = table['Security'].values.tolist()
+#             print(names)
+#             query = 'TRUNCATE `tradiction`.`stocks`'
+#             cursor.execute(query)
+#             for i, j in zip(symbols, names):
+#                 i = "\"" + i + "\""
+#                 j = "\"" + j + "\""
+#                 print(i, j)
+#                 query = 'INSERT INTO stocks (`symbol`, `name`) VALUES (%s, %s)' % (i, j)
+#                 cursor.execute(query)
+#         string = "\"" + "%" + request.GET.get("search") + "%" + "\""
+#         print(string)
+#         query = 'SELECT stocksymbol, stockname from stocks where stockname LIKE %s' % string
+#         cursor.execute(query)
+#         rows = cursor.fetchall()
+#         print(rows)
+#         return render(request, 'stocks.html', {"row": rows})
+#     except Error as e:
+#         print(e)
+#     finally:
+#         cursor.close()
+#         conn.close()
 
-    try:
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
-        cursor = conn.cursor()
-        query = 'select count(*) from stocks'
-        cursor.execute(query)
-        rows = cursor.fetchall()
-        print(rows)
-        if rows is None:
-
-            payload = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
-            table = payload[0]
-
-            symbols = table['Symbol'].values.tolist()
-            print(symbols)
-
-            names = table['Security'].values.tolist()
-            print(names)
-
-            query = 'TRUNCATE `tradiction`.`stocks`'
-            cursor.execute(query)
-            for i, j in zip(symbols, names):
-                i = "\"" + i + "\""
-                j = "\"" + j + "\""
-                print(i, j)
-                query = 'INSERT INTO stocks (`symbol`, `name`) VALUES (%s, %s)' % (i, j)
-                cursor.execute(query)
-
-        string = "\"" + "%" + request.GET.get("search") + "%" + "\""
-        print(string)
-        query = 'SELECT stocksymbol, stockname from stocks where stockname LIKE %s' % string
-        cursor.execute(query)
-        rows = cursor.fetchall()
-        print(rows)
-        return render(request, 'stocks.html', {"row": rows})
-
-    except Error as e:
-        print(e)
-
-    finally:
-        cursor.close()
-        conn.close()
-"""
 
 def addtrader(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     fname = "\"" + request.POST.get('fname') + "\""
     lname = "\"" + request.POST.get('lname') + "\""
     email = "\"" + request.POST.get('email') + "\""
@@ -363,7 +355,7 @@ def addtrader(request):
     eaccount = "\"" + AESCipher(key).encrypt(accno) + "\""
     essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
 
-    conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     if request.method == 'POST':
@@ -403,7 +395,7 @@ def addtrader(request):
 
 def addexpert(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     fname = "\"" + request.POST.get('fname') + "\""
     lname = "\"" + request.POST.get('lname') + "\""
     email = "\"" + request.POST.get('email') + "\""
@@ -418,7 +410,7 @@ def addexpert(request):
     cpwd = request.POST.get('cpwd2')
 
     essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
-    conn = mysql.connector.connect(host="localhost", database="tradiction", user="root", password="toor")
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     if request.method == 'POST':
@@ -456,10 +448,10 @@ def forgotpwd(request):
 
 
 def getpwd(request):
-    key = "tradiction"
+    key = "tradiction123456"
     e = request.POST.get("username")
     print(e)
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "select password from login where username = '%s'" % (e)
     cursor.execute(query)
@@ -486,11 +478,11 @@ def getpwd(request):
 
 def logindata(request):
 
-    key = "tradiction"
+    key = "tradiction123456"
     uname = request.POST.get('username')
     pwd = request.POST.get('password')
 
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "SELECT password,lid,role FROM login WHERE username= '%s'" % uname
     cursor.execute(query)
@@ -560,7 +552,7 @@ def logindata(request):
 def verifyexpert(request):
     try:
         lid = int(request.session.get('lid'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " SELECT * FROM expertreg WHERE status ='pending'"
         cursor.execute(query)
@@ -579,7 +571,7 @@ def verifyexpert(request):
 def verifytrader(request):
     try:
         lid = int(request.session.get('lid'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " SELECT * FROM traderreg WHERE status ='pending'"
         cursor.execute(query)
@@ -598,7 +590,7 @@ def verifytrader(request):
 def accepttrader(request):
     try:
         id = int(request.GET.get('id'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " update traderreg SET status='Accepted' WHERE tid = '%d'" % id
         cursor.execute(query)
@@ -626,7 +618,7 @@ def accepttrader(request):
 def rejecttrader(request):
     try:
         id = int(request.GET.get('id'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " update traderreg SET status='Rejected' WHERE tid  = '%d'" % id
         cursor.execute(query)
@@ -644,7 +636,7 @@ def rejecttrader(request):
 def acceptexpert(request):
     try:
         id = int(request.GET.get('id'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " update expertreg SET status='Accepted' WHERE eid = '%d'" % id
         cursor.execute(query)
@@ -662,7 +654,7 @@ def acceptexpert(request):
 def rejectexpert(request):
     try:
         id = int(request.GET.get('id'))
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " update expertreg SET status='Rejected' WHERE eid = '%d'" % id
         cursor.execute(query)
@@ -715,7 +707,7 @@ def loadstocks(request):
 
 def stocks(request):
     lid = request.session.get('lid')
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     if lid is not None:
         lid = int(lid)
@@ -740,7 +732,7 @@ def stocks(request):
 def stockdetails(request):
 
     lid = request.session.get('lid')
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     ticker = request.GET.get("stock")
@@ -763,7 +755,6 @@ def stockdetails(request):
         else:
             flag = 0
         return render(request, 'details.html', {'details': details, 'twitter': ans, 'flag': flag, 'sid': sid, 'lid': lid})
-
     else:
         return render(request, 'details.html', {'details': details, 'twitter': ans, 'lid': lid})
 
@@ -776,7 +767,7 @@ def addtowatchlist(request):
         lid = int(lid)
         symbol = request.GET.get('symbol')
         print(symbol)
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = "INSERT INTO watchlist (logid, symbol) values ('%d','%s') on duplicate " \
                 "key update wid=LAST_INSERT_ID(wid=0)" % (lid, symbol)
@@ -792,7 +783,7 @@ def watchlist(request):
     lid = request.session.get('lid')
     if lid is not None:
         lid = int(lid)
-        conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = "SELECT wid,logid,stockname,stocksymbol FROM watchlist join stocks on watchlist.symbol = stocks.stocksymbol where watchlist.logid = %d" % lid
         cursor.execute(query)
@@ -807,7 +798,7 @@ def removefromwatchlist(request):
     lid = int(request.session.get('lid'))
     symbol = request.GET.get('symbol')
     print(symbol)
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     query = "DELETE FROM watchlist where symbol='%s' and logid=%d" % (symbol, lid)
     cursor.execute(query)
@@ -840,7 +831,7 @@ def buystocks(request):
     date = datetime.datetime.now().strftime("%c")
     request.session['sid'] = sid
     request.session['total'] = total
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='root', password='toor')
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
     query = "insert into buystocks(lid,stid,sname,datetime,buyprice,quantity,total,status) values ('%d','%s','%s','%s','%s','%s','%s','%s')" \
