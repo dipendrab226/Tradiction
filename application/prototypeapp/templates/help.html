@@ -28,10 +28,6 @@
                               
                               $("LIVECard").click(function()
                                                   {
-                                                  $("LIVEInfo").toggle(function()
-                                                                       {
-                                                                       
-                                                                       });
                                                   $("FAQInfo").hide(function()
                                                                     {
                                                                     
@@ -124,9 +120,9 @@
                 }
                 .column
                 {
-                    float: left;
-                    width: 25%;
-                    padding: 20px 10px;
+                    float: center;
+                    width: 30%;
+                    padding: 40px 50px;
                 }
                 /* Remove extra left and right margins, due to padding */
                 .row {margin: 0 -5px;}
@@ -151,6 +147,11 @@
                 {
                     background-color: #ffffff;
                 }
+                .card.disable
+                {
+                    background-color: #858483;
+                    text-color: #f0f0f0;
+                }
                 pc
                 {
                     font-size: 16px;
@@ -171,8 +172,96 @@
                     text-align: center;
                     top: 50%;
                 }
-                
-                    </style>
+                .accordion {
+                    box-sizing: border-box;
+                    display: flex;
+                    font-family: Arial, Helvetica, sans-serif;
+                    overflow: hidden;
+                    width: 100%;
+                }
+                .accordion-select {
+                    cursor: pointer;
+                    margin: 0;
+                    opacity: 0;
+                    z-index: 1;
+                }
+                .accordion-title {
+                    position: relative;
+                }
+                .accordion-title:not(:nth-last-child(2))::after {
+                    border: 1px solid transparent;
+                    bottom: 0;
+                    content: '';
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .accordion-title span {
+                    bottom: 0px;
+                    box-sizing: border-box;
+                    display: block;
+                    position: absolute;
+                    white-space: nowrap;
+                    width: 100%;
+                }
+                .accordion-content {
+                    box-sizing: border-box;
+                    overflow: auto;
+                    position: relative;
+                    transition: margin 0.3s ease 0.1s;
+                }
+                .accordion-select:checked + .accordion-title + .accordion-content {
+                    margin-bottom: 0;
+                    margin-right: 0;
+                }
+                /* Generated styles starts here */
+                .accordion {
+                    border-color: #dedede;
+                    border-radius: 8px;
+                    border-style: solid;
+                    border-width: 1px;
+                    flex-direction: column;
+                    height: auto;
+                }
+                .accordion-title,
+                .accordion-select  {
+                    background-color: #ffffff;
+                    color: #7f8787;
+                    width: 100%;
+                    height: 65px;
+                    font-size: 15px;
+                }
+                .accordion-select {
+                    margin-bottom: -65px;
+                    margin-right: 0;
+                }
+                .accordion-title:not(:nth-last-child(2))::after {
+                    border-bottom-color: rgb(234, 234, 234);
+                    border-right-color: transparent;
+                }
+                .accordion-select:hover + .accordion-title,
+                .accordion-select:checked + .accordion-title {
+                    background-color: #ffffff;
+                }
+                .accordion-title span  {
+                    transform: rotate(0deg);
+                    -ms-writing-mode: lr-tb;
+                    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+                    padding-left: 33px;
+                    padding-right: 33px;
+                    line-height: 65px;
+                }
+                .accordion-content {
+                    background-color: #f7f7f7;
+                    color: #7f8787;
+                    height: 280px;
+                    margin-bottom: -280px;
+                    margin-right: 0;
+                    padding: 30px;
+                    width: 100%;
+                }
+                </style>
                 <div class = "bodyBackground">
                     <div class= "row">
                         <div class = "column">
@@ -184,14 +273,15 @@
                         </div>
                         <div class = "column">
                             <LIVECard>
-                                <div class = "card">
+                                <div class = "card disable">
                                     <pc>24/7 Live Support</pc>
+                                    <small>under maintenance</small>
                                 </div>
                             </LIVECard>
                         </div>
                         <div class = "column">
                             <CONTACTCard>
-                                <div class = "card">
+                                <div class = "card h-200">
                                     <pc>Contact Us</pc>
                                 </div>
                             </CONTACTCard>
@@ -199,27 +289,34 @@
                     </div>
                     <div class = "displayCard">
                         <FAQInfo>
-                            <h>Frequently Asked Questions</h>
-                            <p>How do I know about my stocks?</p>
-                            <p>How do you apply to be an expert?</p>
-                            <p>Is this site accurate?</p>
-                            <p>How do I contact an expert?</p>
-                            
+                            <div class="accordion">
+                                <input type="radio" name="select" class="accordion-select" checked />
+                                <div class="accordion-title"><span>Is this website secure?</span></div>
+                                <div class="accordion-content">Yes we use encryption</div>
+                                <input type="radio" name="select" class="accordion-select" />
+                                <div class="accordion-title"><span>How do you make predictions on the stocks</span></div>
+                                <div class="accordion-content">We use a machine learning to make that prediction</div>
+                                <input type="radio" name="select" class="accordion-select" />
+                                <div class="accordion-title"><span>Who recieves the message in the contact Us</span></div>
+                                <div class="accordion-content">The adminstrator</div>
+                            </div>
                         </FAQInfo>
                         <LIVEInfo>
                             <b>Our Live Support is down at the moment</b>
                         </LIVEInfo>
                         <CONTACTInfo>
-                            <div id="after_submit"></div>
-                            <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
-                                <label class="required" for="email">Your email:</label><br/>
-                                <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-                                <span id="email_validation" class="error_message"></span>
-                                <label class="required" for="message">Your message:</label><br/>
-                                <textarea id="message" class="input" name="message" rows="10" cols="50"></textarea><br />
-                                <span id="message_validation" class="error_message"></span>
-                                <input style="background-color:green; color:white" id="submit_button" type="submit" value="Send">
-                                    </form>
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" margin >Email address</label>
+                                    <input id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" maxlength = "20"
+                                        size = "30">
+                                        <small id="emailHelp" class="form-text text-muted">your email will not be shared.</small>
+                                        <label class="required" for="message">Your message:</label><br/>
+                                        <textarea id="message" placeholder="Your Message" class="input" name="message" rows="10" cols="50"></textarea><br />
+                                        <span id="message_validation" class="error_message"></span>
+                                        <button type= "submit" class="btn btn-outline-success">Success</button>
+                                        </div>
+                            </form>
                         </CONTACTInfo>
                     </div>
                 </div>
