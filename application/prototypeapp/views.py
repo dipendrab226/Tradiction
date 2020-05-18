@@ -372,7 +372,7 @@ def addtrader(request):
     eaccount = "\"" + AESCipher(key).encrypt(accno) + "\""
     essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
 
-    conn = mysql.connector.connect(host="localhost", database="tradiction", user="admin", password="Admin123")
+    conn = mysql.connector.connect(host="localhost", database="tradiction", user="admin1", password="Admin123")
     cursor = conn.cursor()
 
     if request.method == 'POST':
