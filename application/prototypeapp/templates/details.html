@@ -19,6 +19,14 @@
             text-align: left;
         }
     </style>
+    <script type="text/javascript">
+        function Prompt(i) {
+            if(i===0)
+                alert("Stock added to your Watchlist.")
+            else
+                alert("Stock Removed from your watchlist")
+        }
+    </script>
 </head>
 <body>
     <table style="width:100%" border="1">
@@ -64,11 +72,16 @@
     <div align="center"><h3>{{ twitter.4 }}</h3></div>
     <br>
     <div class="w3l_login_form_bottom1">
-    <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+    {% if lid %}
+        <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+    {% else %}
+        <a href="/login">BUY</a>
+    {% endif %}
+
     {% if flag == 0 %}
-        <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
+        <a onclick="Prompt(0)" href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
     {% elif flag == 1 %}
-        <a href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
+        <a onclick="Prompt(1)" href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
     {% endif %}
     </div>
 </body>

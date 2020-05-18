@@ -20,22 +20,37 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        table.sortable thead {
+                background-color:#eee;
+                color: #000000;
+                font-weight: bold;
+                cursor: pointer;
+        }
+
     </style>
-    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}>
+
+    <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}></script>
+    <script type="text/javascript" src= {% static "js/sorttable.js" %}></script>
+    <script type="text/javascript">
+        function Confirm(i) {
+            if (i === 0) {
+                confirm("Are you sure you want to remove it from watchlist?")
+                alert("Stock removed from your watchlist")
+            }
+        }
     </script>
-</head>
 <body>
 	<div class="container-fluid">
-	<table>
-
-                <tr>
-                    <th><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search"></th>
-                <tr>
-                    <th>Name</th>
-                    <th>Ticker</th>
-                    <th>Details</th>
-                    <th>Watchlist</th>
-                </tr>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for Stock name or symbol" aria-label="Search" name="search" id="search">
+                <table class="sortable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Ticker</th>
+                        <th class="sorttable_nosort">Details</th>
+                        <th class="sorttable_nosort">Watchlist</th>
+                    </tr>
+                </thead>
             <tbody id="stocks">
             {% for i in rows %}
                 <tr>
@@ -45,9 +60,9 @@
 
                     {% if lid is not None %}
                         {% if i.1 in symbols %}
-                            <td><a href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
+                            <td><a onclick="Confirm(0)" href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
                         {% else %}
-                            <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                            <td><a onclick="Confirm(1)" href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
                         {% endif %}
                     {% else %}
                         <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
@@ -56,7 +71,7 @@
                 </tr>
             {% endfor %}
             </tbody>
-	 </table>
+	    </table>
 	</div>
 
     <script>

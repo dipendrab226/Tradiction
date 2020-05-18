@@ -2,26 +2,119 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
-    <style>
-        table {
-            color:green;
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+        .form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.form-inline input {
+
+  vertical-align: middle;
+  margin-left: 500px;
+  margin-bottom:0px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+table {
+            color:black;
+            background-color: white;
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
         }
 
         td, th {
-            border: 1px solid lightgreen;
-            text-align: left;
+            border: black;
+            text-align: center;
             padding: 8px;
         }
+     td a {
+		cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+		min-width: 24px;
+     }
 
-        tr:nth-child(even) {
-            background-color:#dddddd;
-        }
+
     </style>
+
+<script type="text/javascript">
+    function Confirm(){
+        let ans = confirm("Are you sure you want to remove it from watchlist?")
+        if(ans)
+            alert("Stock removed from your watchlist.")
+    }
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]'). on('click', function(){
+$ (this).tooltip ('hide')
+        });
+        var actions = $("table td:last-child").html();
+        // Append table with add row form on add new button click
+        $(".add-new").click(function(){
+            $(this).attr("disabled", "disabled");
+            var index = $("table tbody tr:last-child").index();
+            var row = '<tr>' +
+                '<td><input type="text" class="form-control" name="name" id="name"></td>' +
+                '<td><input type="text" class="form-control" name="department" id="department"></td>' +
+                '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+                '<td>' + actions + '</td>' +
+            '</tr>';
+            $("table").append(row);
+            $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        // Add row on add button click
+        $(document).on("click", ".add", function(){
+            var empty = false;
+            var input = $(this).parents("tr").find('input[type="text"]');
+            input.each(function(){
+                if(!$(this).val()){
+                    $(this).addClass("error");
+                    empty = true;
+                } else{
+                    $(this).removeClass("error");
+                }
+            });
+            $(this).parents("tr").find(".error").first().focus();
+            if(!empty){
+                input.each(function(){
+                    $(this).parent("td").html($(this).val());
+                });
+                $(this).parents("tr").find(".add, .edit").toggle();
+                $(".add-new").removeAttr("disabled");
+            }
+        });
+        // Edit row on edit button click
+        $(document).on("click", ".edit", function(){
+            $(this).parents("tr").find("td:not(:last-child)").each(function(){
+                $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").attr("disabled", "disabled");
+        });
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function(){
+            $(this).parents("tr").remove().toggle();
+            $(".add-new").removeAttr("disabled");
+        });
+    });
+    </script>
 </head>
-<body>
+
+<body style="background-color: rgb(243, 243,243);">
 
 <div class="trade" id="Trading History">
     <nav>
@@ -37,7 +130,9 @@
                     <td>{{ i.2 }}</td>
                     <td>{{ i.3 }}</td>
                     <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
-                    <td><a href="/removefromwatchlist?symbol={{ i.3 }}">Remove from Watchlist</a></td>
+                    <td>
+                      <a onclick="Confirm()" href="/removefromwatchlist?symbol={{ i.3 }}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

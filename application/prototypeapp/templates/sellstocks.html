@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function caltotal() {
+
+            var price = document.getElementById("price").value;
+            var quantity = document.getElementById("quantity").value;
+
+            var Total = parseFloat(price) * parseInt(quantity);
+
+            document.getElementById("total").value = Total;
+        }
+
+    </script>
+    {% include 'header.html' %}
+
+</head>
+<body>
+
+<form action="/sells"> {% csrf_token %}
+
+    Name: <input readonly value="{{ name }}" name="sname" style="width: 300px"> <br>
+
+    <br>
+    <input type="hidden" value="{{ symbol }}" name="symbol">
+
+    {% for i in rows %}
+
+        <input type="hidden" value="{{ i.0 }}" name="sid">
+
+
+        Buying Price :<input type="text" value="{{ i.2 }}" name="cprice" readonly><br><br>
+
+        Date And Time :<input readonly type="text" value="{{ i.1 }}" name="datetime"><br><br>
+
+    {% endfor %}
+
+    Selling Price :<input readonly type="text" value="{{ price }}" name="sellprice" id="price">
+
+    <br><br>
+
+    <input type="hidden" name="bid" value={{ bid }}>
+
+    Quantity: <input type="number" name="quantity" id="quantity" onkeyup="caltotal()"/><br><br>
+
+    Total: <input type="text" readonly name="total" id="total"/><br><br>
+    <input type="submit" value="SELL">
+</form>
+<br>
+</body>
+</html>

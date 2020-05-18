@@ -12,14 +12,14 @@
             let quantity = document.getElementById("quantity").value;
 
             let Total = parseFloat(price) * parseInt(quantity);
-
+            Total = Total.toFixed(2)
             document.getElementById("total").value = Total;
         }
 
     </script>
 </head>
 <body>
-    <form action="/buystocks" method="post">
+    <form action="/buystocks" method="post"> {% csrf_token %}
 
     <input type="hidden" value="{{ details.2 }}" name="sid">
 
@@ -27,11 +27,11 @@
 
     <br>
 
-    Price:<input  value="{{ details.1 }}" id="price" name="cprice">
+    Price:<input readonly value="{{ details.1 }}" id="price" name="cprice">
 
     <br><br>
 
-    Quantity: <input type="text" name="quantity" id="quantity" onkeyup="caltotal()"/><br><br>
+    Quantity: <input type="number" name="quantity" id="quantity" onkeyup="caltotal()" onchange="caltotal()"/><br><br>
 
     Total: <input readonly name="total" id="total"/><br><br>
 

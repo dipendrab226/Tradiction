@@ -19,7 +19,7 @@
     <br/>
 {% endif %}
 
-<form action="/home" method="post" id="bt">
+<form action="/home" method="post" id="bt"> {% csrf_token %}
     <input type="hidden" name="key" value="{{ MERCHANT_KEY }}"/>
     <input type="hidden" name="hash_string" value="{{ hash_string }}"/>
     <input type="hidden" name="hash" value="{{ hashh }}"/>

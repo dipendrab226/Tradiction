@@ -19,6 +19,11 @@
             background-color: #dddddd;
         }
     </style>
+    <script>
+        function Alert() {
+            alert("Password will be sent to your email address shortly.")
+        }
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,33 +38,26 @@
 <div class="col-md-6">
 <div class="card">
 <header class="card-header">
-	<h4 class="card-title mt-2">Log In</h4>
+	<h4 class="card-title mt-2">Forgot Password</h4>
 </header>
-<article class="card-body">
+            <article class="card-body">
                     <p style="color: red">{{ msg }}</p>
-	        <form action="/logindata" method="post"> {% csrf_token %}
+                    <form action="/getpwd" method="post"> {% csrf_token %}
                         <div class="form-group">
                             <label>User Name</label>
-                            <input type="text" id="username" class="form-control" placeholder="Enter your username here:" name="username">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Enter your password here:" name="password">
-                            <small class="text-muted">Forgot Password? <a href="/forgotpwd">Click here</a></small>
+                            <input type="email" id="username" class="form-control" placeholder="Enter your username here:" name="username">
                         </div>
                         <br>
                         <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block"> Log In</button>
-            </div> <!-- form-group// -->
-            <div class="form-group">
-                <button type="submit" class="btn btn-outline-secondary btn-block" formaction="/index"> Cancel</button>
-            </div> <!-- form-group// -->
-            </form>
-</article> <!-- card-body end .// -->
-            <div class="border-top card-body text-center">Don't have an account yet? <a href="/registration">Click here to sign up!</a></div>
+                        <button onclick="Alert()" type="submit" class="btn btn-success btn-block"> Submit</button>
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-secondary btn-block" formaction="/login"> Cancel</button>
+                    </div> <!-- form-group// -->
+                    </form>
+            </article> <!-- card-body end .// -->
         </div> <!-- card.// -->
     </div> <!-- col.//-->
-
 </div> <!-- row.//-->
 
 
