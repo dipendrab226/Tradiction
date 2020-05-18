@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% include 'header.html' %}
+     <script type="text/javascript">
+
+        function caltotal() {
+            //print("hello")
+            let price = document.getElementById("price").value;
+            let quantity = document.getElementById("quantity").value;
+
+            let Total = parseFloat(price) * parseInt(quantity);
+
+            document.getElementById("total").value = Total;
+        }
+
+    </script>
+</head>
+<body>
+    <form action="/buystocks" method="post">
+
+    <input type="hidden" value="{{ details.2 }}" name="sid">
+
+    Name: <input readonly value="{{ details.0 }}" name="sname" style="width: 300px"> <br>
+
+    <br>
+
+    Price:<input  value="{{ details.1 }}" id="price" name="cprice">
+
+    <br><br>
+
+    Quantity: <input type="text" name="quantity" id="quantity" onkeyup="caltotal()"/><br><br>
+
+    Total: <input readonly name="total" id="total"/><br><br>
+
+    <input type="submit" value="BUY">
+</form>
+
+</body>
+</html>

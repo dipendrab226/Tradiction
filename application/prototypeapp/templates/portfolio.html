@@ -7,113 +7,40 @@
                 width: 100%;
                 border-collapse: collapse;
             }
-        td, th
-        {
-            border: 2px solid #dddddd;
-            padding: 8px;
-            text-align: center;
-        }
+            td, th
+            {
+                border: 2px solid #dddddd;
+                padding: 8px;
+                text-align: center;
+            }
         </style>
         {% include "header.html" %}
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {'packages':['line']});
-            google.charts.setOnLoadCallback(drawChart);
-            
-            function drawChart()
-            {
-                
-                var data = new google.visualization.DataTable();
-                data.addColumn('number', 'Year');
-                data.addColumn('number', 'Stock');
-                
-                data.addRows([
-                              [1, 600.8],
-                              [2,  30.9],
-                              [3,  254.4],
-                              [4,  500.7],
-                              [5,  250.9],
-                              [6,   432.8],
-                              [7,   23.6],
-                              [8,  43.3],
-                              [9,  45.9],
-                              [10, 65.8],
-                              [11,  75.3],
-                              [12,  99.6],
-                              [13,  100.8],
-                              ]);
-                              
-                              var display =
-                              {
-                                  chart:
-                                  {    title: 'Stock Name'},
-                                  width: 1000,
-                                  height: 500,
-                                  axes:
-                                  {
-                                      x:
-                                  {    0: {side: 'bottom'}}}
-                                  
-                              };
-                              
-                              var stockGraph = new google.charts.Line(document.getElementById('StockGraph'));
-                              
-                              stockGraph.draw(data, google.charts.Line.convertOptions(display));
-            }
-        </script>
-
+    </head>
     <body>
-
         <div id="StockGraph"></div>
         <table>
             <tr>
                 <th>Serial #</th>
                 <th>Name</th>
                 <th>Buying Price</th>
-                <th>Current Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
                 <th>Date and Time</th>
-                <th>Quantity Total</th>
+                <th>Current Price</th>
+                <th>Sell</th>
             </tr>
+            {% for i in rows %}
             <tr>
-                <td>5435234</td>
-                <td>BA</td>
-                <td>$400.00</td>
-                <td>$450.00</td>
-                <td> 4/03/20</td>
-                <td> 15</td>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.5 }}</td>
+                <td>{{ i.2 }}</td>
+                <td>{{ i.3 }}</td>
+                <td>{{ i.4 }}</td>
+                <td>{{ i.1 }}</td>
+                <td>{{ i.7 }}</td>
+                <td align="center"> <a href="/sellstocks?bid={{i.0}}&symbol={{ i.6 }}"> SELL</a> </td>
             </tr>
-            <tr>
-                <td>5433224</td>
-                <td>dow Jones</td>
-                <td>$1000.00</td>
-                <td>$1200.00</td>
-                <td> 3/21/19</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>5565944</td>
-                <td>GE</td>
-                <td>$1200.00</td>
-                <td>$1500.00</td>
-                <td> 2/03/20</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>4837234</td>
-                <td>NKE</td>
-                <td>$300.00</td>
-                <td>$600.00</td>
-                <td> 1/03/20</td>
-                <td> 7</td>
-            </tr>
-            <tr>
-                <td>2913724</td>
-                <td>AAPL</td>
-                <td>$1900.00</td>
-                <td>$2100.00</td>
-                <td>9/21/18</td>
-                <td>4</td>
-            </tr>
+           {% endfor %}
         </table>
     </body>
 </html>
