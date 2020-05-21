@@ -7,56 +7,57 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Watchlist</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
-        .form-inline {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-.form-inline input {
+        .card{
+            width: 98%;
+            margin: auto;
+        }
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
 
-  vertical-align: middle;
-  margin-left: 500px;
-  margin-bottom:0px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-
-table {
-            color:black;
-            background-color: white;
-            font-family: arial, sans-serif;
+        table {
+            /*color: green;*/
+            /*font-family: arial, sans-serif;*/
             border-collapse: collapse;
             width: 100%;
+            margin: 30px auto 30px auto;
         }
 
         td, th {
-            border: black;
-            text-align: center;
-            padding: 8px;
+            /*border: 1px solid lightgreen;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
+            text-align: left;
+            padding: 15px;
         }
-     td a {
-		cursor: pointer;
-        display: inline-block;
-        margin: 0 5px;
-		min-width: 24px;
-     }
 
+        .remove {
+            width: 300px;
+        }
 
+        .name {
+            width: 600px;
+        }
+
+        /*tr:nth-child(even) {*/
+        /*    background-color: #dddddd;*/
+        /*}*/
     </style>
 
 <script type="text/javascript">
     function Confirm(){
-        let ans = confirm("Are you sure you want to remove it from watchlist?")
-        if(ans)
-            alert("Stock removed from your watchlist.")
+        return confirm("Stock will be removed from your watchlist?")
     }
+
     $(document).ready(function(){
         $('[data-toggle="tooltip"]'). on('click', function(){
 $ (this).tooltip ('hide')
@@ -106,16 +107,14 @@ $ (this).tooltip ('hide')
             $(".add-new").attr("disabled", "disabled");
         });
         // Delete row on delete button click
-        $(document).on("click", ".delete", function(){
-            $(this).parents("tr").remove().toggle();
-            $(".add-new").removeAttr("disabled");
-        });
+
     });
-    </script>
+</script>
 </head>
 
 <body style="background-color: rgb(243, 243,243);">
-
+<div class="card bg-light">
+    <div class="container-fluid">
 <div class="trade" id="Trading History">
     <nav>
         <table>
@@ -131,12 +130,15 @@ $ (this).tooltip ('hide')
                     <td>{{ i.3 }}</td>
                     <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
                     <td>
-                      <a onclick="Confirm()" href="/removefromwatchlist?symbol={{ i.3 }}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                      <a onclick="return Confirm()" href="/removefromwatchlist?symbol={{ i.3 }}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
     </nav>
+</div>
+    </div>
+</div>
 
 
 
