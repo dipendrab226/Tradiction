@@ -96,7 +96,7 @@
                 <p class="text-uppercase font-weight-bold title">Recent News</p>
                 <!--          convert these to a href once we work on backend.-->
                 {% for i in articles %}
-                <a class="newsLinks" target="_blank" onclick="return confirm()" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
+                <a class="newsLinks" target="_blank" onclick="return Confirm()" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
                 {% endfor %}
             </div>
       </div>

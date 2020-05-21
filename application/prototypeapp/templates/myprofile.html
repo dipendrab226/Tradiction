@@ -140,7 +140,7 @@
         <div id="tab-content" class="col-9 tab-content">
             <div id="tab-A" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pill-A">
                 <div class="card-body align-item-center w-75">
-                    <form name="myform">
+			<form name="myform"> {%csrf_token%}
                         <div class="form-row">
 
                         <div class="col form-group">
@@ -189,7 +189,7 @@
             </div>
             <div id="tab-B" class="tab-pane fade" role="tabpanel" aria-labelledby="pill-B">
                 <div class="card-body w-75">
-                    <form name="myform" method="post">
+			<form name="myform" method="post"> {%csrf_token%}
                                     <div class="form-group">
                                             <div>
                                              <label>Social Security Number</label>
@@ -218,7 +218,7 @@
             <div id="tab-C" class="tab-pane fade" role="tabpanel" aria-labelledby="pill-C">
                 <div class="card-body w-75">
                 <div class="form-group">
-                    <form method="post" action="/updatepwd">
+			<form method="post" action="/updatepwd"> {%csrf_token%}
                                             <div>
                                              <label>Current Password</label>
                                               </div>
@@ -229,14 +229,14 @@
                                             <div>
                                              <label>New Password</label>
                                               </div>
-                                             <input type="text" class="form-control" placeholder="******** " name="pwd">
+                                             <input type="password" class="form-control" placeholder="******** " name="pwd">
 
                                        </div> <!-- form-group end.// -->
                                     <div class="form-group">
                                             <div>
                                              <label>Confirm Password</label>
                                               </div>
-                                             <input type="text" class="form-control" placeholder="********" name="cpwd">
+                                             <input type="password" class="form-control" placeholder="********" name="cpwd">
                                         </div> <!-- form-group end.// -->
                                       <div class="form-group">
                         <button type="submit" onsubmit="return validate()"  class="btn btn-success btn-block btn-pull-right" style="width:25%" > Save</button>

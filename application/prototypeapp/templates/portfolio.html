@@ -29,11 +29,33 @@
             width: 98%;
             margin: auto
         }
+
+	.bg {
+            height: 320px;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-style: normal;
+            /*background-image: url(../static/bg.jpg);*/
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: rgba(41, 43, 44, 0.9);
+            background-blend-mode: darken;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 
 </head>
 <body>
-<div class="card bg-light">
+<div class="jumbotron jumbotron-fluid bg">
+  <div class="container">
+    <h3 class="text-center">Below is a list of your purchased stocks</h3>
+  </div>
+</div>
+	<div class="card bg-light">
     <div class="container-fluid">
         <div id="StockGraph"></div>
         <table>
