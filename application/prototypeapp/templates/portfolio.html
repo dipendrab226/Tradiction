@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style>
-            table
-            {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            td, th
-            {
-                border: 2px solid #dddddd;
-                padding: 8px;
-                text-align: center;
-            }
-        </style>
-        {% include "header.html" %}
-    </head>
-    <body>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% include "header.html" %}
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto 20px auto;
+        }
+
+        td, th {
+            /*border: 2px solid #dddddd;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .card {
+            width: 98%;
+            margin: auto
+        }
+    </style>
+
+</head>
+<body>
+<div class="card bg-light">
+    <div class="container-fluid">
         <div id="StockGraph"></div>
         <table>
             <tr>
@@ -38,10 +56,12 @@
                 <td>{{ i.4 }}</td>
                 <td>{{ i.1 }}</td>
                 <td>{{ i.7 }}</td>
-                <td align="center"> <a href="/sellstocks?bid={{i.0}}&symbol={{ i.6 }}"> SELL</a> </td>
+                <td align="center"><a href="/sellstocks?bid={{i.0}}&symbol={{ i.6 }}"> SELL</a></td>
             </tr>
-           {% endfor %}
+            {% endfor %}
         </table>
-    </body>
+    </div>
+</div>
+</body>
 </html>
 

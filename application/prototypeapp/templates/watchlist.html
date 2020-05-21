@@ -2,47 +2,69 @@
 <html lang="en">
 <head>
     {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Watchlist</title>
     <style>
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
         table {
-            color:green;
-            font-family: arial, sans-serif;
+            /*color: green;*/
+            /*font-family: arial, sans-serif;*/
             border-collapse: collapse;
             width: 100%;
+            margin: 30px auto 30px auto;
         }
 
         td, th {
-            border: 1px solid lightgreen;
+            /*border: 1px solid lightgreen;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 15px;
         }
 
-        tr:nth-child(even) {
-            background-color:#dddddd;
+        .remove {
+            width: 300px;
         }
+
+        .name {
+            width: 600px;
+        }
+
+        /*tr:nth-child(even) {*/
+        /*    background-color: #dddddd;*/
+        /*}*/
     </style>
 </head>
 <body>
-
-<div class="trade" id="Trading History">
-    <nav>
-        <table>
-            <tr>
-                <th>Stock Name</th>
-                <th>Symbol</th>
-                <th>Details</th>
-                <th>Remove</th>
-            </tr>
-            {% for i in rows %}
-                <tr>
-                    <td>{{ i.2 }}</td>
-                    <td>{{ i.3 }}</td>
-                    <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
-                    <td><a href="/removefromwatchlist?symbol={{ i.3 }}">Remove from Watchlist</a></td>
-                </tr>
-            {% endfor %}
-        </table>
-    </nav>
-
+<div class="card bg-light">
+    <div class="container-fluid">
+        <div class="trade" id="Trading History">
+            <nav>
+                <table>
+                    <tr align="center">
+                        <th class="name">Stock Name</th>
+                        <th>Symbol</th>
+                        <th>Details</th>
+                        <th class="remove">Remove</th>
+                    </tr>
+                    {% for i in rows %}
+                    <tr align="center">
+                        <td>{{ i.2 }}</td>
+                        <td>{{ i.3 }}</td>
+                        <td><a href="/stockdetails?stock={{ i.3 }}">Details</a></td>
+                        <td><a href="/removefromwatchlist?symbol={{ i.3 }}" class="remove">Remove from Watchlist</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </nav>
+        </div>
+    </div>
+</div>
 
 
 <!-- Optional JavaScript -->

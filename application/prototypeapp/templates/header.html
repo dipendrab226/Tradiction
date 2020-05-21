@@ -9,49 +9,59 @@
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!-- Font -->
+      <link rel="stylesheet" type="text/css" href="css/fonts.css">
+      <!-- Tab Bar Icon -->
+      <link rel="icon" href="../static/logo.png" type="image/png"/>
       <title>Tradiction</title>
       <style>
          .navbar {
-         height: 50px;
+            height: 80px;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-style: normal;
+         }
+         .navbar-brand {
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 0.15em;
          }
          .nav-link {
-         color:white;
-         float: right;
-         background-color: none;
-         border: none;
-         border-color: none;
-         cursor: pointer;
-         padding: 3px 3px;
-         font-size: 20px;
-         text-align: center;
+            color:white;
+            float: right;
+            cursor: pointer;
+            padding: 3px 3px;
+            font-size: 20px;
+            letter-spacing: 0.08em;
+            text-align: center;
+            transition: 0.5s ease-in-out;
          }
-         .nav-link:hover
-         {
-         color:green;
-         transition:0.5s;
-         font-size:22px;
-         border-top:10px;
-         border-bottom:10px;
+         .nav-link:hover {
+            color: green;
+            /*transition: 0.5s;*/
+            /*font-size: 24px;*/
+            /*border-top: 10px;*/
+            /*border-bottom: 10px;*/
+            transform: scale(1.2) perspective(1px);
          }
       </style>
       <nav class="navbar navbar-light bg-light justify-content-between">
-         <a class="navbar-brand mb-0 h1" href="/index">Tradiction</a>
+         <a class="navbar-brand mb-0 h1" href="/index">TRADICTION</a>
          <form class="form-inline">
             {% if lid is not None %}
-            <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/logout">Logout</button>
+            <button type="submit" class="btn btn-outline-secondary ml-2" formaction="/logout">Log Out</button>
             {% else %}
-            <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/login">Login</button>
-            <button class="btn btn-outline-success" type="submit" formaction="/registration">Sign Up</button>
+            <button type="submit" class="btn btn-outline-secondary ml-2" formaction="/login">Log In</button>
+            <button type="submit" class="btn btn-outline-success ml-2"  formaction="/registration">Sign Up</button>
             {% endif %}
          </form>
       </nav>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
-         <a class="nav-link" href="/stocks">Stocks</a>
-         <a class="nav-link" href="/news">News</a>
-         <a class="nav-link" href="/portfolio">Portfolio</a>
-         <a class="nav-link" href="/tradinghistory">Trading History</a>
-         <a class="nav-link" href="/watchlist">Watchlist</a>
-         <a class="nav-link" href="/help">Help</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-around">
+         <a class="nav-link text-uppercase" href="/stocks">Stocks</a>
+         <a class="nav-link text-uppercase" href="/news">News</a>
+         <a class="nav-link text-uppercase" href="/portfolio">Portfolio</a>
+         <a class="nav-link text-uppercase" href="/tradinghistory">Trading History</a>
+         <a class="nav-link text-uppercase" href="/watchlist">Watchlist</a>
+         <a class="nav-link text-uppercase" href="/help">Help</a>
       </nav>
       <br>
    </head>

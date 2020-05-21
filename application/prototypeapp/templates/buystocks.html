@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     {% include 'header.html' %}
+    
      <script type="text/javascript">
 
         function caltotal() {
@@ -17,26 +18,118 @@
         }
 
     </script>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+      body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
+    /*.card{*/
+    /*    background: #f3f3f3;*/
+    /*    box-shadow: 1px 1px 10px rgba(0,0,0,0.25);*/
+    /*    border-radius:15px ;*/
+    /*    border-color: gray;*/
+    /*    align-content: center;*/
+    /*     width: max-content;*/
+
+    /*}*/
+ 
+       .card {
+            width: 30%;
+            margin: auto
+        }
+      table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 30px auto 30px auto;
+        }
+
+        td, th {
+            /*border: 1px solid lightgreen;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
+            padding: 15px;
+        }
+      td {
+          text-align: right;
+      }
+      th {
+          text-align: left;
+      }
+        </style>
 </head>
-<body>
-    <form action="/buystocks" method="post">
+<body >
 
-    <input type="hidden" value="{{ details.2 }}" name="sid">
+<!--need to rewire and delete this later-->
+<!--  <div class= "d-flex justify-content-center">-->
+<!--    <div class="card" >-->
 
-    Name: <input readonly value="{{ details.0 }}" name="sname" style="width: 300px"> <br>
+<!--        <h3 class="card-title" style="text-align: center; margin-top:10px;" > Buy Stocks </h3>-->
+<!--          <form action="/buystocks" method="post"></form>-->
 
-    <br>
+<!--             <div id="inputfield" class="form-group align-content-center ">-->
 
-    Price:<input  value="{{ details.1 }}" id="price" name="cprice">
+<!--                 <div >-->
+<!--                  <input type="hidden" value="{{ details.2 }}" name="sid">-->
+<!--                    <label style="padding-right: 100px;margin-left: 100px;">Name</label>-->
+<!--                   <input readonly value="{{ details.0 }}" name="sname" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"> <br><br>-->
+<!--                  </div>-->
 
-    <br><br>
+<!--                  <div>-->
+<!--                    <label style="padding-right: 105px;margin-left: 100px;">Price</label>-->
+<!--                      <input  value="{{ details.1 }}" id="price" name="cprice" style=" width: 100px; border: 0px; background-color:#f3f3f3; margin-right:100px""><br><br>-->
+<!--                  </div>-->
 
-    Quantity: <input type="text" name="quantity" id="quantity" onkeyup="caltotal()"/><br><br>
+<!--                  <div>-->
+<!--                    <label style="padding-right: 80px;margin-left: 100px;"> Quantity</label>-->
+<!--                    <input type="text" name="quantity" id="quantity" onkeyup="caltotal()" style=" width: 100px; margin-right:100px"/><br><br>-->
+<!--                  </div>-->
 
-    Total: <input readonly name="total" id="total"/><br><br>
+<!--                  <div>-->
+<!--                    <label style="padding-right: 105px;margin-left: 100px;">Total</label>-->
+<!--                    <input readonly name="total" id="total" style=" width: 100px; border: 0px; background-color:#f3f3f3; margin-right:100px"/><br><br>-->
+<!--                  </div>-->
 
-    <input type="submit" value="BUY">
-</form>
+<!--                   <button type="submit"  class="btn btn-success align-center" style="width:20%; background-color: green; margin-left: 175px;" > BUY</button>-->
 
-</body>
-</html>
+
+
+<!--          </div>-->
+<!--         </form>-->
+<!--        </div>-->
+<!--      </div>-->
+
+         <br>
+         <div class="card bg-light text-center">
+             <br>
+             <h3> Buy Stocks </h3>
+             <div class="container-fluid">
+             <table>
+                 <tr>
+                     <th>Name</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Price</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Quantity</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Total</th>
+                     <td>Wire here</td>
+                 </tr>
+                 </table>
+                 <button type= "submit" class="btn btn-success">BUY</button>
+                 <br>
+                 <br>
+             </div>
+         </div>
+        <br>
+    </div>
+      </body>
+</html
