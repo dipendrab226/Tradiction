@@ -1,76 +1,76 @@
 <html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
+        #tab-content {
+            background-color: white;
+        }
+
+        #tab-sidebar {
+            /* This is just to center text in pills */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        }
 
-<style>
-    body {
-        font-family: "Open Sans", Arial, sans-serif;
-    }
+        #tab-sidebar .nav-link {
+            /* This is just to center text in pills */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+        }
 
-    #tab-content {
-        background-color: white;
-    }
+        #tab-sidebar .active {
+            background-color: rgb(7, 158, 22);;
+            color: white;
+        }
 
-    #tab-sidebar {
-        /* This is just to center text in pills */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        #tab-sidebar :hover {
+            background-color: rgb(7, 158, 22);
 
-    }
-
-    #tab-sidebar .nav-link {
-        /* This is just to center text in pills */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: black;
-    }
-
-    #tab-sidebar .active {
-        background-color: rgb(7, 158, 22);;
-        color: white;
-    }
-
-    #tab-sidebar :hover {
-        background-color: rgb(7, 158, 22);
-
-        color: white
-    }
+            color: white
+        }
 
 
-    #tab-sidebar .nav-link.col-12 {
-        max-width: calc(100% - 10px);
+        #tab-sidebar .nav-link.col-12 {
+            max-width: calc(100% - 10px);
 
-    }
+        }
 
-
-    }
-    .card {
-        background: #f3f3f3;
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 15px;
-        border-color: gray;
-        margin-left: 500px;
-        height: 500px;
-
-    }
-</style>
-
-<div class="card align-item-center">
+        .card {
+            background: #f3f3f3;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            border-color: gray;
+            height: 500px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+<div class="card bg-light align-item-center">
     <div class="row">
         <div id="tab-sidebar" class="col-3 nav nav-pills " role="tablist" aria-orientation="vertical">
             <a class=" navbar-brand nav-link col-12 ">My Profile</a>
@@ -196,9 +196,6 @@
     </div> <!-- form-group end.// -->
 
 </div>
-</div>
-</div>
-</card>
-
+</body>
 
 </html>
