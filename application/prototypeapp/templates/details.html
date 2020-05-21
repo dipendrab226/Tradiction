@@ -2,79 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% include 'header.html' %}
-    <style>
+    <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <title>Detailed Stocks</title>
+    {% include "header.html" %}
+     <style>
+        .navbar {
+        height: 50px;
+        }
+        .nav-link {
+        color:white;
+        float: right;
+        background-color: none;
+        border: none;
+        border-color: none;
+        cursor: pointer;
+        padding: 3px 3px;
+        font-size: 20px;
+        text-align: center;
+        }
+        .nav-link:hover
+        {
+        color:green;
+        transition:0.5s;
+        font-size:22px;
+        border-top:10px;
+        border-bottom:10px;
+        }
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
         table {
-            border: 1px solid #000000;
-
-        }
-
-        th, td {
-            border: none;
             border-collapse: collapse;
+            width: 100%;
+            margin: 30px auto 30px auto;
         }
 
-        th, td {
-            padding: 5px;
+        td, th {
+            /*border: 1px solid lightgreen;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
             text-align: left;
+            padding: 15px;
         }
-    </style>
+
+        .card {
+            width: 98%;
+            margin: auto
+        }
+     </style>
+
 </head>
 <body>
-    <table style="width:100%" border="1">
 
-    <h2> {{ details.longName }} </h2>
+    <div class= "container-fluid">
+        <div class="row mx-md-n5">
+             <div class="col">
+                 <h2> {{ details.longName }} ({{ details.symbol }})</h2>
+             </div>
+             <div class="col text-right">
+                 <!-- wire these buttons with the backend below -->
+                <button type= "submit" class="btn btn-danger">Remove from Watchlist</button>
+                <button type= "submit" class="btn btn-outline-success">Add to Watchlist</button>
+                <button type= "submit" class="btn btn-success">BUY</button>
+             </div>
+         </div>
+         <br>
+         <div class="card bg-light">
+             <div class="container-fluid">
+             <table>
+                 <tr>
+                     <th>Previous Close</th>
+                     <td>{{ details.previousClose }}</td>
+                     <th>Market Cap</th>
+                     <td>{{ details.marketCap }}</td>
+                 </tr>
+                 <tr>
+                     <th>Open</th>
+                     <td>{{ details.open }}</td>
+                     <th>Beta</th>
+                     <td>{{ details.beta }}</td>
+                 </tr>
+                 <tr>
+                     <th>Bid</th>
+                     <td>{{ details.bid }} x {{ details.askSize }}</td>
+                     <th>Ask</th>
+                     <td>{{ details.ask }} x {{ details.askSize }}</td>
+                 </tr>
+                 <tr>
+                     <th>Day's Range</th>
+                     <td>{{ details.dayLow }} - {{ details.dayHigh }}</td>
+                     <th>52 Week Range</th>
+                     <td>{{ details.fiftyTwoWeekLow }} - {{ details.fiftyTwoWeekHigh }}</td>
+                 </tr>
+                 <tr>
+                     <th>Volume</th>
+                     <td>{{ details.volume }}</td>
+                     <th>Avg. Volume</th>
+                     <td>{{ details.averageVolume }}</td>
+                 </tr>
+                 </table>
+             </div>
+         </div>
 
-    <h3> {{ details.symbol }} </h3>
-    <br>
-    <tr>
-        <th>Previous Close</th>
-        <td>{{ details.previousClose }}</td>
-        <th>Market Cap</th>
-        <td>{{ details.marketCap }}</td>
-    </tr>
-    <tr>
-        <th>Open</th>
-        <td>{{ details.open }}</td>
-        <th>Beta</th>
-        <td>{{ details.beta }}</td>
-    </tr>
-    <tr>
-        <th>Bid</th>
-        <td>{{ details.bid }} x {{ details.askSize }}</td>
-        <th>Ask</th>
-        <td>{{ details.ask }} x {{ details.askSize }}</td>
-    </tr>
-    <tr>
-        <th>Day's Range</th>
-        <td>{{ details.dayLow }} - {{ details.dayHigh }}</td>
-        <th>52 Week Range</th>
-        <td>{{ details.fiftyTwoWeekLow }} - {{ details.fiftyTwoWeekHigh }}</td>
-    </tr>
-    <tr>
-        <th>Volume</th>
-        <td>{{ details.volume }}</td>
-        <th>Avg. Volume</th>
-        <td>{{ details.averageVolume }}</td>
-    </tr>
 
-    </table>
-    <br>
 
-    <div align="center"><h3>{{ twitter.4 }}</h3></div>
-    <br>
-    <div class="w3l_login_form_bottom1">
-    {% if lid %}
-        <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
-    {% else %}
-        <a href="/login">BUY</a>
-    {% endif %}
+        <br>
 
-    {% if flag == 0 %}
-        <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
-    {% elif flag == 1 %}
-        <a href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
-    {% endif %}
+        <div align="center"><h4>{{ twitter.4 }}</h4></div>
+        <br>
+
+        <!-- need to rewire and delete after-->
+        <div class="w3l_login_form_bottom1">
+        {% if lid %}
+            <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
+        {% else %}
+            <a href="/login">BUY</a>
+        {% endif %}
+
+        {% if flag == 0 %}
+            <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
+        {% elif flag == 1 %}
+            <a href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
+        {% endif %}
+        </div>
     </div>
+
 </body>
 </html>

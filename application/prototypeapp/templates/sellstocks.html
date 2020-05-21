@@ -20,24 +20,48 @@
       
     <style>
       
-    .card{
-        background: #f3f3f3;
-        box-shadow: 1px 1px 10px rgba(0,0,0,0.25);
-        border-radius:15px ;
-        border-color: gray;
-     align-content: center;
-         width: max-content;
-         
-    }
- 
+    /*.card{*/
+    /*    background: #f3f3f3;*/
+    /*    box-shadow: 1px 1px 10px rgba(0,0,0,0.25);*/
+    /*    border-radius:15px ;*/
+    /*    border-color: gray;*/
+    /* align-content: center;*/
+    /*     width: max-content;*/
+    /*     */
+    /*}*/
+
+        .card {
+            width: 30%;
+            margin: auto
+        }
+         table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 30px auto 30px auto;
+        }
+
+        td, th {
+            /*border: 1px solid lightgreen;*/
+            font-family: "Open Sans", Arial, sans-serif;
+            border-bottom: 1px solid #dddddd;
+            /*text-align: center;*/
+            padding: 15px;
+        }
+        td {
+            text-align: right;
+        }
+        th {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
-    <div class="d-flex justify-content-center">
-        <div class="card">
-            <h4 class="card-title" style="text-align: center; margin-top:10px; "> Sell Stocks </h3>
-                <form action="/sells">
-                  <div class="form-group">
+<!--need to rewire and delete later-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--        <div class="card">-->
+<!--            <h4 class="card-title" style="text-align: center; margin-top:10px; "> Sell Stocks </h4>-->
+<!--                <form action="/sells">-->
+<!--                  <div class="form-group">-->
 
 
                         <label style="padding-right: 110px;margin-left: 100px; ">Name</label>
@@ -49,29 +73,77 @@
                   {% for i in rows %}
                      <div>
                        <input type="hidden" value="{{ i.0 }}" name="sid">
+<!--                   -->
+<!--                        <label style="padding-right: 110px;margin-left: 100px; ">Name</label>-->
+<!--                        <input readonly value="{{ name }}" name="sname" style=" width:200px; border: 0px; background-color:#f3f3f3;"> <br> <br>-->
+<!--                        <input type="hidden" value="{{ symbol }}" name="symbol">-->
 
-                         <label style="padding-right:70px ;margin-left: 100px;"> Buying Price</label>
-                           <input type="text" value="{{ i.2 }}" name="cprice" readonly style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"><br><br>
-        
-                           <label style="padding-right: 50px; margin-left: 100px;"> Date And Time</label>
-                          <input readonly type="text" value="{{ i.1 }}" name="datetime" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"><br><br>
-                     </div>
-                   {% endfor %}
-                   <div>
-                          <label style="padding-right: 70px; margin-left: 100px;"> Selling Price</label>
-                          <input type="text" value="{{ price }}" name="sellprice" id="price" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px">
-                                 <br><br>
+<!--                    -->
+<!--                    -->
+<!--                  {% for i in rows %}-->
+<!--                     <div>-->
+<!--                       <input type="hidden" value="{{ i.0 }}" name="sid">-->
 
-                          <input type="hidden" name="bid" value={{ bid }}>
-                          <label style="padding-right: 95px; margin-left: 100px;"> Quantity</label>
-                          <input type="text" name="quantity" id="quantity" onkeyup="caltotal()" style=" width:100px;  margin-right:100px"/><br><br>
+<!--                         <label style="padding-right:70px ;margin-left: 100px;"> Buying Price</label>-->
+<!--                           <input type="text" value="{{ i.2 }}" name="cprice" readonly style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"><br><br>-->
+<!--        -->
+<!--                           <label style="padding-right: 50px; margin-left: 100px;"> Date And Time</label>-->
+<!--                          <input readonly type="text" value="{{ i.1 }}" name="datetime" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"><br><br>-->
+<!--                     </div>-->
+<!--                   {% endfor %}-->
+<!--                   <div>-->
+<!--                          <label style="padding-right: 70px; margin-left: 100px;"> Selling Price</label>-->
+<!--                          <input type="text" value="{{ price }}" name="sellprice" id="price" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px">-->
+<!--                                 <br><br>-->
 
-                          <label style="padding-right: 120px; margin-left: 100px;"> Total</label>
-                          <input type="text" readonly name="total" id="total" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"/><br><br>
-                  </div>
-                          <button type="submit"  class="btn btn-success align-center" style="width:20%; background-color: green; margin-left: 175px;" > SELL</button>
-               
-</form>
+<!--                          <input type="hidden" name="bid" value={{ bid }}>-->
+<!--                          <label style="padding-right: 95px; margin-left: 100px;"> Quantity</label>-->
+<!--                          <input type="text" name="quantity" id="quantity" onkeyup="caltotal()" style=" width:100px;  margin-right:100px"/><br><br>-->
+
+<!--                          <label style="padding-right: 120px; margin-left: 100px;"> Total</label>-->
+<!--                          <input type="text" readonly name="total" id="total" style=" width:100px; border: 0px; background-color:#f3f3f3; margin-right:100px"/><br><br>-->
+<!--                  </div>-->
+<!--                          <button type="submit"  class="btn btn-success align-center" style="width:20%; background-color: green; margin-left: 175px;" > SELL</button>-->
+<!--                  </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
 <br>
+         <div class="card bg-light text-center">
+             <br>
+             <h3> Sell Stocks </h3>
+             <div class="container-fluid">
+             <table>
+                 <tr>
+                     <th>Name</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Buying Price</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Date and Time</th>
+                     <td>Wire here</td>
+                 </tr>
+                  <tr>
+                     <th>Selling Price</th>
+                     <td>Wire here</td>
+                 </tr>
+                 <tr>
+                     <th>Quantity</th>
+                     <td>Wire here</td>
+                 </tr>
+                 <tr>
+                     <th>Total</th>
+                     <td>Wire here</td>
+                 </tr>
+                 </table>
+                 <button type= "submit" class="btn btn-success">SELL</button>
+                 <br>
+                 <br>
+             </div>
+         </div>
+        <br>
 </body>
 </html>
