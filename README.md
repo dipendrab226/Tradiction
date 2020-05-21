@@ -1,6 +1,7 @@
 # CSC 648 Repository
 ## Stock Market App (Tradiction)
-Tradiction will be a stock market application where users can create accounts, view stock lists, know details about how the stock is performing in relation to past days, and purchase stocks using a payment gateway.
+Tradiction is a stock trading app that allows users the ability to browse recent stock-related news articles while also giving them the ability to buy, sell, and view stocks. Unlike other stock trading apps, Tradicition implements a proprietary sentimental analysis algorithm that analyzes twitter comments to keep users up to date on the latest trending market chatter. Tradiction also provides a feature allowing traders to communicate directly with stock experts, giving the trader the best market advice and information related to the stock possible. Tradiction can be found at http://ec2-18-222-193-100.us-east-2.compute.amazonaws.com:8000. 
+
 
 
 ## When AWS setup, add link to site here*
@@ -16,3 +17,6 @@ Tradiction will be a stock market application where users can create accounts, v
 
 ### EC2 DNS: 
 ec2-18-222-193-100.us-east-2.compute.amazonaws.com
+
+### Tradiction URL:
+http://ec2-18-222-193-100.us-east-2.compute.amazonaws.com:8000/
