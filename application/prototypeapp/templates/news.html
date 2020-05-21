@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>{% include 'header.html' %}</head>
+<head>{% include 'header.html' %}
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>News</title>
+    <style>
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+        }
+
+        .articleTitle {
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .articleTitle:hover {
+            color: green;
+            text-decoration: none;
+        }
+
+        .card {
+            margin: 30px auto 30px auto;
+        }
+
+    </style>
+</head>
 <body>
 <br>
 
-        <div class="row mx-md-n5">
-                {% for i in articles %}
-                  <div class="col px-md-5">
-                      <div class="p-3 border rounded text-center">
-                          <div class=figure >
-                              <p><a href={{ i.url }} target="_blank" ><img src= {{ i.urlToImage }}  class="img-responsive"
-                                                          width="200" height="220" > </a></p>
-                              <p> <a href={{ i.url }} target="_blank"> {{ i.title }} </a></p>
-                          </div>
-                      </div>
-                  </div>
-                {% endfor %}
+<div class="row mx-md-n5">
+    {% for i in articles %}
+    <div class="col px-md-5">
+        <div class="p-3 text-center">
+            <div class="figure card bg-light">
+                <p><a href={{ i.url }} target="_blank"><img src={{ i.urlToImage }} class="card-img-top img-responsive"
+                                                            width="200" height="220"> </a></p>
+                <p><a href={{ i.url }} target="_blank" class="card-title articleTitle"> {{ i.title }} </a></p>
+            </div>
         </div>
+    </div>
+    {% endfor %}
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

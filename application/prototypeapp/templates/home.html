@@ -1,99 +1,163 @@
 <html>
 <head>{% include 'header.html' %}
-<style>
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0 0 8px 0;
+        }
+
+        .bg {
+            height: 320px;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-style: normal;
+            background-image: url(../static/bg.jpg);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: rgba(41, 43, 44, 0.9);
+            background-blend-mode: darken;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slogan {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .intro {
+            font-size: 22px;
+            font-weight: 400;
+            width: 75%;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: .12em;
+        }
+
         table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
+            /*font-family: Arial, sans-serif;*/
+            /*border-collapse: collapse;*/
+            border-left: 0;
+            border-right: 0;
             width: 100%;
+            margin: 0;
         }
 
         td, th {
+            font-family: "Open Sans", Arial, sans-serif;
             border: 1px solid #dddddd;
+            border-left: 0;
+            border-right: 0;
             text-align: left;
-            padding: 8px;
+            padding: 15px;
         }
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
+        /*tr:nth-child(even) {*/
+        /*    background-color: #dddddd;*/
+        /*}*/
+
+        .newsLinks {
+            color: black;
+            font-size: 16px;
+            text-decoration: none;
         }
+
+        .newsLinks:hover {
+            color: green;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
-  <section class="jumbotron text-center">
-     <div class="container">
-       <h1>Invest with Us!</h1>
-       <p class="lead text-muted">Tradiction offers the latest in stock news, and a platform to easily view, buy and sell stocks. Sign up today to take advantage of everything this site has to offer! </p>
-     </div>
-   </section>
+    <section class="bg jumbotron-fluid text-center">
+        <div class="container-fluid text-center">
+            <h1 class="slogan">Invest with us!</h1>
+            <p class="lead intro">Tradiction offers the latest in stock news, as well as a platform to easily view, buy, and sell
+                stocks. Sign up today to take advantage of everything this site has to offer! </p>
+        </div>
+    </section>
     <br>
     <div class="row mx-md-n5">
-      <div class="col px-md-5">
-          <div class="p-3 border rounded text-center">
-              <p class= "font-weight-bold">Recent News</p>
-    <!--          convert these to a href once we work on backend.-->
-              {% for i in articles %}
-                <a target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
-              {% endfor %}
-          </div>
-
-      </div>
         <div class="col px-md-5">
-          <div class="p-3 border text-center rounded">
-              <p class= "font-weight-bold">Trending Stocks</p>
-                    <table>
-                          <tr>
-                              <th>Name</th>
-                              <th>Last</th>
-                              <th>CHG</th>
-                              <th>%CHG</th>
-                              <th>HIGH</th>
-                              <th>LOW</th>
+            <div class="p-3 text-center bg-light card">
+                <p class="text-uppercase font-weight-bold title">Recent News</p>
+                <!--          convert these to a href once we work on backend.-->
+                {% for i in articles %}
+                <a class="newsLinks" target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
+                {% endfor %}
+            </div>
 
-                          </tr>
-                          <tr>
-                              <td>Nasdaq Composite</td>
-                              <td>8650.14</td>
-                              <td>117.78</td>
-                              <td>1.38</td>
-                              <td>----</td>
-                              <td>----</td>
-                          </tr>
-                          <tr>
-                              <td>S&P500</td>
-                             <td>2874.56</td>
-                             <td>75.01</td>
-                             <td>2.68</td>
-                             <td>----</td>
-                             <td>----</td>
-                         </tr>
-                         <tr>
-                             <td>China:Shanghai Composite</td>
-                             <td>2838.49</td>
-                             <td>18.56</td>
-                             <td>0.66</td>
-                             <td>----</td>
-                             <td>----</td>
-                         </tr>
-                         <tr>
-                             <td>Japan:Nikkei225</td>
-                             <td>19897.26</td>
-                             <td>607.06</td>
-                             <td>3.15</td>
-                             <td>----</td>
-                             <td>----</td>
-                         </tr>
-                         <tr>
-                             <td>UK:FTSE100</td>
-                             <td>5786.96</td>
-                             <td>158.53</td>
-                             <td>2.82</td>
-                             <td>----</td>
-                             <td>----</td>
-                         </tr>
-                     </table>
+        </div>
+        <div class="col px-md-5">
+            <div class="p-3 text-center bg-light card">
+                <p class="text-uppercase font-weight-bold title">Trending Stocks</p>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last</th>
+                        <th>CHG</th>
+                        <th>%CHG</th>
+                        <th>HIGH</th>
+                        <th>LOW</th>
+
+                    </tr>
+                    <tr>
+                        <td>Nasdaq Composite</td>
+                        <td>8650.14</td>
+                        <td>117.78</td>
+                        <td>1.38</td>
+                        <td>----</td>
+                        <td>----</td>
+                    </tr>
+                    <tr>
+                        <td>S&P500</td>
+                        <td>2874.56</td>
+                        <td>75.01</td>
+                        <td>2.68</td>
+                        <td>----</td>
+                        <td>----</td>
+                    </tr>
+                    <tr>
+                        <td>China:Shanghai Composite</td>
+                        <td>2838.49</td>
+                        <td>18.56</td>
+                        <td>0.66</td>
+                        <td>----</td>
+                        <td>----</td>
+                    </tr>
+                    <tr>
+                        <td>Japan:Nikkei225</td>
+                        <td>19897.26</td>
+                        <td>607.06</td>
+                        <td>3.15</td>
+                        <td>----</td>
+                        <td>----</td>
+                    </tr>
+                    <tr>
+                        <td>UK:FTSE100</td>
+                        <td>5786.96</td>
+                        <td>158.53</td>
+                        <td>2.82</td>
+                        <td>----</td>
+                        <td>----</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-
 
 
 <!-- Optional JavaScript -->
