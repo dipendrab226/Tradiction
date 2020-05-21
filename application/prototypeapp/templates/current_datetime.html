@@ -3,7 +3,7 @@
     <script type="text/javascript">
         let hash = "{{ hashh }}";
         function submitPayuForm() {
-            if (hash == '') {
+            if (hash === '') {
                 return;
             }
             let payuForm = document.forms.payuForm;
@@ -35,15 +35,23 @@
         </tr>
         <tr>
             <td>Amount:</td>
-            <td><input name="amount" value="{{ posted.amount|default:'' }}"/></td>
+            <td></td>
+            <td><input readonly name="amount" value="{{ posted.amount|default:'' }}"/></td>
+        </tr>
+        <tr>
             <td>First Name:</td>
-            <td><input name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}"/></td>
+            <td></td>
+            <td><input readonly name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}"/></td>
         </tr>
         <tr>
             <td>Email:</td>
-            <td><input name="email" id="email" value="{{ posted.email|default:'' }}"/></td>
+            <td></td>
+            <td><input readonly size="30" name="email" id="email" value="{{ posted.email|default:'' }}"/></td>
+        </tr>
+        <tr>
             <td>Phone:</td>
-            <td><input name="phone" value="{{ posted.phone|default:'' }}"/></td>
+            <td></td>
+            <td><input readonly name="phone" value="{{ posted.phone|default:'' }}"/></td>
         </tr>
         <tr>
 

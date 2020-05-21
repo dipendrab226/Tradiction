@@ -1,5 +1,5 @@
 """
-WSGI config for prototype project.
+WSGI config for tradiction project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

@@ -80,96 +80,67 @@
         }
 
     </style>
-</head>
-<body>
-    <section class="bg jumbotron-fluid text-center">
+   </head>
+   <body>
+      <section class="bg jumbotron-fluid text-center">
         <div class="container-fluid text-center">
             <h1 class="slogan">Invest with us!</h1>
             <p class="lead intro">Tradiction offers the latest in stock news, as well as a platform to easily view, buy, and sell
                 stocks. Sign up today to take advantage of everything this site has to offer! </p>
         </div>
     </section>
-    <br>
-    <div class="row mx-md-n5">
-        <div class="col px-md-5">
-            <div class="p-3 text-center bg-light card">
+      <br>
+      <div class="row mx-md-n5">
+      <div class="col px-md-5">
+         <div class="p-3 text-center bg-light card">
                 <p class="text-uppercase font-weight-bold title">Recent News</p>
                 <!--          convert these to a href once we work on backend.-->
                 {% for i in articles %}
-                <a class="newsLinks" target="_blank" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
+                <a class="newsLinks" target="_blank" onclick="return Confirm()" href={{ i.url }}><p class="text-left">{{ i.title }}</p></a>
                 {% endfor %}
             </div>
-
-        </div>
-        <div class="col px-md-5">
-            <div class="p-3 text-center bg-light card">
-                <p class="text-uppercase font-weight-bold title">Trending Stocks</p>
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Last</th>
-                        <th>CHG</th>
-                        <th>%CHG</th>
-                        <th>HIGH</th>
-                        <th>LOW</th>
-
-                    </tr>
-                    <tr>
-                        <td>Nasdaq Composite</td>
-                        <td>8650.14</td>
-                        <td>117.78</td>
-                        <td>1.38</td>
-                        <td>----</td>
-                        <td>----</td>
-                    </tr>
-                    <tr>
-                        <td>S&P500</td>
-                        <td>2874.56</td>
-                        <td>75.01</td>
-                        <td>2.68</td>
-                        <td>----</td>
-                        <td>----</td>
-                    </tr>
-                    <tr>
-                        <td>China:Shanghai Composite</td>
-                        <td>2838.49</td>
-                        <td>18.56</td>
-                        <td>0.66</td>
-                        <td>----</td>
-                        <td>----</td>
-                    </tr>
-                    <tr>
-                        <td>Japan:Nikkei225</td>
-                        <td>19897.26</td>
-                        <td>607.06</td>
-                        <td>3.15</td>
-                        <td>----</td>
-                        <td>----</td>
-                    </tr>
-                    <tr>
-                        <td>UK:FTSE100</td>
-                        <td>5786.96</td>
-                        <td>158.53</td>
-                        <td>2.82</td>
-                        <td>----</td>
-                        <td>----</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
+      </div>
+      <div class="col px-md-5">
+         <div class="p-3 text-center bg-light card">
+            <p class="text-uppercase font-weight-bold title">Trending Stocks</p>
+            <table>
+               <tr>
+                   <th>Name</th>
+                   <th>Day High</th>
+                   <th>Day Low</th>
+                   <th>Open</th>
+                   <th>Previous Close</th>
+                   <th>Details</th>
+               </tr>
+               {% for i in details %}
+                   <tr>
+                      <td>{{ i.longName }}</td>
+                      <td>{{ i.dayHigh }}</td>
+                      <td>{{ i.dayLow }}</td>
+                      <td>{{ i.open }}</td>
+                      <td>{{ i.previousClose }}</td>
+                      <td><a href="/stockdetails?stock={{ i.symbol }}">Details</a></td>
+                   </tr>
+               {% endfor %}
+            </table>
+         </div>
+      </div>
+      </div>
+      <script>
+          function Confirm() {
+              return confirm("You are about to leave the page!!! Are you sure?")
+          }
+      </script>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+         crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+         crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous"></script>
+   </body>
 </html>

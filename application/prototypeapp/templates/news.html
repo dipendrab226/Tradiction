@@ -27,6 +27,11 @@
         }
 
     </style>
+    <script type="text/javascript">
+        function Confirm(){
+            return confirm("You will be redirected to another page.")
+        }
+    </script>
 </head>
 <body>
 <br>
@@ -36,9 +41,9 @@
     <div class="col px-md-5">
         <div class="p-3 text-center">
             <div class="figure card bg-light">
-                <p><a href={{ i.url }} target="_blank"><img src={{ i.urlToImage }} class="card-img-top img-responsive"
-                                                            width="200" height="220"> </a></p>
-                <p><a href={{ i.url }} target="_blank" class="card-title articleTitle"> {{ i.title }} </a></p>
+                 <p><a onclick="return Confirm()" href={{ i.url }} target="_blank" ><img src= {{ i.urlToImage }}  class="img-responsive"
+                                                          width="200" height="220" > </a></p>
+                              <p><a onclick="return Confirm()" href={{ i.url }} target="_blank"> {{ i.title }} </a></p>
             </div>
         </div>
     </div>

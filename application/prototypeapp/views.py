@@ -1,12 +1,10 @@
 from simple_aes_cipher import AESCipher, generate_secret_key
-from random import randint
-from cryptography.fernet import Fernet
 from django.core.mail import EmailMessage
 from django.template.context_processors import csrf
 from get_all_tickers import get_tickers as gt
 from django.core.checks import Error
 from django.core.files.storage import FileSystemStorage
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import mysql.connector
 from newsapi import NewsApiClient
 from pprint import pprint
@@ -17,6 +15,7 @@ from django.contrib.messages.storage import session
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 import datetime
 import hashlib
+from django.shortcuts import HttpResponseRedirect
 
 # Create your views here.
 
@@ -29,6 +28,96 @@ def expertregistration(request):
     return render(request, 'registration/expert_register.html')
 
 
+def myprofile(request):
+    key = "tradiction123456"
+    lid = int(request.session.get('lid'))
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
+    query = "SELECT role from login where lid='%d'" % lid
+    cursor.execute(query)
+    row = cursor.fetchone()
+    role = row[0]
+    if role == 'trader':
+        query = "SELECT * from traderreg join login l on traderreg.lid = l.lid where l.lid='%d'" % lid
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+
+        for i in rows:
+            newl = list(i)
+            newl[7] = AESCipher(key).decrypt(newl[7])
+            newl[9] = AESCipher(key).decrypt(newl[9])
+            newl[10] = AESCipher(key).decrypt(newl[10])
+            newl[15] = AESCipher(key).decrypt(newl[15])
+
+        print(newl)
+        return render(request, 'myprofile.html', {'rows': newl, 'lid': lid})
+
+    elif role == 'expert':
+        query = "SELECT * from expertreg join login l on expertreg.loid = l.lid where l.lid='%d'" % lid
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        newrows = []
+        for i in rows:
+            newl = list(i)
+            newl.append(AESCipher(key).decrypt(newl[8]))
+            newl.append(AESCipher(key).decrypt(newl[14]))
+            newrows.append(newl)
+        return render(request, 'myprofile.html', {'rows': newrows})
+
+
+def updateinfo(request):
+    key = "tradiction123456"
+    fname = "\"" + request.POST.get('fname') + "\""
+    lname = "\"" + request.POST.get('lname') + "\""
+    email = "\"" + request.POST.get('email') + "\""
+    address = "\"" + request.POST.get('address') + "\""
+    city = "\"" + request.POST.get('city') + "\""
+    state = "\"" + request.POST.get('state') + "\""
+    phono = "\"" + request.POST.get('phono') + "\""
+    lid = int(request.session.get('lid'))
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
+    query = "UPDATE traderreg SET firstname=%s, lastname=%s, address=%s, city=%s, state=%s, phoneno=%s where lid=%d" %(fname, lname, address, city, state, phono, lid)
+    cursor.execute(query)
+    conn.commit()
+    query = "UPDATE login SET username=%s where lid=%d" %(email, lid)
+    cursor.execute(query)
+    conn.commit()
+    return myprofile(request)
+
+
+def updatebankinfo(request):
+    key = "tradiction123456"
+    ssnno = request.POST.get('ssnno')
+    routingno = request.POST.get('routingno')
+    accno = request.POST.get('accountno')
+    erouting = "\"" + AESCipher(key).encrypt(routingno) + "\""
+    eaccount = "\"" + AESCipher(key).encrypt(accno) + "\""
+    essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
+    lid = int(request.session.get('lid'))
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
+    query = "UPDATE traderreg SET ssnno=%s, routingno=%s, accountno=%s where lid=%d" % (essn, erouting, eaccount, lid)
+    cursor.execute(query)
+    conn.commit()
+    return myprofile(request)
+
+
+def updatepwd(request):
+    key = "tradiciton"
+    pwd = request.POST.get('pwd')
+    print(pwd)
+    epwd = "\"" + AESCipher(key).encrypt(pwd) + "\""
+    lid = int(request.session.get('lid'))
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
+    query = "UPDATE login SET password=%s where lid=%d" %(epwd, lid)
+    cursor.execute(query)
+    return myprofile(request)
+
+
 def portfolio(request):
     lid = request.session.get('lid')
     print(lid)
@@ -37,12 +126,12 @@ def portfolio(request):
         conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " select bs.bid,bs.datetime,bs.buyprice, bs.quantity,bs.total, sd.stockname, sd.stocksymbol from buystocks as bs join stocks as sd " \
-                "on bs.stid = sd.sid where bs.lid = '%d' AND status='payment successful'" % (lid)
+                "on bs.stid = sd.sid where bs.lid = '%d' AND status='payment successful'" % lid
         cursor.execute(query)
         rows = cursor.fetchall()
         print('rows', rows)
         print('length', len(rows))
-        print(rows[0][6])
+        #print(rows[0][6])
         sym = []
         for i in rows:
             sym.append(i[6])
@@ -62,9 +151,10 @@ def portfolio(request):
             i = i + 1
 
         print('updated row', newrows)
-        return render(request, 'portfolio.html', {'rows': newrows, 'lid':lid})
+        return render(request, 'portfolio.html', {'rows': newrows, 'lid': lid})
     else:
-        return login(request)
+        msg = "You will need to login first"
+        return render(request, 'registration/login.html', {'msg': msg})
 
 
 def sellstocks(request):
@@ -78,39 +168,50 @@ def sellstocks(request):
     name = ticker.info['longName']
     conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
-    query = "select stid,datetime,buyprice from buystocks where bid='%d' " % (bid)
+    query = "select stid,datetime,buyprice,quantity from buystocks where bid='%d' " % (bid)
     cursor.execute(query)
     rows = cursor.fetchall()
     print(rows)
     return render(request, 'sellstocks.html',
-                  {'name': name, 'rows': rows, 'price': currentprice, 'symbol': symbol, 'bid': bid})
+                  {'name': name, 'rows': rows, 'price': currentprice, 'symbol': symbol, 'bid': bid, 'lid': lid})
 
 
 def sells(request):
-    symbol = request.GET.get('symbol')
+    symbol = request.POST.get('symbol')
     lid = int(request.session.get('lid'))
-    sname = request.GET.get('sname')
-    quantity = int(request.GET.get('quantity'))
-    bprice = float(request.GET.get('cprice'))
-    total = float(request.GET.get('total'))
+    sname = request.POST.get('sname')
+    sellquantity = int(request.POST.get('sellquantity'))
+    buyquantity = int(request.POST.get('buyquantity'))
+    left = buyquantity-sellquantity
+    bprice = float(request.POST.get('cprice'))
+    total = float(request.POST.get('total'))
 
-    sellprice = float(request.GET.get('sellprice'))
+    sellprice = float(request.POST.get('sellprice'))
     date = datetime.datetime.now().strftime("%c")
-    total1 = quantity * bprice
+    total1 = sellquantity * bprice
     net = total - total1
-    bid = request.GET.get('bid')
+    bid = int(request.POST.get('bid'))
     conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
 
-    query = "INSERT INTO sellstocks (lid,sellingprice,sellingdate,profitloss,bid) VALUES ('%d','%s','%s','%d','%s')" % (
-        lid, sellprice, date, net, bid)
+    query = "INSERT INTO sellstocks (lid,sellingprice,sellingdate,sellquantity,profitloss,bid) VALUES ('%d','%s','%s','%s','%d','%d')" % (
+        lid, sellprice, date, sellquantity,net,bid)
+    cursor.execute(query)
+    conn.commit()
+
+    query = "UPDATE buystocks SET quantity='%d' where bid=%d" % (left, bid)
     cursor.execute(query)
     conn.commit()
     return tradinghistory(request)
 
 
 def help(request):
-    return render(request, 'help.html')
+    lid = request.session.get('lid')
+    if lid is not None:
+        lid = int(lid)
+        return render(request, 'help.html', {'lid': lid})
+    else:
+        return render(request, 'help.html')
 
 
 def login(request):
@@ -131,14 +232,18 @@ def tradinghistory(request):
         print(rows)
         return render(request, 'tradinghistory.html', {'rows': rows, 'lid': lid})
     else:
-        return login(request)
+        msg = "You will need to login first"
+        return render(request, 'registration/login.html', {'msg': msg})
 
 
 def logout(request):
-    lid = int(request.session.get('lid'))
+
+    lid = request.session.get('lid')
     print(lid)
     del request.session['lid']
-    return index(request)
+    print(request.META['HTTP_REFERER'])
+    #return request.META['HTTP_REFERER'] + request
+    return stocks(request)
 
 
 def between(request):
@@ -157,6 +262,7 @@ def between(request):
 
 
 def Home(request):
+    lid = request.session.get('lid')
     MERCHANT_KEY = "asBQUwV3"
     key="asBQUwV3"
     SALT = "c7GRmpi4Yb"
@@ -184,10 +290,10 @@ def Home(request):
     hashh=hashlib.sha512(hash_string.encode('utf-8')).hexdigest().lower()
     action =PAYU_BASE_URL
     if(posted.get("key")!=None and posted.get("txnid")!=None and posted.get("productinfo")!=None and posted.get("firstname")!=None and posted.get("email")!=None):
-        return render(request, 'current_datetime.html', {"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,
+        return render(request, 'current_datetime.html', {"lid":lid, "posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,
                                                                                "txnid":txnid,"hash_string":hash_string,"action":"https://sandboxsecure.payu.in/_payment" })
     else:
-        return render(request, 'current_datetime.html', {"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,
+        return render(request, 'current_datetime.html', {"lid":lid, "posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,
                                                                                "txnid":txnid,"hash_string":hash_string,"action":"." })
 
 
@@ -256,6 +362,9 @@ def failure(request):
     posted_hash = request.POST["hash"]
     key = request.POST["key"]
     productinfo = request.POST["productinfo"]
+    result = productinfo.split(",")
+    bid = result[0]
+    lid = result[1]
     email = request.POST["email"]
     salt = ""
     try:
@@ -270,7 +379,13 @@ def failure(request):
         print("Thank You. Your order status is ", status)
         print("Your Transaction ID for this transaction is ",txnid)
         print("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
-    return render(request, "Failure.html", c)
+    #return render(request, "Failure.html", c)
+    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    cursor = conn.cursor()
+    query = "UPDATE buystocks SET status='payment failed' where bid=%s" % (bid)
+    cursor.execute(query)
+    conn.commit()
+    return stocks(request)
 
 
 def index(request):
@@ -294,45 +409,60 @@ def index(request):
         titles.append(singlearticle.get('title'))
 
     pprint(titles)
-    return render(request, 'home.html', {'articles': articles, 'lid': lid})
+
+    sdetails = []
+    symbols = ['FB', 'AAPL', 'NFLX', 'GOOGL', 'AMZN', 'MSFT', 'UBER', 'TWTR', 'TSLA', 'DELL']
+    for i in symbols:
+        symbols = yf.Ticker(i)
+        details = symbols.info
+        sdetails.append(details)
+    return render(request, 'home.html', {'articles': articles, 'lid': lid, 'details': sdetails})
 
 
-# def search(request):
-#     try:
-#         conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
-#         cursor = conn.cursor()
-#         query = 'select count(*) from stocks'
-#         cursor.execute(query)
-#         rows = cursor.fetchall()
-#         print(rows)
-#         if rows is None:
-#             payload = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
-#             table = payload[0]
-#             symbols = table['Symbol'].values.tolist()
-#             print(symbols)
-#             names = table['Security'].values.tolist()
-#             print(names)
-#             query = 'TRUNCATE `tradiction`.`stocks`'
-#             cursor.execute(query)
-#             for i, j in zip(symbols, names):
-#                 i = "\"" + i + "\""
-#                 j = "\"" + j + "\""
-#                 print(i, j)
-#                 query = 'INSERT INTO stocks (`symbol`, `name`) VALUES (%s, %s)' % (i, j)
-#                 cursor.execute(query)
-#         string = "\"" + "%" + request.GET.get("search") + "%" + "\""
-#         print(string)
-#         query = 'SELECT stocksymbol, stockname from stocks where stockname LIKE %s' % string
-#         cursor.execute(query)
-#         rows = cursor.fetchall()
-#         print(rows)
-#         return render(request, 'stocks.html', {"row": rows})
-#     except Error as e:
-#         print(e)
-#     finally:
-#         cursor.close()
-#         conn.close()
+"""def search(request):
 
+    try:
+        conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='toor)
+        cursor = conn.cursor()
+        query = 'select count(*) from stocks'
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        if rows is None:
+
+            payload = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+            table = payload[0]
+
+            symbols = table['Symbol'].values.tolist()
+            print(symbols)
+
+            names = table['Security'].values.tolist()
+            print(names)
+
+            query = 'TRUNCATE `tradiction`.`stocks`'
+            cursor.execute(query)
+            for i, j in zip(symbols, names):
+                i = "\"" + i + "\""
+                j = "\"" + j + "\""
+                print(i, j)
+                query = 'INSERT INTO stocks (`symbol`, `name`) VALUES (%s, %s)' % (i, j)
+                cursor.execute(query)
+
+        string = "\"" + "%" + request.GET.get("search") + "%" + "\""
+        print(string)
+        query = 'SELECT stocksymbol, stockname from stocks where stockname LIKE %s' % string
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        return render(request, 'stocks.html', {"row": rows})
+
+    except Error as e:
+        print(e)
+
+    finally:
+        cursor.close()
+        conn.close()
+"""
 
 def addtrader(request):
 
@@ -355,7 +485,7 @@ def addtrader(request):
     eaccount = "\"" + AESCipher(key).encrypt(accno) + "\""
     essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
 
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    conn = mysql.connector.connect(host="localhost", database="tradiction", user="admin1", password="Admin123")
     cursor = conn.cursor()
 
     if request.method == 'POST':
@@ -385,7 +515,7 @@ def addtrader(request):
         cursor1 = conn.cursor()
         cursor1.execute(query)
         conn.commit()
-        msg = "Registration Complete !!"
+        msg = "Registration Complete !! Wait for confirmation message until your account is reviewed"
         return render(request, 'registration/login.html', {'msg': msg})
 
     else:
@@ -410,7 +540,7 @@ def addexpert(request):
     cpwd = request.POST.get('cpwd2')
 
     essn = "\"" + AESCipher(key).encrypt(ssnno) + "\""
-    conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
+    conn = mysql.connector.connect(host="localhost", database="tradiction", user="admin1", password="Admin123")
     cursor = conn.cursor()
 
     if request.method == 'POST':
@@ -436,7 +566,8 @@ def addexpert(request):
 
         cursor.execute(query)
         conn.commit()
-        return login(request)
+        msg = "Registration Complete !! Wait for confirmation message until your account is reviewed"
+        return render(request, 'registration/login.html', {'msg': msg})
 
     else:
         msg = "Passwords do not match"
@@ -530,7 +661,7 @@ def logindata(request):
                 print(status)
 
                 if status == 'Accepted':
-                    return index(request)
+                    return stocks(request)
 
                 elif status == 'Rejected':
                     msg = " Sorry, Your Registration As a Traders has been Reject  :(  "
@@ -551,14 +682,23 @@ def logindata(request):
 
 def verifyexpert(request):
     try:
+        key = "tradiction123456"
         lid = int(request.session.get('lid'))
         conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " SELECT * FROM expertreg WHERE status ='pending'"
         cursor.execute(query)
         rows = cursor.fetchall()
-        print(rows)
-        return render(request, 'expertverification.html', {'rows': rows, 'lid': lid})
+        newrows = []
+        for i in rows:
+            newl = list(i)
+            newl.append(AESCipher(key).decrypt(newl[7]))
+            newl.append(AESCipher(key).decrypt(newl[9]))
+            newl.append(AESCipher(key).decrypt(newl[10]))
+            newrows.append(newl)
+
+        print(newrows)
+        return render(request, 'expertverification.html', {'rows': newrows, 'lid': lid})
 
     except Error as e:
         print(e)
@@ -570,14 +710,23 @@ def verifyexpert(request):
 
 def verifytrader(request):
     try:
+        key = "tradiction123456"
         lid = int(request.session.get('lid'))
         conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
         cursor = conn.cursor()
         query = " SELECT * FROM traderreg WHERE status ='pending'"
         cursor.execute(query)
         rows = cursor.fetchall()
-        print(rows)
-        return render(request, 'traderverification.html', {'rows': rows, 'lid': lid})
+        newrows = []
+        for i in rows:
+            newl = list(i)
+            newl.append(AESCipher(key).decrypt(newl[7]))
+            newl.append(AESCipher(key).decrypt(newl[9]))
+            newl.append(AESCipher(key).decrypt(newl[10]))
+            newrows.append(newl)
+
+        print(newrows)
+        return render(request, 'traderverification.html', {'rows': newrows, 'lid': lid})
 
     except Error as e:
         print(e)
@@ -595,16 +744,16 @@ def accepttrader(request):
         query = " update traderreg SET status='Accepted' WHERE tid = '%d'" % id
         cursor.execute(query)
         conn.commit()
-        query = "SELECT username from login join traderreg on login.lid = traderreg.lid "
+        query = "SELECT username from login join traderreg on login.lid = traderreg.lid where traderreg.tid = %d" %id
         cursor.execute(query)
         rows = cursor.fetchall()
+        print(rows)
         e = rows[0][0]
         subject = "Welcome to Tradiction"
         Body = "Congratulations, Your account is now approved"
         email = EmailMessage(subject, Body, to=[e])
         email.send()
         print("sent")
-
         return verifytrader(request)
 
     except Error as e:
@@ -623,6 +772,16 @@ def rejecttrader(request):
         query = " update traderreg SET status='Rejected' WHERE tid  = '%d'" % id
         cursor.execute(query)
         conn.commit()
+        query = "SELECT username from login join traderreg on login.lid = traderreg.lid where traderreg.tid = %d" % id
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        e = rows[0][0]
+        subject = "Account Rejected"
+        Body = "We appreciate your patience but your account has been rejected."
+        email = EmailMessage(subject, Body, to=[e])
+        email.send()
+        print("sent")
         return verifytrader(request)
 
     except Error as e:
@@ -641,6 +800,16 @@ def acceptexpert(request):
         query = " update expertreg SET status='Accepted' WHERE eid = '%d'" % id
         cursor.execute(query)
         conn.commit()
+        query = "SELECT username from login join expertreg e on login.lid = e.loid where e.eid = %d" % id
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        e = rows[0][0]
+        subject = "Welcome to Tradiction"
+        Body = "Congratulations, Your account is now approved"
+        email = EmailMessage(subject, Body, to=[e])
+        email.send()
+        print("sent")
         return verifyexpert(request)
 
     except Error as e:
@@ -659,6 +828,16 @@ def rejectexpert(request):
         query = " update expertreg SET status='Rejected' WHERE eid = '%d'" % id
         cursor.execute(query)
         conn.commit()
+        query = "SELECT username from login join expertreg e on login.lid = e.loid where e.eid = %d" % id
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        print(rows)
+        e = rows[0][0]
+        subject = "Account Rejected"
+        Body = "We appreciate your patience but your account has been rejected."
+        email = EmailMessage(subject, Body, to=[e])
+        email.send()
+        print("sent")
         return verifyexpert(request)
 
     except Error as e:
@@ -671,6 +850,7 @@ def rejectexpert(request):
 
 def news(request):
 
+    lid = request.session.get('lid')
     topnews = NewsApiClient(api_key='17338a8016484433bcd67895a6a6ed95')
 
     # /v2/top-headlines
@@ -691,7 +871,7 @@ def news(request):
 
     articles.extend(top_headlines['articles'])
     pprint(articles)
-    return render(request, 'news.html', {'articles': articles})
+    return render(request, 'news.html', {'articles': articles, 'lid': lid})
 
 
 def loadstocks(request):
@@ -707,6 +887,7 @@ def loadstocks(request):
 
 def stocks(request):
     lid = request.session.get('lid')
+    print(lid)
     conn = mysql.connector.connect(host='localhost', database='tradiction', user='admin1', password='Admin123')
     cursor = conn.cursor()
     if lid is not None:
@@ -740,7 +921,6 @@ def stockdetails(request):
     details = symbol.info
     pprint(details)
     ans = query_twitter(details['longName'], 100)
-    pprint(ans)
 
     if lid is not None:
         lid = int(lid)
@@ -755,8 +935,10 @@ def stockdetails(request):
         else:
             flag = 0
         return render(request, 'details.html', {'details': details, 'twitter': ans, 'flag': flag, 'sid': sid, 'lid': lid})
+
     else:
         return render(request, 'details.html', {'details': details, 'twitter': ans, 'lid': lid})
+
 
 def addtowatchlist(request):
 
@@ -772,10 +954,11 @@ def addtowatchlist(request):
                 "key update wid=LAST_INSERT_ID(wid=0)" % (lid, symbol)
         cursor.execute(query)
         conn.commit()
-        return stocks(request)
-
+        pprint(request.META)
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
     else:
-        return login(request)
+        msg = "You will need to login first"
+        return render(request, 'registration/login.html', {'msg': msg})
 
 
 def watchlist(request):
@@ -789,7 +972,8 @@ def watchlist(request):
         rows = cursor.fetchall()
         return render(request, 'watchlist.html', {'rows': rows, 'lid': lid})
     else:
-        return login(request)
+        msg = "You will need to login first"
+        return render(request, 'registration/login.html', {'msg': msg})
 
 
 def removefromwatchlist(request):
@@ -802,7 +986,7 @@ def removefromwatchlist(request):
     query = "DELETE FROM watchlist where symbol='%s' and logid=%d" % (symbol, lid)
     cursor.execute(query)
     conn.commit()
-    return stocks(request)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 def addstocks(request):
@@ -813,7 +997,7 @@ def addstocks(request):
     symbol = yf.Ticker(ticker)
     details = symbol.info
     pprint(details)
-    buyprice = details['previousClose']
+    buyprice = round(details['previousClose'], 3)
     name = details['longName']
     details = [name, buyprice, sid]
     return render(request, 'buystocks.html', {'details': details, 'lid': lid})

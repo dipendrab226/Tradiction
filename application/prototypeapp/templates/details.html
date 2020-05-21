@@ -55,7 +55,12 @@
             margin: auto
         }
      </style>
+   <script type="text/javascript">
 
+    function Confirm(){
+        return confirm("Stock will be removed from your watchlist?")
+        }
+    </script>
 </head>
 <body>
 
@@ -66,9 +71,21 @@
              </div>
              <div class="col text-right">
                  <!-- wire these buttons with the backend below -->
-                <button type= "submit" class="btn btn-danger">Remove from Watchlist</button>
-                <button type= "submit" class="btn btn-outline-success">Add to Watchlist</button>
-                <button type= "submit" class="btn btn-success">BUY</button>
+             <form>
+                <input type="hidden" value="{{ details.symbol }}" name="symbol">
+                <input type="hidden" value="{{ sid.0 }}" name="id" >
+                {% if flag == 1 %}
+                    <button type= "submit" onclick="return Confirm()" formaction="/removefromwatchlist" class="btn btn-danger">Remove from Watchlist</button>
+                {% elif flag == 0 %}
+                    <button type= "submit" formaction="/addtowatchlist" class="btn btn-outline-success">Add to Watchlist</button>
+                {% endif %}
+
+                 {% if lid %}
+                    <button type= "submit" formaction="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}" class="btn btn-success">BUY</button>
+                 {% else %}
+                    <button formaction="/login" type= "submit" class="btn btn-success">BUY</button>
+                 {% endif %}
+             </form>
              </div>
          </div>
          <br>
@@ -117,18 +134,7 @@
         <br>
 
         <!-- need to rewire and delete after-->
-        <div class="w3l_login_form_bottom1">
-        {% if lid %}
-            <a href="/addstocks?id={{ sid.0 }}&symbol={{ details.symbol }}">BUY</a>
-        {% else %}
-            <a href="/login">BUY</a>
-        {% endif %}
 
-        {% if flag == 0 %}
-            <a href="/addtowatchlist?symbol={{ details.symbol }}">ADD TO WATCHLIST</a>
-        {% elif flag == 1 %}
-            <a href="/removefromwatchlist?symbol={{ details.symbol }}">REMOVE FROM WATCHLIST</a>
-        {% endif %}
         </div>
     </div>
 

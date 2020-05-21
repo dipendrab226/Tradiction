@@ -34,12 +34,15 @@ urlpatterns = [
     url(r'^removefromwatchlist', views.removefromwatchlist, name='removefromwatchlist'),
     url(r'^addstocks$', views.addstocks, name='addstocks'),
     url(r'^buystocks$', views.buystocks, name='buystocks'),
-    url(r'^buystocks$', views.buystocks, name='buystocks'),
     url(r'^sellstocks$', views.sellstocks, name='sellstocks'),
     url(r'^sells$', views.sells, name='sells'),
     url(r'^between', views.between, name='between'),
     url(r'^home', views.Home, name='home'),
     url(r'^success', views.success, name='success'),
     url(r'^failure', views.failure, name='failure'),
+    url(r'^myprofile', views.myprofile, name='myprofile'),
+    url(r'^updateinfo', views.updateinfo, name='updateinfo'),
+    url(r'^updatebankinfo', views.updatebankinfo, name='updatebankinfo'),
+    url(r'^updatepwd', views.updatepwd, name='updatepwd'),
 
 ]

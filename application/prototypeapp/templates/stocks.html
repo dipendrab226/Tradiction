@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>Stocks</title>
     {% include 'header.html' %}
     <style>
@@ -14,57 +10,68 @@
         font-style: normal;
      }
         table {
-            font-family: "Open Sans", Arial, sans-serif;
+            font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
             margin: 30px auto 30px auto;
         }
 
         td, th {
-            /*border: 1px solid #dddddd;*/
-            /*text-align: left;*/
-            font-family: "Open Sans", Arial, sans-serif;
+           font-family: "Open Sans", Arial, sans-serif;
             border-bottom: 1px solid #dddddd;
             text-align: left;
             padding: 15px;
         }
 
-        tr:nth-child(2) {
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+         tr:nth-child(2) {
             border-top: 1px solid #dddddd;
         }
-
-        /*tr:nth-child(even) {*/
-        /*    background-color: #dddddd;*/
-        /*}*/
-
-        .card {
-            width: 98%;
-            margin: auto
+        table.sortable thead {
+                background-color:#eee;
+                color: #000000;
+                font-weight: bold;
+                cursor: pointer;
         }
-
-        .searchBar {
+.searchBar {
             width: 500px;
         }
     </style>
-</head>
+
     <script type="text/javascript" src= {% static "js/jquery_3.4.1_jquery.js" %}></script>
-</head>
+    <script type="text/javascript" src= {% static "js/sorttable.js" %}></script>
+    <script type="text/javascript">
+        function Confirm(i) {
+            if (i === 0) {
+                let con = confirm("Are you sure you want to remove it from watchlist?")
+                if (con) {
+                    alert("Stock removed from your watchlist")
+                    return true
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                alert("Stock added to your watchlist")
+            }
+        }
+    </script>
 <body>
-    <div class="justify-content-center card bg-light">
 	<div class="container-fluid">
-	<table id="stocktable" class="display">
-            <thead>
-                <tr>
-                    <th><input class="searchBar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search"></th>
-                <tr>
-                    <th>Name</th>
-                    <th>Ticker</th>
-                    <th>Details</th>
-                    <th>Watchlist</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
+                <input class="searchBar form-control mr-sm-2" type="search" placeholder="Search for Stock name or symbol" aria-label="Search" name="search" id="search">
+                <table class="sortable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Ticker</th>
+                        <th class="sorttable_nosort">Details</th>
+                        <th class="sorttable_nosort">Watchlist</th>
+                    </tr>
+                </thead>
             <tbody id="stocks">
             {% for i in rows %}
                 <tr>
@@ -74,9 +81,9 @@
 
                     {% if lid is not None %}
                         {% if i.1 in symbols %}
-                            <td><a href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
+                            <td><a onclick="return Confirm(0)" href="/removefromwatchlist?symbol={{ i.1 }}" style="-webkit-text-fill-color: red">Remove from Watchlist</a></td>
                         {% else %}
-                            <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
+                            <td><a onclick="Confirm(1)" href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
                         {% endif %}
                     {% else %}
                         <td><a href="/addtowatchlist?symbol={{ i.1 }}">Add to Watchlist</a></td>
@@ -85,8 +92,7 @@
                 </tr>
             {% endfor %}
             </tbody>
-	 </table>
-    </div>
+	    </table>
 	</div>
 
     <script>
@@ -114,4 +120,3 @@
             crossorigin="anonymous"></script>
 </body>
 </html>
-
