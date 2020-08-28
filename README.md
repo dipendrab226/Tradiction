@@ -7,10 +7,10 @@ Tradiction is a stock trading app that allows users the ability to browse recent
 ## When AWS setup, add link to site here*
 
 
-#### Team lead: Dipendra (Dibs), dbharati@mail.sfsu.edu
+#### Team lead: Brian, blim6@mail.sfsu.edu
 #### Front end lead: May, mnaing1@mail.sfsu.edu
 #### Back end lead: Sanjay, smirani1@mail.sfsu.edu
-#### Github master: Brian, blim6@mail.sfsu.edu
+#### Github master: Dipendra (Dibs), dbharati@mail.sfsu.edu
 #### Db master 1: Zike, zxian@mail.sfsu.edu
 #### Db master 2: Ben, benjamin.fletes@gmail.com
 #
