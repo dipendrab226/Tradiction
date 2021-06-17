@@ -87,3 +87,16 @@ Tradiction is a stock trading app that allows users the ability to browse recent
 - Revised and bug-fixed the help page front-end.
 - Provided feedback and assistance with work from other team members.
 - Tested and fixed any bugs with the project on AWS.
+
+# Challenges and Solution during the project
+Some of the non-technical challenges that we faced were:
+- ` Managing the schedule was difficult in the begining as result we missed the first two meetings. `
+- ` Meeting the deadlines were also challenging because some team members would be behind in their assigned work. `
+- ` Couple of team members hadn't used git version control so it took them a while to get used to it, which also delayed the development. `
+
+Some of the technical challenges that we faced were:
+- `It took time to understand different concepts like business requirements, prototypes, High-level architecture, low-level architecture, web-app servers and so on.`
+- `Setting the enviroment on AWS was also challenge in the begining as I faced issues with security groups, inbound, outbound rules and pem files.`
+- `We also faced issues with uniformity in our web pages. We solved it after creating design system which dictated how each elements of the web page should look and interact.`
+- `I had to spent a lot of time configuring gunicorn and nginx to use them as an appication server and web server respectively. I had minimal idea on their concept before that.`
+- `Faced multiple challenges while creating ERD diagrams, databasemodel and schema from the the business rules. For instance, I remember having issues with assigning proper relationship between entities table like one to many, many to many etc.`
